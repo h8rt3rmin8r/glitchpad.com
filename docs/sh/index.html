@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
+    <title>Glitchpad | sh</title>
+    <style type="text/css" media="screen">
+        .ace_editor {
+            border: 3px solid #303030;
+            margin: auto;
+            min-height: 200px;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
+    <!-- Site Styles -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            color: #4969dd;
+            background-color: #161616;
+            font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            padding: 0px;
+            bottom: 0;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        /* Scrollbar Styles */
+
+        /* Scrollbar Width */
+
+        ::-webkit-scrollbar {
+            width: 7px;
+            max-height: 50px;
+        }
+
+        /* Scrollbar Track */
+
+        ::-webkit-scrollbar-track {
+            background: #424242;
+            box-shadow: inset 0 0 5px grey;
+        }
+
+        /* Scrollbar Handle */
+
+        ::-webkit-scrollbar-thumb {
+            background: #757575;
+            border-radius: 10px;
+        }
+
+        /* Scrollbar Handle on Hover */
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ababab;
+            border-radius: 10px;
+        }
+    </style>
+
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/ace" src="https://ace.c9.io/lib/ace/ace.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/fixoldbrowsers"
+        src="https://ace.c9.io/lib/ace/lib/fixoldbrowsers.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/dom" src="https://ace.c9.io/lib/ace/lib/dom.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/event" src="https://ace.c9.io/lib/ace/lib/event.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/range" src="https://ace.c9.io/lib/ace/range.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/editor" src="https://ace.c9.io/lib/ace/editor.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/edit_session" src="https://ace.c9.io/lib/ace/edit_session.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/undomanager" src="https://ace.c9.io/lib/ace/undomanager.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/virtual_renderer"
+        src="https://ace.c9.io/lib/ace/virtual_renderer.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/worker/worker_client"
+        src="https://ace.c9.io/lib/ace/worker/worker_client.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/keyboard/hash_handler"
+        src="https://ace.c9.io/lib/ace/keyboard/hash_handler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/placeholder" src="https://ace.c9.io/lib/ace/placeholder.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/multi_select" src="https://ace.c9.io/lib/ace/multi_select.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/fold_mode"
+        src="https://ace.c9.io/lib/ace/mode/folding/fold_mode.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/ext/error_marker"
+        src="https://ace.c9.io/lib/ace/ext/error_marker.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/config" src="https://ace.c9.io/lib/ace/config.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/lang" src="https://ace.c9.io/lib/ace/lib/lang.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/oop" src="https://ace.c9.io/lib/ace/lib/oop.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/net" src="https://ace.c9.io/lib/ace/lib/net.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/app_config" src="https://ace.c9.io/lib/ace/lib/app_config.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/keys" src="https://ace.c9.io/lib/ace/lib/keys.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/useragent" src="https://ace.c9.io/lib/ace/lib/useragent.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/range_list" src="https://ace.c9.io/lib/ace/range_list.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/selection" src="https://ace.c9.io/lib/ace/selection.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/multi_select_handler"
+        src="https://ace.c9.io/lib/ace/mouse/multi_select_handler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/commands/multi_select_commands"
+        src="https://ace.c9.io/lib/ace/commands/multi_select_commands.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/search" src="https://ace.c9.io/lib/ace/search.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/requirejs/text" src="https://ace.c9.io/lib/ace/requirejs/text.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/line_widgets" src="https://ace.c9.io/lib/ace/line_widgets.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/gutter" src="https://ace.c9.io/lib/ace/layer/gutter.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/marker" src="https://ace.c9.io/lib/ace/layer/marker.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/text" src="https://ace.c9.io/lib/ace/layer/text.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/cursor" src="https://ace.c9.io/lib/ace/layer/cursor.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/scrollbar" src="https://ace.c9.io/lib/ace/scrollbar.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/renderloop" src="https://ace.c9.io/lib/ace/renderloop.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/font_metrics"
+        src="https://ace.c9.io/lib/ace/layer/font_metrics.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/event_emitter"
+        src="https://ace.c9.io/lib/ace/lib/event_emitter.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/keyboard/textinput"
+        src="https://ace.c9.io/lib/ace/keyboard/textinput.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/mouse_handler"
+        src="https://ace.c9.io/lib/ace/mouse/mouse_handler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/fold_handler"
+        src="https://ace.c9.io/lib/ace/mouse/fold_handler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/keyboard/keybinding"
+        src="https://ace.c9.io/lib/ace/keyboard/keybinding.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/commands/command_manager"
+        src="https://ace.c9.io/lib/ace/commands/command_manager.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/commands/default_commands"
+        src="https://ace.c9.io/lib/ace/commands/default_commands.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/token_iterator" src="https://ace.c9.io/lib/ace/token_iterator.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/clipboard" src="https://ace.c9.io/lib/ace/clipboard.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/bidihandler" src="https://ace.c9.io/lib/ace/bidihandler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/text" src="https://ace.c9.io/lib/ace/mode/text.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/document" src="https://ace.c9.io/lib/ace/document.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/background_tokenizer"
+        src="https://ace.c9.io/lib/ace/background_tokenizer.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/search_highlight"
+        src="https://ace.c9.io/lib/ace/search_highlight.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/edit_session/folding"
+        src="https://ace.c9.io/lib/ace/edit_session/folding.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/edit_session/bracket_match"
+        src="https://ace.c9.io/lib/ace/edit_session/bracket_match.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/regexp" src="https://ace.c9.io/lib/ace/lib/regexp.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/es5-shim" src="https://ace.c9.io/lib/ace/lib/es5-shim.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/default_handlers"
+        src="https://ace.c9.io/lib/ace/mouse/default_handlers.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/default_gutter_handler"
+        src="https://ace.c9.io/lib/ace/mouse/default_gutter_handler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/mouse_event"
+        src="https://ace.c9.io/lib/ace/mouse/mouse_event.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mouse/dragdrop_handler"
+        src="https://ace.c9.io/lib/ace/mouse/dragdrop_handler.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/bidiutil" src="https://ace.c9.io/lib/ace/lib/bidiutil.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/keyboard/textinput_ios"
+        src="https://ace.c9.io/lib/ace/keyboard/textinput_ios.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/tokenizer" src="https://ace.c9.io/lib/ace/tokenizer.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/text_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/text_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/cstyle"
+        src="https://ace.c9.io/lib/ace/mode/behaviour/cstyle.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/unicode" src="https://ace.c9.io/lib/ace/unicode.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/apply_delta" src="https://ace.c9.io/lib/ace/apply_delta.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/anchor" src="https://ace.c9.io/lib/ace/anchor.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/edit_session/fold_line"
+        src="https://ace.c9.io/lib/ace/edit_session/fold_line.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/edit_session/fold"
+        src="https://ace.c9.io/lib/ace/edit_session/fold.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/lines" src="https://ace.c9.io/lib/ace/layer/lines.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/tooltip" src="https://ace.c9.io/lib/ace/tooltip.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour" src="https://ace.c9.io/lib/ace/mode/behaviour.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/html" src="https://ace.c9.io/lib/ace/mode/html.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/javascript"
+        src="https://ace.c9.io/lib/ace/mode/javascript.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/css" src="https://ace.c9.io/lib/ace/mode/css.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/sh" src="https://ace.c9.io/build/src/mode-sh.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/html_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/html_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/xml"
+        src="https://ace.c9.io/lib/ace/mode/behaviour/xml.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/html"
+        src="https://ace.c9.io/lib/ace/mode/folding/html.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/html_completions"
+        src="https://ace.c9.io/lib/ace/mode/html_completions.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/mixed"
+        src="https://ace.c9.io/lib/ace/mode/folding/mixed.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/xml"
+        src="https://ace.c9.io/lib/ace/mode/folding/xml.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/cstyle"
+        src="https://ace.c9.io/lib/ace/mode/folding/cstyle.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/javascript_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/javascript_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/matching_brace_outdent"
+        src="https://ace.c9.io/lib/ace/mode/matching_brace_outdent.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/css_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/css_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/css_completions"
+        src="https://ace.c9.io/lib/ace/mode/css_completions.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/css"
+        src="https://ace.c9.io/lib/ace/mode/behaviour/css.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/xml_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/xml_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/doc_comment_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/doc_comment_highlight_rules.js"></script>
+
+
+    <!-- THEMES START -->
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow" src="https://ace.c9.io/lib/ace/theme/tomorrow.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/solarized_dark"
+        src="https://ace.c9.io/lib/ace/theme/solarized_dark.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/eclipse" src="https://ace.c9.io/lib/ace/theme/eclipse.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/terminal" src="https://ace.c9.io/lib/ace/theme/terminal.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/twilight" src="https://ace.c9.io/lib/ace/theme/twilight.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/mono_industrial"
+        src="https://ace.c9.io/lib/ace/theme/mono_industrial.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/dracula" src="https://ace.c9.io/lib/ace/theme/dracula.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/xcode" src="https://ace.c9.io/lib/ace/theme/xcode.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/textmate" src="https://ace.c9.io/lib/ace/theme/textmate.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow_night_blue"
+        src="https://ace.c9.io/lib/ace/theme/tomorrow_night_blue.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow_night_eighties"
+        src="https://ace.c9.io/lib/ace/theme/tomorrow_night_eighties.js"></script>
+    <!-- THEMES END -->
+</head>
+
+<body>
+    <pre id="editor1" style="width: 100%; height: 95vh;">...</pre>
+    <div class="scrollmargin"></div>
+    <script src="https://ace.c9.io/demo/kitchen-sink/require.js"></script>
+    <script>
+        // setup paths
+        require.config({
+            paths: {
+                "ace": "https://ace.c9.io/lib/ace"
+            }
+        });
+        // load ace and extensions
+        require(["ace/ace"], function (ace) {
+            var editor1 = ace.edit("editor1", {
+                theme: "ace/theme/terminal",
+                mode: "ace/mode/sh",
+                //maxLines: 400,
+                minLines: 250,
+                wrap: true,
+                autoScrollEditorIntoView: true
+            });
+            var refs = {};
+
+            function updateToolbar() {
+                refs.saveButton.disabled = editor.session.getUndoManager().isClean();
+                refs.undoButton.disabled = !editor.session.getUndoManager().hasUndo();
+                refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
+            }
+            editor.on("input", updateToolbar);
+            editor.session.mergeUndoDeltas = true; 
+            editor.session.insert({row: 0, column:0}, Date()+"");
+            editor.session.setValue(localStorage.savedValue || "Welcome to Nova IDE!")
+        });
+    </script>
+    <script src="https://ace.c9.io/demo/show_own_source.js"></script>
+</body>
+
+</html>
