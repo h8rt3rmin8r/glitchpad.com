@@ -260,7 +260,7 @@
 </head>
 
 <body>
-    <pre id="editor1" style="width: 100%; height: 95vh;">#! /bin/bash</pre>
+    <pre id="editor1" style="width: 100%; height: 96vh;">#! /bin/bash</pre>
     <div class="scrollmargin"></div>
     <script src="https://ace.c9.io/demo/kitchen-sink/require.js"></script>
     <script>
@@ -281,15 +281,6 @@
                 autoScrollEditorIntoView: true
             });
             var refs = {};
-
-            function updateToolbar() {
-                refs.saveButton.disabled = editor.session.getUndoManager().isClean();
-                refs.undoButton.disabled = !editor.session.getUndoManager().hasUndo();
-                refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
-            }
-            editor.on("input", updateToolbar);
-            editor.session.mergeUndoDeltas = true; 
-            editor.session.insert({row: 0, column:0}, Date()+"");
             editor.session.setValue(localStorage.savedValue || "Welcome to Nova IDE!")
         });
     </script>
