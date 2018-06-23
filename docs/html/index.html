@@ -39,7 +39,7 @@
     <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/images/ms-icon-144x144.png">
     <meta name="msapplication-TileColor" content="#3372DF">
     <link rel="shortcut icon" href="https://h8rt3rmin8r.com/images/images/favicon.png">
-    
+
     <style type="text/css" media="screen">
         .ace_editor {
             border: 3px solid #303030;
@@ -259,7 +259,7 @@
 </head>
 
 <body>
-    <pre id="editor1" style="width: 100%; height: 95vh;">...</pre>
+    <pre id="editor1" style="width: 100%; height: 96vh;">...</pre>
     <div class="scrollmargin"></div>
     <script src="https://ace.c9.io/demo/kitchen-sink/require.js"></script>
     <script>
@@ -280,15 +280,6 @@
                 autoScrollEditorIntoView: true
             });
             var refs = {};
-
-            function updateToolbar() {
-                refs.saveButton.disabled = editor.session.getUndoManager().isClean();
-                refs.undoButton.disabled = !editor.session.getUndoManager().hasUndo();
-                refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
-            }
-            editor.on("input", updateToolbar);
-            editor.session.mergeUndoDeltas = true; 
-            editor.session.insert({row: 0, column:0}, Date()+"");
             editor.session.setValue(localStorage.savedValue || "Welcome to Nova IDE!")
         });
     </script>
