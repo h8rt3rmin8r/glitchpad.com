@@ -5,42 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
-    <title>Glitchpad | sh</title>
-    
-    <meta name="description" content="A simple browser-based IDE built on the open source Ace library">
-
-    <!-- ****** FAVICONS AND BRANDING ****** -->
-
-    <link rel="apple-touch-icon" sizes="57x57" href="https://h8rt3rmin8r.com/images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://h8rt3rmin8r.com/images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://h8rt3rmin8r.com/images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://h8rt3rmin8r.com/images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://h8rt3rmin8r.com/images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://h8rt3rmin8r.com/images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://h8rt3rmin8r.com/images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://h8rt3rmin8r.com/images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://h8rt3rmin8r.com/images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://h8rt3rmin8r.com/images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://h8rt3rmin8r.com/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://h8rt3rmin8r.com/images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://h8rt3rmin8r.com/images/favicon-16x16.png">
-    <link rel="manifest" href="https://h8rt3rmin8r.com/images/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="https://h8rt3rmin8r.com/images/images/android-icon-192x192.png">
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="GlitchPad">
-    <link rel="apple-touch-icon-precomposed" href="https://h8rt3rmin8r.com/images/images/apple-icon-precomposed.png">
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/images/ms-icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-    <link rel="shortcut icon" href="https://h8rt3rmin8r.com/images/images/favicon.png">
-    
+    <title>Glitchpad | SH</title>
     <style type="text/css" media="screen">
         .ace_editor {
             border: 3px solid #303030;
@@ -104,6 +69,7 @@
             border-radius: 10px;
         }
     </style>
+    
 
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/ace" src="https://ace.c9.io/lib/ace/ace.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/fixoldbrowsers"
@@ -112,6 +78,8 @@
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/lib/event" src="https://ace.c9.io/lib/ace/lib/event.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/range" src="https://ace.c9.io/lib/ace/range.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/editor" src="https://ace.c9.io/lib/ace/editor.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/edit_session" src="https://ace.c9.io/lib/ace/edit_session.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/undomanager" src="https://ace.c9.io/lib/ace/undomanager.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/virtual_renderer"
         src="https://ace.c9.io/lib/ace/virtual_renderer.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/worker/worker_client"
@@ -120,8 +88,6 @@
         src="https://ace.c9.io/lib/ace/keyboard/hash_handler.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/placeholder" src="https://ace.c9.io/lib/ace/placeholder.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/multi_select" src="https://ace.c9.io/lib/ace/multi_select.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/fold_mode"
-        src="https://ace.c9.io/lib/ace/mode/folding/fold_mode.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/ext/error_marker"
         src="https://ace.c9.io/lib/ace/ext/error_marker.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/config" src="https://ace.c9.io/lib/ace/config.js"></script>
@@ -165,7 +131,6 @@
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/token_iterator" src="https://ace.c9.io/lib/ace/token_iterator.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/clipboard" src="https://ace.c9.io/lib/ace/clipboard.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/bidihandler" src="https://ace.c9.io/lib/ace/bidihandler.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/text" src="https://ace.c9.io/lib/ace/mode/text.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/document" src="https://ace.c9.io/lib/ace/document.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/background_tokenizer"
         src="https://ace.c9.io/lib/ace/background_tokenizer.js"></script>
@@ -189,10 +154,6 @@
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/keyboard/textinput_ios"
         src="https://ace.c9.io/lib/ace/keyboard/textinput_ios.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/tokenizer" src="https://ace.c9.io/lib/ace/tokenizer.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/text_highlight_rules"
-        src="https://ace.c9.io/lib/ace/mode/text_highlight_rules.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/cstyle"
-        src="https://ace.c9.io/lib/ace/mode/behaviour/cstyle.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/unicode" src="https://ace.c9.io/lib/ace/unicode.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/apply_delta" src="https://ace.c9.io/lib/ace/apply_delta.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/anchor" src="https://ace.c9.io/lib/ace/anchor.js"></script>
@@ -202,6 +163,12 @@
         src="https://ace.c9.io/lib/ace/edit_session/fold.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/layer/lines" src="https://ace.c9.io/lib/ace/layer/lines.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/tooltip" src="https://ace.c9.io/lib/ace/tooltip.js"></script>
+    
+    <!-- MODE SELECTION START -->
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/fold_mode"
+        src="https://ace.c9.io/lib/ace/mode/folding/fold_mode.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/cstyle"
+        src="https://ace.c9.io/lib/ace/mode/behaviour/cstyle.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour" src="https://ace.c9.io/lib/ace/mode/behaviour.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/html" src="https://ace.c9.io/lib/ace/mode/html.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/javascript"
@@ -210,16 +177,12 @@
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/sh" src="https://ace.c9.io/build/src/mode-sh.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/html_highlight_rules"
         src="https://ace.c9.io/lib/ace/mode/html_highlight_rules.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/xml"
-        src="https://ace.c9.io/lib/ace/mode/behaviour/xml.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/html"
         src="https://ace.c9.io/lib/ace/mode/folding/html.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/html_completions"
         src="https://ace.c9.io/lib/ace/mode/html_completions.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/mixed"
         src="https://ace.c9.io/lib/ace/mode/folding/mixed.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/xml"
-        src="https://ace.c9.io/lib/ace/mode/folding/xml.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/cstyle"
         src="https://ace.c9.io/lib/ace/mode/folding/cstyle.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/javascript_highlight_rules"
@@ -232,18 +195,29 @@
         src="https://ace.c9.io/lib/ace/mode/css_completions.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/css"
         src="https://ace.c9.io/lib/ace/mode/behaviour/css.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/xml_highlight_rules"
-        src="https://ace.c9.io/lib/ace/mode/xml_highlight_rules.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/doc_comment_highlight_rules"
         src="https://ace.c9.io/lib/ace/mode/doc_comment_highlight_rules.js"></script>
-
+    <!--
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/text_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/text_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/text" src="https://ace.c9.io/lib/ace/mode/text.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/xml_highlight_rules"
+        src="https://ace.c9.io/lib/ace/mode/xml_highlight_rules.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/folding/xml"
+        src="https://ace.c9.io/lib/ace/mode/folding/xml.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/xml"
+        src="https://ace.c9.io/lib/ace/mode/behaviour/xml.js"></script>
+    -->
+    <!-- MODE SELECTION END -->
 
     <!-- THEMES START -->
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/terminal" src="https://ace.c9.io/lib/ace/theme/terminal.js"></script>
+    <!--
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow" src="https://ace.c9.io/lib/ace/theme/tomorrow.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/solarized_dark"
         src="https://ace.c9.io/lib/ace/theme/solarized_dark.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/eclipse" src="https://ace.c9.io/lib/ace/theme/eclipse.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/terminal" src="https://ace.c9.io/lib/ace/theme/terminal.js"></script>
+    
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/twilight" src="https://ace.c9.io/lib/ace/theme/twilight.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/mono_industrial"
         src="https://ace.c9.io/lib/ace/theme/mono_industrial.js"></script>
@@ -254,13 +228,15 @@
         src="https://ace.c9.io/lib/ace/theme/tomorrow_night_blue.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow_night_eighties"
         src="https://ace.c9.io/lib/ace/theme/tomorrow_night_eighties.js"></script>
+    -->
     <!-- THEMES END -->
 </head>
 
 <body>
-    <pre id="editor1" style="width: 100%; height: 96vh;">#! /bin/bash</pre>
-    <div class="scrollmargin"></div>
     <script src="https://ace.c9.io/demo/kitchen-sink/require.js"></script>
+    <pre id="editor1" style="width: 100%; height: 95vh;">...</pre>
+    <div class="scrollmargin"></div>
+    
     <script>
         // setup paths
         require.config({
@@ -278,9 +254,21 @@
                 wrap: true,
                 autoScrollEditorIntoView: true
             });
+            var refs = {};
+
+            function updateToolbar() {
+                refs.saveButton.disabled = editor.session.getUndoManager().isClean();
+                refs.undoButton.disabled = !editor.session.getUndoManager().hasUndo();
+                refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
+            }
+            editor.on("input", updateToolbar);
+            editor.session.mergeUndoDeltas = true; 
+            editor.session.insert({row: 0, column:0}, Date()+"");
+            editor.session.setValue(localStorage.savedValue || "Welcome to Nova IDE!")
         });
     </script>
     <script src="https://ace.c9.io/demo/show_own_source.js"></script>
+    
 </body>
 
 </html>
