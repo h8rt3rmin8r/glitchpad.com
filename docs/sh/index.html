@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GlitchPad</title>
+    <title>GlitchPad | SH</title>
     <meta name="description" content="A browser-based notepad and IDE by ResoNova">
     <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad">
 
@@ -33,7 +33,7 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
-    <meta name="apple-mobile-web-app-title" content="GlitchPad">
+    <meta name="apple-mobile-web-app-title" content="GlitchPad SH">
     <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
@@ -44,13 +44,8 @@
     <style type="text/css" media="screen">
         .ace_editor {
             border: 3px solid #303030;
-            margin: auto;
-            min-height: 200px;
-            width: 100%;
-            height: 100vh;
         }
-    </style>
-    <style>
+
         * {
             box-sizing: border-box;
         }
@@ -58,14 +53,6 @@
         html {
             position: relative;
             height: 100%;
-        }
-
-        body {
-            color: #4969dd;
-            background-color: #161616;
-            font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            padding: 0px;
-            bottom: 0;
         }
 
         textarea:focus {
@@ -77,25 +64,54 @@
         /* Scrollbar Width */
         ::-webkit-scrollbar {
             width: 7px;
-            max-height: 50px;
         }
 
         /* Scrollbar Track */
         ::-webkit-scrollbar-track {
             background: #424242;
-            box-shadow: inset 0 0 5px grey;
+            box-shadow: inset 0 0 2px grey;
         }
 
         /* Scrollbar Handle */
         ::-webkit-scrollbar-thumb {
             background: #757575;
-            border-radius: 10px;
+            border-radius: 3px;
         }
 
         /* Scrollbar Handle on Hover */
         ::-webkit-scrollbar-thumb:hover {
             background: #ababab;
-            border-radius: 10px;
+            border-radius: 3px;
+        }
+
+        #editor1 {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            min-height: 100vh;
+            max-height: 100vh;
+            min-width: 100vw;
+            max-width: 100vw;
+            z-index: 99999999;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+
+        #editor2 {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            min-height: 100vh;
+            max-height: 100vh;
+            min-width: 100vw;
+            max-width: 100vw;
+            z-index: 99999999;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
         }
     </style>
     
@@ -237,35 +253,14 @@
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/mode/behaviour/xml"
         src="https://ace.c9.io/lib/ace/mode/behaviour/xml.js"></script>
     -->
-    <!-- MODE SELECTION END -->
 
-    <!-- THEMES START -->
+    <!-- THEME -->
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/terminal" src="https://ace.c9.io/lib/ace/theme/terminal.js"></script>
-    <!--
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow" src="https://ace.c9.io/lib/ace/theme/tomorrow.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/solarized_dark"
-        src="https://ace.c9.io/lib/ace/theme/solarized_dark.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/eclipse" src="https://ace.c9.io/lib/ace/theme/eclipse.js"></script>
-    
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/twilight" src="https://ace.c9.io/lib/ace/theme/twilight.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/mono_industrial"
-        src="https://ace.c9.io/lib/ace/theme/mono_industrial.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/dracula" src="https://ace.c9.io/lib/ace/theme/dracula.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/xcode" src="https://ace.c9.io/lib/ace/theme/xcode.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/textmate" src="https://ace.c9.io/lib/ace/theme/textmate.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow_night_blue"
-        src="https://ace.c9.io/lib/ace/theme/tomorrow_night_blue.js"></script>
-    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ace/theme/tomorrow_night_eighties"
-        src="https://ace.c9.io/lib/ace/theme/tomorrow_night_eighties.js"></script>
-    -->
-    <!-- THEMES END -->
 </head>
 
 <body>
     <script src="https://ace.c9.io/demo/kitchen-sink/require.js"></script>
-    <pre id="editor1" style="width: 100%; height: 95vh;">...</pre>
-    <div class="scrollmargin"></div>
-    
+    <pre id="editor2" class="ace_editor">...</pre>    
     <script>
         // setup paths
         require.config({
@@ -275,7 +270,7 @@
         });
         // load ace and extensions
         require(["ace/ace"], function (ace) {
-            var editor1 = ace.edit("editor1", {
+            var editor2 = ace.edit("editor2", {
                 theme: "ace/theme/terminal",
                 mode: "ace/mode/sh",
                 //maxLines: 400,
