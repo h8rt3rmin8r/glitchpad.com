@@ -43,6 +43,8 @@
     <!-- Site Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/darkly/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" />
+    <link rel="stylesheet" href="https://clox.io/css/clox.css">
+	<link rel="stylesheet" href="https://resonova.github.io/cdn/css/animate.css">
     <style>
         html {
             position: relative;
@@ -191,46 +193,54 @@
 </head>
 
 <body>
-    <!--<textarea id="glitch-textareaA" class="textarea-a"></textarea>
-    <textarea id="glitch-textareaB" class="textarea-b"></textarea>-->
-    <textarea id="glitch-textareaC" class="textarea-c"></textarea>
-    <textarea id="glitch-textareaD" class="textarea-d"></textarea>
+	<!-- Website Jumbotron Starts -->
+		<div class="header">
+			<div class="container">
+				<h3 class="display-4">Glitchpad</h3>
+				<p class="lead">A simple browser-based notepad and IDE by 
+					<a href="https://resonova.com">ResoNova</a>
+				</p>
+			</div>
+		</div>
+		<!-- jumbotron stops -->
+		<div class="container">
+			<div class="wrapper">
+				<br>
+				<h2>Layout Selection</h2>
+				<hr>
+				<br>
 
-    <!-- Additional Site Scripts -->
-    <script>
-        function enableTab(id) {
-            var el = document.getElementById(id);
-            el.onkeydown = function (e) {
-                if (e.keyCode === 9) { // tab was pressed
+				<p>
+					<button class="btn" onclick="redFunction()">NOTE WIDE</button>
+					<script>
+						function redFunction() {
+							var x = document.doctype.name;
+							window.open("https://glitchpad/note/w/", "_blank", "width=960,height=450,resizable");
+						}
+					</script>
+				</p>
+				<p>
+					<button class="btn" onclick="greenFunction()">NOTE TALL</button>
+					<script>
+						function greenFunction() {
+							var x = document.doctype.name;
+							window.open("https://glitchpad/note/t/", "_blank", "width=960,height=450,resizable");
+						}
+					</script>
+				</p>
+				<p>
+					<button class="btn" onclick="window.location.href='https://github.com/resonova/glitchpad.com/'">VIEW ON GITHUB</button>
+				</p>
+			</div>
+		</div>
+		<br>
+		<br>
 
-                    // get caret position/selection
-                    var val = this.value,
-                        start = this.selectionStart,
-                        end = this.selectionEnd;
-
-                    // set textarea value to: text before caret + tab + text after caret
-                    this.value = val.substring(0, start) + '\t' + val.substring(end);
-
-                    // put caret at right position again
-                    this.selectionStart = this.selectionEnd = start + 1;
-
-                    // prevent the focus lose
-                    return false;
-
-                }
-            };
-        }
-
-        // Enable the tab character onkeypress (onkeydown) inside textarea...
-        // ... for a textarea that has an `id="glitch-textareaA"`
-        //enableTab('glitch-textareaA');
-        // ... for a textarea that has an `id="glitch-textareaB"`
-        //enableTab('glitch-textareaB');
-        // ... for a textarea that has an `id="glitch-textareaC"`
-        enableTab('glitch-textareaC');
-        // ... for a textarea that has an `id="glitch-textareaD"`
-        enableTab('glitch-textareaD');
-    </script>
+		<div class="footer">
+			<p class="p2"><i>think outside the box</i></p>
+		</div>
+	</div>
+    <!-- Site Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
