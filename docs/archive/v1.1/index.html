@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GlitchPad</title>
+    <meta name="description" content="A simple browser-based notepad">
+
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://h8rt3rmin8r.com/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://h8rt3rmin8r.com/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://h8rt3rmin8r.com/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://h8rt3rmin8r.com/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://h8rt3rmin8r.com/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://h8rt3rmin8r.com/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://h8rt3rmin8r.com/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://h8rt3rmin8r.com/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://h8rt3rmin8r.com/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://h8rt3rmin8r.com/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://h8rt3rmin8r.com/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://h8rt3rmin8r.com/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://h8rt3rmin8r.com/images/favicon-16x16.png">
+    <link rel="manifest" href="https://h8rt3rmin8r.com/images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://h8rt3rmin8r.com/images/images/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="GlitchPad">
+    <link rel="apple-touch-icon-precomposed" href="https://h8rt3rmin8r.com/images/images/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/images/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://h8rt3rmin8r.com/images/images/favicon.png">
+
+    <!-- Site Styles -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/darkly/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 30px;
+            color: green;
+        }
+        
+        a {
+            color: #4969dd;
+        }
+        
+        a:hover {
+            color: #203eaa;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: 29px;
+            line-height: 29px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            color: green;
+        }
+
+        textarea {
+            max-height: 70vh;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.0em;
+            font-weight: 500;
+            line-height: 1em;
+            color: green;
+            background-color: black;
+            border: 1px solid rgba(24, 24, 24, 0.897);
+            padding: 8px;
+            outline: none;
+        }
+        
+        textarea:focus {
+            outline: none;
+        }
+
+        .card {
+            margin: 2px;
+            padding: 2px;
+            font-family: 'Courier New', Courier, monospace;
+            color: green;
+            width: 100%;
+        }
+
+        .gp-title {
+            font-family: 'Courier New', Courier, monospace;
+            color: green;
+            text-align: center;
+            font-size: 35px;
+            position: auto;
+            margin-top: -22px;
+        }
+
+        .gp-subtitle {
+            font-family: 'Courier New', Courier, monospace;
+            color: #dd4949;
+            text-align: center;
+            font-size: 0.9em;
+            line-height: 10px;
+            margin-top: -12px;
+        }
+
+        .container {
+            width: 90vw;
+        }
+
+        .jumbotron {
+            height: 10vh;
+            border: 2px solid rgba(0, 0, 0, 0.897);
+            background: rgb(20, 20, 20);
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Roboto|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- jQuery v3.3.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="gp-title">GlitchPad</h1>
+            <p class="gp-subtitle">(Version 1.1)</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <textarea rows="50" id="glitch-textarea"></textarea>
+        </div>
+    </div>
+    
+    <!-- Website Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span>
+                <p>© 2018 <a href="https://www.ResoNova.com">ResoNova International Consulting, LLC</a></p>
+            </span>
+        </div>
+    </footer>
+    <!-- Additional Site Scripts -->
+    <script>
+        function enableTab(id) {
+            var el = document.getElementById(id);
+            el.onkeydown = function (e) {
+                if (e.keyCode === 9) { // tab was pressed
+
+                    // get caret position/selection
+                    var val = this.value,
+                        start = this.selectionStart,
+                        end = this.selectionEnd;
+
+                    // set textarea value to: text before caret + tab + text after caret
+                    this.value = val.substring(0, start) + '\t' + val.substring(end);
+
+                    // put caret at right position again
+                    this.selectionStart = this.selectionEnd = start + 1;
+
+                    // prevent the focus lose
+                    return false;
+
+                }
+            };
+        }
+
+        // Enable the tab character onkeypress (onkeydown) inside textarea...
+        // ... for a textarea that has an `id="glitch-textarea"`
+        enableTab('glitch-textarea');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
