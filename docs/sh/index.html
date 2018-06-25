@@ -2,10 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
-    <title>Glitchpad | SH</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GlitchPad</title>
+    <meta name="description" content="A browser-based notepad and IDE by ResoNova">
+    <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad">
+
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="GlitchPad">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+    
+    <!-- Site Styles -->
     <style type="text/css" media="screen">
         .ace_editor {
             border: 3px solid #303030;
@@ -15,8 +50,6 @@
             height: 100vh;
         }
     </style>
-
-    <!-- Site Styles -->
     <style>
         * {
             box-sizing: border-box;
@@ -42,28 +75,24 @@
         /* Scrollbar Styles */
 
         /* Scrollbar Width */
-
         ::-webkit-scrollbar {
             width: 7px;
             max-height: 50px;
         }
 
         /* Scrollbar Track */
-
         ::-webkit-scrollbar-track {
             background: #424242;
             box-shadow: inset 0 0 5px grey;
         }
 
         /* Scrollbar Handle */
-
         ::-webkit-scrollbar-thumb {
             background: #757575;
             border-radius: 10px;
         }
 
         /* Scrollbar Handle on Hover */
-
         ::-webkit-scrollbar-thumb:hover {
             background: #ababab;
             border-radius: 10px;
@@ -255,20 +284,9 @@
                 autoScrollEditorIntoView: true
             });
             var refs = {};
-
-            function updateToolbar() {
-                refs.saveButton.disabled = editor.session.getUndoManager().isClean();
-                refs.undoButton.disabled = !editor.session.getUndoManager().hasUndo();
-                refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
-            }
-            editor.on("input", updateToolbar);
-            editor.session.mergeUndoDeltas = true; 
-            editor.session.insert({row: 0, column:0}, Date()+"");
-            editor.session.setValue(localStorage.savedValue || "Welcome to Nova IDE!")
         });
     </script>
     <script src="https://ace.c9.io/demo/show_own_source.js"></script>
-    
 </body>
 
 </html>
