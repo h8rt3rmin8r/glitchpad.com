@@ -1,0 +1,17 @@
+https://glitchpad.com/assets/favicons/manifest.json
+https://glitchpad.com/assets/favicons/favicon.png
+https://glitchpad.com/assets/favicons/favicon-32x32.png
+https://glitchpad.com/assets/favicons/favicon-96x96.png
+https://glitchpad.com/assets/favicons/favicon-16x16.png
+https://glitchpad.com/assets/favicons/android-icon-192x192.png
+https://glitchpad.com/assets/favicons/ms-icon-144x144.png
+https://glitchpad.com/assets/favicons/apple-icon-57x57.png
+https://glitchpad.com/assets/favicons/apple-icon-60x60.png
+https://glitchpad.com/assets/favicons/apple-icon-72x72.png
+https://glitchpad.com/assets/favicons/apple-icon-76x76.png
+https://glitchpad.com/assets/favicons/apple-icon-114x114.png
+https://glitchpad.com/assets/favicons/apple-icon-120x120.png
+https://glitchpad.com/assets/favicons/apple-icon-144x144.png
+https://glitchpad.com/assets/favicons/apple-icon-152x152.png
+https://glitchpad.com/assets/favicons/apple-icon-180x180.png
+https://glitchpad.com/assets/favicons/apple-icon-precomposed.png
