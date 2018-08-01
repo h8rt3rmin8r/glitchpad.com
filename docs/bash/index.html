@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GlitchPad</title>
+    <meta name="description" content="A browser-based notepad and IDE by ResoNova">
+    <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad">
+
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="GlitchPad">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+    <!-- ****** SITE STYLESHEETS ****** -->
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://glitchpad.com/assets/css/ubuntu-mono.css" />
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/animate.css">
+    <!-- ****** SCRIPTS - jQuery v3.3.1 ****** -->
+    <script src="https://glitchpad.com/assets/jq/jquery.min.js"></script>
+
+    <!-- Site Styles -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            color: black;
+            /*color: #4969dd;*/
+            background-color: black;
+            /*background-color: #161616;*/
+            font-size: 14px;
+            font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            padding: 0px;
+            bottom: 0;
+        }
+
+        button {
+            margin: 4px;
+            color: #551b1b;
+            background-color: black;
+            border: 1px solid #551b1b;
+        }
+
+        button:hover {
+            color: black;
+            background-color: #551b1b;
+            border: 1px solid black;
+        }
+
+        .textareaDiv {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .textareaDiv:focus {
+            outline: none;
+        }
+
+        /* Scrollbar Styles */
+
+        /* Scrollbar Width */
+
+        ::-webkit-scrollbar {
+            width: 7px;
+            max-height: 50px;
+            background: #401414;
+        }
+
+        /* Scrollbar Track */
+
+        ::-webkit-scrollbar-track {
+            background: #401414;
+            box-shadow: inset 0 0 5px black;
+        }
+
+        /* Scrollbar Handle */
+
+        ::-webkit-scrollbar-thumb {
+            background: gray;
+            border-radius: 10px;
+        }
+
+        /* Scrollbar Handle on Hover */
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: whitesmoke;
+            border-radius: 10px;
+        }
+
+        .toolbar {
+            border: 1px solid #161616;
+            margin: 0;
+            width: 100vw;
+            height: 4vh;
+        }
+
+        .ace_editor {
+            height: 95vh;
+            width: 100vw;
+            border: 1px solid #161616;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="animated fadeIn">
+
+    <script src="https://resonova.github.io/cdn/js/ace/kitchen-sink-require.js"></script>
+    <script src="https://resonova.github.io/cdn/js/ace/no-conflict-ace.js"></script>
+    <script>
+        // setup paths
+        require.config({
+            paths: {
+                "ace": "https://ace.c9.io/lib/ace"
+            }
+        });
+        // load ace and extensions
+        require(["ace/ace", "ace/ext/language_tools"], function (ace) {
+            var buildDom = require("ace/lib/dom").buildDom;
+            var editor = ace.edit();
+            editor.setOptions({
+                theme: "ace/theme/terminal",
+                mode: "ace/mode/sh",
+                minLines: 250,
+                wrap: true,
+                autoScrollEditorIntoView: true
+            });
+            var refs = {};
+
+            function updateToolbar() {
+                refs.saveButton.disabled = editor.session.getUndoManager().isClean();
+                refs.undoButton.disabled = !editor.session.getUndoManager().hasUndo();
+                refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
+            }
+            editor.on("input", updateToolbar);
+            editor.session.setValue(localStorage.savedValue || "#! /bin/bash")
+
+            function save() {
+                localStorage.savedValue = editor.getValue();
+                editor.session.getUndoManager().markClean();
+                updateToolbar();
+            }
+            editor.commands.addCommand({
+                name: "save",
+                exec: save,
+                bindKey: {
+                    win: "ctrl-s",
+                    mac: "cmd-s"
+                }
+            });
+
+            buildDom(["div", {
+                    class: "toolbar"
+                },
+                ["button", {
+                    ref: "saveButton",
+                    onclick: save
+                }, "save"],
+                ["button", {
+                    ref: "undoButton",
+                    onclick: function () {
+                        editor.undo();
+                    }
+                }, "undo"],
+                ["button", {
+                    ref: "redoButton",
+                    onclick: function () {
+                        editor.redo();
+                    }
+                }, "redo"],
+            ], document.body, refs);
+            document.body.appendChild(editor.container)
+
+            window.editor = editor;
+        });
+    </script>
+
+</body>
+
+</html>
