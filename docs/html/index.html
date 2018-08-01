@@ -174,7 +174,7 @@
                 refs.redoButton.disabled = !editor.session.getUndoManager().hasRedo();
             }
             editor.on("input", updateToolbar);
-            editor.session.setValue(localStorage.savedValue || "#! /bin/bash")
+            editor.session.setValue(localStorage.savedValue || "<!DOCTYPE html>")
 
             function save() {
                 localStorage.savedValue = editor.getValue();
