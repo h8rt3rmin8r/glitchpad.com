@@ -106,15 +106,14 @@ body {
 .header {
     background-color: #001800de;
     color: green;
-    padding: 5vh;
     position: fixed;
     top: 0px;
     bottom: 75%;
     left: 0px;
     right: 0px;
     width: 100vw;
-    max-height: 20%;
-    min-height: 20%;
+    max-height: 18%;
+    min-height: 18%;
 }
 
 .content {
