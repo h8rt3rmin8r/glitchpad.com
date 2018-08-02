@@ -112,8 +112,8 @@ body {
     left: 0px;
     right: 0px;
     width: 100vw;
-    max-height: 18%;
-    min-height: 18%;
+    max-height: 16%;
+    min-height: 16%;
 }
 
 .content {
@@ -121,7 +121,7 @@ body {
     color: green;
     position: fixed;
     top: 20%;
-    bottom: 4%;
+    bottom: 5%;
     left: 0px;
     right: 0px;
     width: 100vw;
