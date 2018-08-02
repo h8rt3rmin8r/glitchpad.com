@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GlitchPad</title>
-    <meta name="description" content="A browser-based notepad and IDE by ResoNova">
+    <meta name="description" content="A collection of notepads, IDEs, and other useful web tools by ResoNova">
     <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad">
 
     <!-- ****** FAVICONS AND BRANDING ****** -->
@@ -39,139 +39,99 @@
     <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
     <meta name="msapplication-TileColor" content="#3372DF">
     <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
-    
-    <!-- ****** SITE STYLESHEETS ****** -->
-    <link rel="stylesheet" href="https://glitchpad.com/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://glitchpad.com/assets/css/ubuntu-mono.css" />
-    <link rel="stylesheet" href="https://glitchpad.com/assets/css/animate.css">
+
+    <!-- ****** SITE STYLES ****** -->
     <link rel="stylesheet" href="https://glitchpad.com/assets/css/glitchpad.css">
-    <!-- ****** SCRIPTS - jQuery v3.3.1 ****** -->
-    <script src="https://glitchpad.com/assets/jq/jquery.min.js"></script>
+
 </head>
 
 <body>
     <!-- SITE HEADER -->
     <div class="header">
-        <div class="container">
-            <h3 class="display-4">Glitchpad</h3>
-            <p class="lead">A browser-based notepad and IDE by
-                <a href="https://resonova.com">ResoNova</a> and other useful web tools.
-            </p>
+        <div class="fallout">
+            <div class="container">
+                <h3 class="display-4">Glitchpad</h3>
+                <p>A collection of notepads, IDEs, and other useful web tools by
+                    <a href="https://resonova.com">ResoNova</a>.</p>
+            </div>
         </div>
     </div>
     <!-- MAIN SITE CONTENT -->
     <div class="content">
         <div class="container">
+            <div class="card fallout">
+                <div class="card-body">
+                    <h3>Core Tools</h3>
+                    <p>Select an option to open in an immersive pop-out window.</p>
+                    <!-- Dropdown start -->
+                    <div class="dropdown">
+                        <button onclick="glitchDropNotes()" class="dropbtn btn">GLITCHPAD NOTES</button>
+                        <div id="glitchDropNotesID" class="dropdown-content">
+                            <a href='javascript:;' onclick='popGlitchwide();'>Desktop Edition</a>
+                            <a href='javascript:;' onclick='popGlitchtall();'>Mobile Edition</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown finish -->
+                    <!-- Dropdown start -->
+                    <div class="dropdown">
+                        <button onclick="glitchDropIde()" class="dropbtn btn">GLITCHPAD IDEs</button>
+                        <div id="glitchDropIdeID" class="dropdown-content">
+                            <a href='javascript:;' onclick='popBasheditor();'>Bash</a>
+                            <a href='javascript:;' onclick='popHtmleditor();'>HTML</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown finish -->
+                    <!-- Dropdown start -->
+                    <div class="dropdown">
+                        <button onclick="glitchDropEx()" class="dropbtn btn">EXTERNAL IDEs</button>
+                        <div id="glitchDropExID" class="dropdown-content">
+                            <a href='javascript:;' onclick='popAnyfilenotepad();'>Anyfile Notepad</a>
+                            <a href='javascript:;' onclick='popDrivenotepad();'>Drive Notepad</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown finish -->
+                    <!-- Dropdown start -->
+                    <div class="dropdown">
+                        <button onclick="glitchDropCalc()" class="dropbtn btn">CALCULATORS</button>
+                        <div id="glitchDropCalcID" class="dropdown-content">
+                            <a href='javascript:;' onclick='popPreev();'>Preev BTC Calculator</a>
+                            <a href='javascript:;' onclick='popCalc();'>Scientific Calculator</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown finish -->
+                </div>
+            </div>
             <br>
-            <h3>Layout Selection</h3>
+            <div class="card fallout">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>Additional Resources</h3>
+                    </div>
+                    <div class="card-text">
+                        <button class="btn" onclick="popWorkflowy()">WORKFLOWY</button>
+                        <button class="btn" onclick="popClox()">DIGITAL CLOCK</button>
+                        <button class="btn" onclick="window.location.href='https://github.com/resonova/glitchpad.com/'">VIEW ON GITHUB</button>
+                    </div>
+                </div>
+            </div>
             <br>
-
-            <p>
-                <button class="btn" onclick="redFunction()">GLITCHPAD WIDE</button>
-                <script>
-                    function redFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://glitchpad.com/note/w/", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="greenFunction()">GLITCHPAD TALL</button>
-                <script>
-                    function greenFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://glitchpad.com/note/t/", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="anyfileNotepadFunction()">ANYFILE-NOTEPAD</button>
-                <script>
-                    function anyfileNotepadFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://anyfile-notepad.semaan.ca/app#new/GoogleDrive", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="driveNotepadFunction()">DRIVE NOTEPAD</button>
-                <script>
-                    function driveNotepadFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://drivenotepad.github.io/app/", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="bashEditorFunction()">BASH EDITOR</button>
-                <script>
-                    function bashEditorFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://glitchpad.com/bash", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="htmlEditorFunction()">HTML EDITOR</button>
-                <script>
-                    function htmlEditorFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://glitchpad.com/html", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="workflowyFunction()">WORKFLOWY</button>
-                <script>
-                    function workflowyFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://workflowy.com", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="cloxFunction()">DIGITAL CLOCK</button>
-                <script>
-                    function cloxFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://clox.io/g/", "_blank", "width=960,height=450,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="preevFunction()">PREEV NANO</button>
-                <script>
-                    function preevFunction() {
-                        var x = document.doctype.name;
-                        window.open("http://preev.com", "_blank", "width=420,height=420,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="calcFunction()">CALCULATOR</button>
-                <script>
-                    function calcFunction() {
-                        var x = document.doctype.name;
-                        window.open("https://web2.0calc.com/widgets/minimal/", "_blank", "width=420,height=420,resizable");
-                    }
-                </script>
-            </p>
-            <p>
-                <button class="btn" onclick="window.location.href='https://github.com/resonova/glitchpad.com/'">VIEW ON GITHUB</button>
-            </p>
         </div>
     </div>
     <!-- SITE FOOTER -->
-    <div class="footer">
-        <div class="container">
-            <p class="p2">
-                <i>think outside the box</i>
-            </p>
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <p class="p2">
+                    <i>think outside the box</i>
+                </p>
+            </div>
         </div>
-    </div>
+    </footer>
     <!-- Site Scripts -->
-    <script src="https://glitchpad.com/assets/js/popper.min.js"></script>
-    <script src="https://glitchpad.com/assets/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://glitchpad.com/assets/js/glitchpad.js"></script>
 </body>
 
 </html>
