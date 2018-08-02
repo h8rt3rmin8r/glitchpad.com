@@ -200,8 +200,8 @@ button {
     background: #000000;
     color: green;
     border: 1px solid rgb(17, 66, 16);
-    min-width: 200px;
-    min-height: 45px;
+    min-width: 170px;
+    min-height: 40px;
     cursor: pointer;
 }
 
@@ -360,6 +360,49 @@ button {
 
 .menu li:hover {
     color: #da190b;
+}
+
+/* Options Button Styles */
+.dropbtn {
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    background: #000000;
+    border: 1px solid rgb(17, 66, 16);
+    color: white;
+    min-width: 170px;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: black;
+    border: #3e8e41;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #021604be;
+    color: #3e8e41;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: rgb(170, 170, 170);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #002e05be
 }
 
 /* Center the loader and define appearance */
