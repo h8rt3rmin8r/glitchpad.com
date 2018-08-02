@@ -109,25 +109,25 @@ body {
     padding: 5vh;
     position: fixed;
     top: 0px;
-    bottom: 75vh;
+    bottom: 75%;
     left: 0px;
     right: 0px;
     width: 100vw;
-    max-height: 25vh;
-    min-height: 25vh;
+    max-height: 20%;
+    min-height: 20%;
 }
 
 .content {
     background-color: black;
     color: green;
     position: fixed;
-    top: 25vh;
-    bottom: 5vh;
+    top: 20%;
+    bottom: 4%;
     left: 0px;
     right: 0px;
     width: 100vw;
-    min-height: 70vh;
-    max-height: 70vh;
+    min-height: 76%;
+    max-height: 76%;
 }
 
 .footer {
@@ -135,14 +135,14 @@ body {
     color: green;
     padding: 1vh;
     position: fixed;
-    top: 95vh;
+    top: 96%;
     bottom: 0px;
     left: 0px;
     right: 0px;
     width: 100vw;
     /* Sticky Footer (set the fixed height of the footer here) */
-    max-height: 5vh;
-    min-height: 5vh;
+    max-height: 4%;
+    min-height: 4%;
 }
 
 h1 {
