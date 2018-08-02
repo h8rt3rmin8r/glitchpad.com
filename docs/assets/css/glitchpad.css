@@ -293,6 +293,7 @@ Inspired by: https://www.w3schools.com/howto/howto_js_dropdown.asp
     See also '.show' below.
     */
     position: absolute;
+    z-index: 99999;
     background-color: #021604e8;
     color: #3e8e41;
     min-width: 180px;
