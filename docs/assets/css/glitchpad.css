@@ -193,12 +193,13 @@ button {
     min-width: 180px;
     min-height: 38px;
     outline: none;
+    cursor: pointer;
 }
 
 .button,
 .btn {
     text-shadow: 0 0 5px rgb(85, 85, 85);
-    font-size: 16px;
+    font-size: 15px;
     background: #000000;
     color: green;
     border: 1px solid rgb(17, 66, 16);
@@ -252,11 +253,17 @@ button {
     z-index: 0;
 }
 
-/* Dropdown Button Styles */
-/* Inspired by https://www.w3schools.com/howto/howto_js_dropdown.asp */
+/* 
+
+Dropdown Button Styles 
+Requires JavaScript located here: 
+Inspired by: https://www.w3schools.com/howto/howto_js_dropdown.asp 
+
+*/
+
 .dropbtn {
     text-shadow: 0 0 5px rgb(85, 85, 85);
-    font-size: 16px;
+    font-size: 15px;
     background: #000000;
     color: green;
     border: 1px solid rgb(17, 66, 16);
@@ -276,12 +283,18 @@ button {
 .dropdown {
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 .dropdown-content {
     display: none;
+    /*
+    The 'display' property is toggled via JavaScript. 
+    See also '.show' below.
+    */
+    z-index: 1;
     position: absolute;
-    background-color: #021604be;
+    background-color: #021604e8;
     color: #3e8e41;
     min-width: 180px;
     min-height: 38px;
@@ -407,7 +420,7 @@ ul.dropdown-menu.show {
     padding: 8px 8px;
     margin: 8px;
     width: 95%;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     box-sizing: border-box;
     box-shadow: 2px 3px 4px #000000;
