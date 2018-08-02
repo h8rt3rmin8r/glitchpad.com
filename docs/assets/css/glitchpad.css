@@ -191,17 +191,18 @@ a:hover {
 
 button {
     min-width: 170px;
-    min-height: 40px;
+    min-height: 38px;
 }
 
 .button,
 .btn {
     text-shadow: 0 0 5px rgb(85, 85, 85);
+    font-size: 16px;
     background: #000000;
     color: green;
     border: 1px solid rgb(17, 66, 16);
     min-width: 170px;
-    min-height: 40px;
+    min-height: 38px;
     cursor: pointer;
 }
 
@@ -376,7 +377,7 @@ button {
 .dropbtn:focus {
     background-color: black;
     border: #3e8e41;
-    color: white;
+    color: green;
 }
 
 .dropdown {
@@ -403,6 +404,7 @@ button {
 
 .dropdown-content a:hover {
     background-color: #002e05be
+    color: green;
 }
 
 /* Center the loader and define appearance */
