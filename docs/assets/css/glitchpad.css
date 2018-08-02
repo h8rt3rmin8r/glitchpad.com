@@ -253,6 +253,7 @@ button {
 }
 
 /* Dropdown Button Styles */
+/* Inspired by https://www.w3schools.com/howto/howto_js_dropdown.asp */
 .dropbtn {
     text-shadow: 0 0 5px rgb(85, 85, 85);
     font-size: 16px;
@@ -282,13 +283,15 @@ button {
     position: absolute;
     background-color: #021604be;
     color: #3e8e41;
-    min-width: 160px;
+    min-width: 180px;
+    min-height: 38px;
+    outline: none;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
-    color: rgb(170, 170, 170);
+    color: rgba(35, 102, 39, 0.932);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -297,6 +300,10 @@ button {
 .dropdown-content a:hover {
     background-color: #002e05be;
     color: green;
+}
+
+.show {
+    display: block;
 }
 
 ul.dropdown-menu.show {
