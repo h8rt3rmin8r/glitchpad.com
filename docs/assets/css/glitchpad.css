@@ -192,6 +192,7 @@ a:hover {
 button {
     min-width: 180px;
     min-height: 38px;
+    outline: none;
 }
 
 .button,
@@ -205,6 +206,7 @@ button {
     min-height: 38px;
     margin: 3px;
     cursor: pointer;
+    outline: none;
 }
 
 .button:hover,
@@ -261,6 +263,7 @@ button {
     min-height: 38px;
     margin: 3px;
     cursor: pointer;
+    outline: none;
 }
 
 .dropbtn:hover,
@@ -294,6 +297,12 @@ button {
 .dropdown-content a:hover {
     background-color: #002e05be;
     color: green;
+}
+
+ul.dropdown-menu.show {
+    background-color: #02160400;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* ------------------------------------------------ COLOR REFERENCE */
