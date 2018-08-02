@@ -1,4 +1,5 @@
 /* Glitchpad Function Series */
+/* Source Code: https://glitchpad.com/assets/js/glitchpad.js */
 function popCalc() {
     var x = document.doctype.name;
     window.open("https://web2.0calc.com/widgets/minimal/", "_blank",
