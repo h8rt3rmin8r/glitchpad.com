@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest='manifest.appcache'>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tab2space</title>
+    <meta name="description" content="Convert tabs to spaces online. A simple way to replace tabs with spaces." />
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="Tab2space">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+    <!-- ****** SITE STYLES ****** -->
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/glitchpad.css">
+
+</head>
+
+<body>
+    <!-- SITE HEADER -->
+    <div class="header">
+        <div class="fallout">
+            <div class="container">
+                <br>
+                <h2>Tabs2spaces Converter</h2>
+                <p>Replace tabs with spaces. Perfect for copying code snippets to markdown or pastebin.</p>
+            </div>
+        </div>
+    </div>
+    <!-- MAIN SITE CONTENT -->
+    <div class="content">
+        <div class="container">
+            <div id="accordion">
+                <!--<article>-->
+                <div class="card fallout">
+                    <div class="card-header" id="headingOne">
+                        <h3 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">PASTE AREA</button>
+                        </h3>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <section id="col1">
+                                <textarea id="input" rows="12" cols="60" autofocus></textarea>
+                                <br />
+                                <select id="numSpaces" class="btn">
+                                    <option value="1">1 space</option>
+                                    <option value="2">2 spaces</option>
+                                    <option value="4" selected="selected">4 spaces</option>
+                                </select>
+                                <br />
+                                <button class="btn" onclick="convert()">Convert tabs to spaces</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="card fallout">
+                    <div class="card-header" id="headingTwo">
+                        <h3 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">RESULTS AREA</button>
+                        </h3>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <section id="col2">
+                                <textarea id="output" rows="12" cols="60"></textarea>
+                                <br />
+                                <button class="btn" onclick="addSpaces()">Add four spaces to the beginning of every row</button>
+                            </section>
+                        </div>
+                    </div>
+                    <!--</article>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <p class="p2">
+                    <i>think outside the box</i>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Site Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://glitchpad.com/assets/js/glitchpad.js"></script>
+    <script>
+        var input = document.getElementById("input");
+        var output = document.getElementById("output");
+
+        function convert() {
+            var text = input.value;
+            var numOfSpaces = parseInt(document.getElementById("numSpaces").value);
+            var spaces = "";
+            for (var i = 0; i < numOfSpaces; i++) {
+                spaces = spaces + ' ';
+            }
+
+            var result = text.replace(/\t/g, spaces);
+
+            output.value = result;
+            output.focus();
+            output.select();
+        }
+
+        function addSpaces() {
+            var text = output.value;
+
+            var result = text.replace(/^/gm, "    ");
+
+            output.value = result;
+            output.focus();
+            output.select();
+        }
+    </script>
+</body>
+
+</html>
