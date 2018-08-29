@@ -1,2 +1,2 @@
 # glitchpad.com
-A simple browser-based notepad and IDE
+A collection of powerful browser-based tools and IDE's
