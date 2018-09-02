@@ -62,7 +62,7 @@ function popGlitchwide() {
 
 function popColorpicker() {
     var x = document.doctype.name;
-    window.open("glitchpad.com/colorpicker/", "_blank",
+    window.open("https://glitchpad.com/colorpicker/", "_blank",
         "width=520,height=280,resizable");
 }
 
