@@ -63,7 +63,7 @@ function popGlitchwide() {
 function popColorpicker() {
     var x = document.doctype.name;
     window.open("https://glitchpad.com/colorpicker/", "_blank",
-        "width=520,height=280,resizable");
+        "width=520,height=300,resizable");
 }
 
 /* TOGGLE DROPDOWN MENUS - Source Code: https://pastebin.com/raw/D8Q5J11h */
