@@ -13,7 +13,7 @@ function popPreev() {
 
 function popClox() {
     var x = document.doctype.name;
-    window.open("https://clox.io/g/", "_blank",
+    window.open("https://glitchpad.com/clox/g/", "_blank",
         "width=960,height=450,resizable");
 }
 
