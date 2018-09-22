@@ -66,6 +66,12 @@ function popColorpicker() {
         "width=470,height=300,resizable");
 }
 
+function popBcoder() {
+    var x = document.doctype.name;
+    window.open("https://glitchpad.com/base64/", "_blank",
+        "width=760,height=450,resizable");
+}
+
 /* TOGGLE DROPDOWN MENUS - Source Code: https://pastebin.com/raw/D8Q5J11h */
 /* Glitchpad functional references */
 function glitchDropEx() {
