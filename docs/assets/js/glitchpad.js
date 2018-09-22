@@ -2,8 +2,7 @@
 /* Source Code: https://glitchpad.com/assets/js/glitchpad.js */
 function popCalc() {
     var x = document.doctype.name;
-    window.open("https://web2.0calc.com/widgets/minimal/", "_blank",
-        "width=420,height=420,resizable");
+    window.open("https://web2.0calc.com/widgets/minimal/", "_blank", "width=420,height=420,resizable");
 }
 
 function popPreev() {
@@ -13,63 +12,52 @@ function popPreev() {
 
 function popClox() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/clox/g/", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://glitchpad.com/clox/g/", "_blank", "width=960,height=450,resizable");
 }
 
 function popWorkflowy() {
     var x = document.doctype.name;
-    window.open("https://workflowy.com", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://workflowy.com", "_blank", "width=960,height=450,resizable");
 }
 
 function popDrivenotepad() {
     var x = document.doctype.name;
-    window.open("https://drivenotepad.github.io/app/", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://drivenotepad.github.io/app/", "_blank", "width=960,height=450,resizable");
 }
 
 function popAnyfilenotepad() {
     var x = document.doctype.name;
-    window.open("https://anyfile-notepad.semaan.ca/app#new/GoogleDrive",
-        "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://anyfile-notepad.semaan.ca/app#new/GoogleDrive", "_blank", "width=960,height=450,resizable");
 }
 
 function popHtmleditor() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/html", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://glitchpad.com/html", "_blank", "width=960,height=450,resizable");
 }
 
 function popBasheditor() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/bash", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://glitchpad.com/bash", "_blank", "width=960,height=450,resizable");
 }
 
 function popGlitchtall() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/note/t/", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://glitchpad.com/note/t/", "_blank", "width=960,height=450,resizable");
 }
 
 function popGlitchwide() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/note/w/", "_blank",
-        "width=960,height=450,resizable");
+    window.open("https://glitchpad.com/note/w/", "_blank", "width=960,height=450,resizable");
 }
 
 function popColorpicker() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/colorpicker/", "_blank",
-        "width=470,height=300,resizable");
+    window.open("https://glitchpad.com/colorpicker/", "_blank", "width=470,height=300,resizable");
 }
 
 function popBcoder() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/base64/", "_blank",
-        "width=760,height=450,resizable");
+    window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=230,resizable");
 }
 
 /* TOGGLE DROPDOWN MENUS - Source Code: https://pastebin.com/raw/D8Q5J11h */
