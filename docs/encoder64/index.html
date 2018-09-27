@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="An advanced base64 encoding tool with file upload and download capabilities powered by client-side scripting">
+    <title>Encoder64</title>
+
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="Encoder64">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+    <!-- ****** SITE STYLES ****** -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/glitchpad.css">
+    <style>
+        input {
+        font-family: Ubuntu Mono, monospace;
+        font-size: 0.9em;
+        font-weight: 500;
+        line-height: 1em;
+        color: green;
+        background-color: black;
+        border-left: 2px solid rgba(4, 41, 3, 0.35);
+        border-right: 2px solid rgba(4, 41, 3, 0.35);
+        border-top: 2px solid rgba(4, 41, 3, 0.35);
+        border-bottom: 2px solid rgba(4, 41, 3, 0.35);
+        /* Transition Effects */
+        -webkit-transition-property: border-left, border-right, border-top, border-bottom;
+        -webkit-transition-duration: 0.5s;
+        -o-transition-property: border-left, border-right, border-top, border-bottom;
+        -o-transition-duration: 0.5s;
+        -moz-transition-property: border-left, border-right, border-top, border-bottom;
+        -moz-transition-duration: 0.5s;
+        transition-property: border-left, border-right, border-top, border-bottom;
+        transition-duration: 0.5s;
+    }
+
+    input:focus {
+        outline: none;
+        border-left: 2px solid rgb(3, 63, 0);
+        border-right: 2px solid rgb(3, 63, 0);
+        border-top: 2px solid rgb(3, 63, 0);
+        border-bottom: 2px solid rgb(3, 63, 0);
+    }
+
+    .card,
+    .card-body,
+    .card-text {
+        background-color: black;
+    }
+
+    /* Scrollbar Width */
+    ::-webkit-scrollbar {
+        width: 9px;
+        cursor: crosshair;
+    }
+
+    /* Scrollbar Track */
+    ::-webkit-scrollbar-track {
+        background: rgba(5, 44, 3, 0.925);
+        box-shadow: inset 0 0 2px rgba(18, 100, 22, 0.8);
+        border: 1px solid rgb(18, 100, 22);
+    }
+
+    /* Scrollbar Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(87, 20, 20, 0.911);
+        border-radius: 3px;
+        border: 1px solid rgb(145, 21, 21);
+        /* Transition Effects */
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 0.5s;
+        -o-transition-property: background;
+        -o-transition-duration: 0.5s;
+        -moz-transition-property: background;
+        -moz-transition-duration: 0.5s;
+        transition-property: background;
+        transition-duration: 0.5s;
+    }
+
+    /* Scrollbar Handle on Hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(145, 21, 21);
+        cursor: crosshair;
+    }
+</style>
+    <script src="https://resonova.github.io/cdn/js/modernizr.custom.32229-2.8-respondjs-1-4-2.js"></script>
+    <script src="https://resonova.github.io/cdn/js/codecs/codeccompatibilitytest.js"></script>
+    <script src="https://resonova.github.io/cdn/js/codecs/codecs.min.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron fallout">
+        <div class="container">
+            <script type="text/javascript">
+                function fetchEncoder() {
+                    let encoder;
+                    if ($('#useSimplifiedEncoding').is(':checked')) {
+                        encoder = new SimplifiedBase64Encoder();
+                    } else {
+                        encoder = new FullBase64Encoder();
+                    }
+
+                    if ($('#makeUrlSafe').is(':checked')) {
+                        encoder = new MakeUrlSafeTransformer(encoder);
+                    }
+
+                    return encoder;
+                }
+
+                function fetchOutput() {
+                    let fileOutput;
+                    if ($('#generateDownloadLink').is(':checked')) {
+                        fileOutput = new FileOutput('#fileOutputContainer', '#filenameField', '#fileOutputLink');
+                    } else {
+                        fileOutput = new InactiveFileOutput('#fileOutputContainer', '#filenameField',
+                            '#fileOutputLink');
+                    }
+
+                    let htmlOutput;
+                    if ($('#generateTextRendition').is(':checked')) {
+                        htmlOutput = new HtmlOutput('#htmlOutput', '#htmlOutput');
+                    } else {
+                        htmlOutput = new InactiveHtmlOutput('#htmlOutput', '#htmlOutput');
+                    }
+
+                    const container = new ContainerVisibilityOutput('#textOutputPanel')
+                    const output = new CompoundOutput(container, htmlOutput, fileOutput);
+
+                    return output;
+                }
+
+                function encode() {
+                    const fileInputElement = $('#fileToEncode').get(0);
+                    const fileInput = new BinaryFileInput(fileInputElement)
+                    const htmlInput = new HtmlInput('#toEncode');
+                    const input = new OneOrOtherInput(fileInput, htmlInput, function () {
+                        return fileInputElement.files.length == 1
+                    })
+
+                    const encoder = fetchEncoder();
+
+                    const output = fetchOutput();
+
+                    const action = new Action(input, encoder, output);
+                    action.act();
+                }
+            </script>
+
+            <h1>Encoder64</h1>
+            <p>An advanced base64 encoding tool with file upload and download capabilities powered by client-side
+                scripting</p>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="card fallout">
+            <h2 class="header-bar">Encoder Input</h2>
+            <div class="card-body">
+                <div class="card-text">
+                    <p>Paste or upload a file to encode
+                        <!--<div class="btn btn-default btn-file">-->
+                        <input class="btn btn-file" type="file" id="fileToEncode" name="fileToEncode" onchange='$("#uploadFileInfo").html($(this).val().replace(/^.*\\/, ""))' />
+                        <!--<span class='label label-info' id="uploadFileInfo"></span>
+                        </div>-->
+                    </p>
+                    <textarea id="toEncode" class="codec-input"></textarea>
+                    <div>
+                        <input type="checkbox" id="generateTextRendition" checked="checked" /><label for="generateDownloadLink">&nbsp;Auto-generate text output</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="generateDownloadLink" checked="checked" /><label for="generateDownloadLink">&nbsp;Auto-generate download link (slower)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="makeUrlSafe" /><label for="makeUrlSafe">&nbsp;Use URL-safe base64</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="useSimplifiedEncoding" /><label for="useSimplifiedEncoding">&nbsp;Disable line wrap (faster)</label>
+                    </div>
+                    <p>
+                        <button class="btn" onclick="return encode()">Encode</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="card fallout">
+            <div id="textOutputPanel" style="display: none">
+                <h2 class="header-bar">Encoder Output</h2>
+                <textarea id="htmlOutput" class="codec-output"></textarea>
+                <p id="fileOutputContainer">
+                    <a href="#" id="fileOutputLink">Download encoded file: </a>
+                    <input type="text" id="filenameField" value="Base64Encoded.txt" title="This name will be used as the default filename when you download." />
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <script src="https://resonova.github.io/cdn/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://resonova.github.io/cdn/js/jquery.validate.min.js"></script>
+    <script src="https://resonova.github.io/cdn/js/typeahead.js"></script>
+    <script src="https://resonova.github.io/cdn/js/fastclick.js"></script>
+    <script src="https://resonova.github.io/cdn/js/bootstrap-tagsinput.js"></script>
+
+
+</body>
+
+</html>
