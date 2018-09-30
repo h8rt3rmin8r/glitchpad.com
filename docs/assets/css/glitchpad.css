@@ -104,7 +104,6 @@ body {
 }
 
 .header {
-    background-color: #001800de;
     color: green;
     position: fixed;
     padding-top: 10px;
@@ -115,6 +114,7 @@ body {
     width: 100vw;
     max-height: 16%;
     min-height: 16%;
+    border-bottom: 2px solid green;
 }
 
 .header-fallout {
@@ -146,6 +146,21 @@ body {
 }
 
 .footer {
+    color: green;
+    padding: 1vh;
+    position: fixed;
+    top: 96%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    /* Sticky Footer (set the fixed height of the footer here) */
+    max-height: 4%;
+    min-height: 4%;
+    border-top: 2px solid green;
+}
+
+.footer-fallout {
     background-color: #001800de;
     color: green;
     padding: 1vh;
@@ -158,6 +173,7 @@ body {
     /* Sticky Footer (set the fixed height of the footer here) */
     max-height: 4%;
     min-height: 4%;
+    border-top: 2px solid green;
 }
 
 h1 {
