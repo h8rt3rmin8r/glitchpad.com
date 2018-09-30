@@ -113,7 +113,7 @@ body {
     right: 0px;
     width: 100vw;
     max-height: 16%;
-    min-height: 16%;
+    min-height: 115px;
     border-bottom: 2px solid green;
 }
 
@@ -128,7 +128,7 @@ body {
     right: 0px;
     width: 100vw;
     max-height: 16%;
-    min-height: 16%;
+    min-height: 115px;
     border-bottom: 2px solid green;
 }
 
@@ -156,7 +156,7 @@ body {
     width: 100vw;
     /* Sticky Footer (set the fixed height of the footer here) */
     max-height: 4%;
-    min-height: 4%;
+    min-height: 32px;
     border-top: 2px solid green;
 }
 
@@ -172,7 +172,7 @@ body {
     width: 100vw;
     /* Sticky Footer (set the fixed height of the footer here) */
     max-height: 4%;
-    min-height: 4%;
+    min-height: 32px;
     border-top: 2px solid green;
 }
 
