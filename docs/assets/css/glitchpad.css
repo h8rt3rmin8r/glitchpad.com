@@ -107,6 +107,7 @@ body {
     background-color: #001800de;
     color: green;
     position: fixed;
+    padding-top: 10px;
     top: 0px;
     bottom: 75%;
     left: 0px;
@@ -114,6 +115,21 @@ body {
     width: 100vw;
     max-height: 16%;
     min-height: 16%;
+}
+
+.header-fallout {
+    background-color: #001800de;
+    color: green;
+    position: fixed;
+    padding-top: 10px;
+    top: 0px;
+    bottom: 75%;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    max-height: 16%;
+    min-height: 16%;
+    border-bottom: 2px solid green;
 }
 
 .content {
@@ -146,22 +162,26 @@ body {
 
 h1 {
     font-family: "Ubuntu";
-    color: green;
+    color: red;
+    text-shadow: 0 0 1px rgb(85, 85, 85);
 }
 
 h2 {
     font-family: "Ubuntu";
-    color: green;
+    color: red;
+    text-shadow: 0 0 1px rgb(85, 85, 85);
 }
 
 h3 {
     font-family: "Ubuntu";
-    color: green;
+    color: red;
+    text-shadow: 0 0 1px rgb(85, 85, 85);
 }
 
 h4 {
     font-family: "Ubuntu";
     color: green;
+    text-shadow: 0 0 1px rgb(85, 85, 85);
 }
 
 p {
@@ -186,6 +206,11 @@ a {
 a:hover {
     color: #0c78d1
 }
+
+.fallout-font-red {color: #f44336}
+.fallout-font-blue {color: #0c78d1}
+.fallout-font-green {color: green}
+.fallout-font-orange {color: #e68a00}
 
 input {
     font-family: Ubuntu Mono, monospace;
