@@ -189,16 +189,17 @@
             </script>
 
             <h3 class="display-4">Encoder64</h3>
-            <p>An advanced base64 encoding tool with file upload and download capabilities powered by client-side
-                scripting</p>
+            <p>An advanced base64 encoding tool</p>
         </div>
     </div>
     <br>
     <div class="content">
     <div class="container">
         <div class="card fallout animated fadeInUp">
-            <h2 class="header-bar">Encoder Input</h2>
             <div class="card-body">
+                <div class="card-title">
+                    <h2>Encoder Input</h2>
+                </div>
                 <div class="card-text">
                     <p>Paste or upload a file to encode
                         <!--<div class="btn btn-default btn-file">-->
@@ -228,14 +229,18 @@
     </div>
     <br>
     <div class="container">
-        <div class="card fallout animated fadeInUp">
-            <div id="textOutputPanel" style="display: none">
-                <h2 class="header-bar">Encoder Output</h2>
-                <textarea id="htmlOutput" class="codec-output"></textarea>
-                <p id="fileOutputContainer">
-                    <a href="#" id="fileOutputLink">Download encoded file: </a>
-                    <input type="text" id="filenameField" value="Base64Encoded.txt" title="This name will be used as the default filename when you download." />
-                </p>
+        <div id="textOutputPanel" style="display: none">
+            <div class="card fallout animated fadeInUp">
+                <div class="card-title">
+                    <h2>Encoder Output</h2>
+                </div>
+                <div class="card-text">
+                    <textarea id="htmlOutput" class="codec-output"></textarea>
+                    <p id="fileOutputContainer">
+                        <a href="#" id="fileOutputLink">Download encoded file: </a>
+                        <input type="text" id="filenameField" value="Base64Encoded.txt" title="This name will be used as the default filename when you download." />
+                    </p>
+                </div>
             </div>
         </div>
     </div>
