@@ -722,7 +722,7 @@ textarea:focus {
 
 /* Scrollbar Width */
 ::-webkit-scrollbar {
-    width: 9px;
+    width: 8px;
     cursor: crosshair;
 }
 
