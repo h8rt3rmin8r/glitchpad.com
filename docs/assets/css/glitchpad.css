@@ -132,6 +132,11 @@ body {
     border-bottom: 2px solid green;
 }
 
+.header-desc {
+    font-family: "Ubuntu";
+    color: green;
+}
+
 .content {
     background-color: black;
     color: green;
@@ -623,10 +628,10 @@ textarea {
     line-height: 1em;
     color: green;
     background-color: black;
-    border-left: 6px solid rgba(4, 41, 3, 0.35);
-    border-right: 0px solid rgba(4, 41, 3, 0.35);
-    border-top: 6px solid rgba(4, 41, 3, 0.35);
-    border-bottom: 6px solid rgba(4, 41, 3, 0.35);
+    border-left: 4px solid rgba(4, 41, 3, 0.35);
+    border-right: 4px solid rgba(4, 41, 3, 0.35);
+    border-top: 4px solid rgba(4, 41, 3, 0.35);
+    border-bottom: 4px solid rgba(4, 41, 3, 0.35);
     /* Transition Effects */
     -webkit-transition-property: border-left, border-right, border-top, border-bottom;
     -webkit-transition-duration: 0.5s;
@@ -640,10 +645,10 @@ textarea {
 
 textarea:focus {
     outline: none;
-    border-left: 6px solid rgb(3, 63, 0);
-    border-right: 0px solid rgb(3, 63, 0);
-    border-top: 6px solid rgb(3, 63, 0);
-    border-bottom: 6px solid rgb(3, 63, 0);
+    border-left: 4px solid rgb(3, 63, 0);
+    border-right: 4px solid rgb(3, 63, 0);
+    border-top: 4px solid rgb(3, 63, 0);
+    border-bottom: 4px solid rgb(3, 63, 0);
 }
 
 .textarea-a {
@@ -737,4 +742,116 @@ textarea:focus {
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(145, 21, 21);
     cursor: crosshair;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (min-width: 736px) {
+    h1, h2, h3 {
+        font-size: 45px;
+    }
+
+    h4 {
+        font-size: 1.2ev;
+    }
+
+    .input {
+        padding: 0 0 0 20px;
+    }
+}
+
+@media screen and (max-width: 536px) {
+    h1, h2, h3 {
+        font-size: 43px;
+    }
+
+    h4 {
+        font-size: 1ev;
+    }
+
+    .input {
+        padding: 0 0 0 18px;
+    }
+
+    .content {
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width: 536px) {
+    h1, h2, h3 {
+        font-size: 42px;
+    }
+
+    h4 {
+        font-size: 1ev;
+    }
+
+    .input {
+        padding: 0 0 0 15px;
+    }
+
+    .content {
+        font-size: 95%;
+    }
+
+    .footer {
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .content {
+        font-size: 95%;
+    }
+
+    h1, h2, h3 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 23px;
+    }
+
+    .input {
+        padding: 0 0 0 10px;
+    }
+
+    .footer {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .content {
+        font-size: 85%;
+    }
+
+    h1, h2, h3 {
+        font-size: 38px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .input {
+        padding: 0 0 0 8px;
+    }
+
+    .footer {
+        font-size: 90%;
+    }
+}
+
+@media screen and (min-width: 381px) {
+    .header-desc {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .header-desc {
+        display: none;
+    }
 }
