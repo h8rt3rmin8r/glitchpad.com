@@ -282,6 +282,7 @@ input:focus {
 .card-text {
     background-color: black;
     color: green;
+    z-index: 8889;
 }
 
 .card {
@@ -289,6 +290,7 @@ input:focus {
     border-right: 2px solid green;
     border-top: 2px solid green;
     border-bottom: 2px solid green;
+    z-index: 8889;
 }
 
 /* ------------------------------------------------ CLOX.io BUTTONS AND COLORS */
