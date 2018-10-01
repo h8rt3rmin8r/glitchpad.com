@@ -106,6 +106,7 @@ body {
 .header {
     color: green;
     position: fixed;
+    z-index: 99999;
     padding-top: 10px;
     top: 0px;
     bottom: 75%;
@@ -121,6 +122,7 @@ body {
     background-color: #001800de;
     color: green;
     position: fixed;
+    z-index: 99999;
     padding-top: 10px;
     top: 0px;
     bottom: 75%;
@@ -141,6 +143,7 @@ body {
     background-color: black;
     color: green;
     position: fixed;
+    z-index: 8888;
     top: 20%;
     bottom: 5%;
     left: 0px;
