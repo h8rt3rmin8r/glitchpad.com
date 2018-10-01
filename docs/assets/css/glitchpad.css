@@ -140,7 +140,7 @@ body {
 .content {
     background-color: black;
     color: green;
-    position: absolute;
+    position: fixed;
     top: 20%;
     bottom: 5%;
     left: 0px;
