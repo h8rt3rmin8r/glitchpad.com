@@ -771,7 +771,6 @@ and (max-device-width : 480px) {
 and (min-width : 321px) {
 /* STYLES GO HERE */
     .footer, footer {display: none;}
-    .header-desc {display: none;}
     h1, h2, h3, h4 {font-size: 0.9em;}
 }
  
@@ -788,6 +787,7 @@ and (max-width : 320px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 /* STYLES GO HERE */
+    .footer, footer {display: block;}
 }
  
 /* iPads (landscape) ----------- */
@@ -796,6 +796,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
 /* STYLES GO HERE */
+    .footer, footer {display: block;}
 }
  
 /* iPads (portrait) ----------- */
@@ -804,18 +805,21 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 /* STYLES GO HERE */
+    .footer, footer {display: block;}
 }
  
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
 /* STYLES GO HERE */
+    .footer, footer {display: block;}
 }
  
 /* Large screens ----------- */
 @media only screen
 and (min-width : 1824px) {
 /* STYLES GO HERE */
+    .footer, footer {display: block;}
 }
  
 /* iPhone 5 (portrait & landscape)----------- */
@@ -834,7 +838,6 @@ and (max-device-width : 568px)
 and (orientation : landscape) {
 /* STYLES GO HERE */
     .footer, footer {display: none;}
-    .header-desc {display: none;}
     h1, h2, h3, h4 {font-size: 0.9em;}
 }
  
