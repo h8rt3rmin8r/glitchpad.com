@@ -149,6 +149,7 @@ body {
     min-height: 76%;
     overflow-x: hidden;
     overflow-y: auto;
+    padding-top: 22px;
 }
 
 .footer {
@@ -756,39 +757,23 @@ textarea:focus {
 
 /* RESPONSIVE DESIGN */
 
-@media screen and (min-width: 736px) {
-    h1, h2 {font-size: 40px;}
-    h3 {font-size: 38px;}
-    h4 {font-size: 1.2ev;}
-}
+/* @media screen and (min-width: 736px) {} */
 
 @media screen and (max-width: 536px) {
-    h1, h2 {font-size: 39px;}
-    h3 {font-size: 34px;}
-    h4 {font-size: 1ev;}
     .content {font-size: 100%;}
 }
 
 @media screen and (max-width: 536px) {
-    h1, h2 {font-size: 36px;}
-    h3 {font-size: 32px;}
-    h4 {font-size: 1ev;}
     .content {font-size: 95%;}
     .footer {font-size: 100%;}
 }
 
 @media screen and (max-width: 535px) {
-    h1, h2 {font-size: 32px;}
-    h3 {font-size: 30px;}
-    h4 {font-size: 25px;}
     .content {font-size: 95%;}
     .footer {font-size: 90%;}
 }
 
 @media screen and (max-width: 501px) {
-    h1, h2 {font-size: 30px;}
-    h3 {font-size: 28px;}
-    h4 {font-size: 22px;}
     .content {font-size: 85%;}
     .footer {font-size: 90%;}
 }
