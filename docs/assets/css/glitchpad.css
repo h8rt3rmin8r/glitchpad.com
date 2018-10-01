@@ -282,7 +282,7 @@ input:focus {
 .card-text {
     background-color: black;
     color: green;
-    z-index: 8889;
+    z-index: 889;
 }
 
 .card {
@@ -290,7 +290,8 @@ input:focus {
     border-right: 2px solid green;
     border-top: 2px solid green;
     border-bottom: 2px solid green;
-    z-index: 8889;
+    z-index: 889;
+    margin-top: 20px
 }
 
 /* ------------------------------------------------ CLOX.io BUTTONS AND COLORS */
@@ -389,7 +390,6 @@ Inspired by: https://www.w3schools.com/howto/howto_js_dropdown.asp
 }
 
 .dropdown {
-    position: relative;
     display: inline-block;
     cursor: pointer;
 }
@@ -401,30 +401,39 @@ Inspired by: https://www.w3schools.com/howto/howto_js_dropdown.asp
     See also '.show' below.
     */
     position: absolute;
-    z-index: 99999;
+    z-index: 999999;
+    font-size: 13px;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align: center;
     background-color: #021604e8;
     color: #3e8e41;
-    min-width: 180px;
-    min-height: 38px;
+    min-width: 170px;
+    min-height: 17px;
+    border-radius: 5px;
     outline: none;
-    overflow: auto;
+    overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-left: 2px solid green;
-    border-right: 2px solid green;
-    border-top: 2px solid green;
-    border-bottom: 2px solid green;
+    border-left: 2px solid rgba(35, 102, 39, 0.932);
+    border-right: 2px solid rgba(35, 102, 39, 0.932);
+    border-top: 2px solid rgba(35, 102, 39, 0.932);
+    border-bottom: 2px solid rgba(35, 102, 39, 0.932);
 }
 
 .dropdown-content a {
-    color: rgba(35, 102, 39, 0.932);
-    padding: 12px 16px;
+    color: red;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 3px;
+    margin:4px;
     text-decoration: none;
-    display: block;
+    display:block;
+    overflow: hidden;
 }
 
 .dropdown-content a:hover {
     background-color: #002e05be;
-    color: green;
+    color: rgba(35, 102, 39, 0.932);
 }
 
 .show {
@@ -435,6 +444,7 @@ ul.dropdown-menu.show {
     background-color: #02160400;
     margin: 0px;
     padding: 0px;
+    z-index: 999999;
 }
 
 /* ------------------------------------------------ COLOR REFERENCE */
