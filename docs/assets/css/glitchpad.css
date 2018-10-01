@@ -757,28 +757,93 @@ textarea:focus {
 
 /* RESPONSIVE DESIGN */
 
-/* @media screen and (min-width: 736px) {} */
-
-@media screen and (max-width: 536px) {
-    .content {font-size: 100%;}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* STYLES GO HERE */
+    .footer, footer {display: none;}
+    h1, h2, h3, h4 {font-size: 0.9em;}
 }
-
-@media screen and (max-width: 536px) {
-    .content {font-size: 95%;}
-    .footer {font-size: 100%;}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* STYLES GO HERE */
+    .footer, footer {display: none;}
+    .header-desc {display: none;}
+    h1, h2, h3, h4 {font-size: 0.9em;}
 }
-
-@media screen and (max-width: 535px) {
-    .content {font-size: 95%;}
-    .footer {font-size: 90%;}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* STYLES GO HERE */
+    .footer, footer {display: none;}
+    h1, h2, h3, h4 {font-size: 0.9em;}
 }
-
-@media screen and (max-width: 501px) {
-    .content {font-size: 85%;}
-    .footer {font-size: 90%;}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* STYLES GO HERE */
 }
-
-@media screen and (min-width: 381px) {.header-desc {display: block;}}
-@media screen and (min-height: 620px) {.header-desc {display: block;}}
-@media screen and (max-width: 380px) {.header-desc {display: none;}}
-@media screen and (max-height: 619px) {.header-desc {display: none;}}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* STYLES GO HERE */
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* STYLES GO HERE */
+}
+ 
+/* iPhone 5 (portrait & landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+/* STYLES GO HERE */
+    .footer, footer {display: none;}
+    h1, h2, h3, h4 {font-size: 0.9em;}
+}
+ 
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+    .footer, footer {display: none;}
+    .header-desc {display: none;}
+    h1, h2, h3, h4 {font-size: 0.9em;}
+}
+ 
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+    .footer, footer {display: none;}
+    h1, h2, h3, h4 {font-size: 0.9em;}
+}
