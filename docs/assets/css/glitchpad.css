@@ -147,8 +147,8 @@ body {
     right: 0px;
     width: 100vw;
     min-height: 76%;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .footer {
@@ -186,6 +186,7 @@ h1 {
     font-family: "Ubuntu";
     color: red;
     text-shadow: 0 0 1px rgb(85, 85, 85);
+    font-size: 100%;
 }
 
 h2 {
@@ -193,6 +194,7 @@ h2 {
     color: red;
     text-shadow: 0 0 1px rgb(85, 85, 85);
     text-transform: uppercase;
+    font-size: 95%;
 }
 
 h3 {
@@ -200,6 +202,7 @@ h3 {
     color: red;
     text-shadow: 0 0 1px rgb(85, 85, 85);
     text-transform: uppercase;
+    font-size: 93%;
 }
 
 h4 {
@@ -207,6 +210,7 @@ h4 {
     color: green;
     text-shadow: 0 0 1px rgb(85, 85, 85);
     text-transform: uppercase;
+    font-size: 93%;
 }
 
 p {
@@ -753,48 +757,43 @@ textarea:focus {
 /* RESPONSIVE DESIGN */
 
 @media screen and (min-width: 736px) {
-    h1, h2 {font-size: 42px;}
-    h3 {font-size: 40px;}
+    h1, h2 {font-size: 40px;}
+    h3 {font-size: 38px;}
     h4 {font-size: 1.2ev;}
-    .input {padding: 0 0 0 20px;}
 }
 
 @media screen and (max-width: 536px) {
-    h1, h2 {font-size: 43px;}
-    h3 {font-size: 38px;}
+    h1, h2 {font-size: 39px;}
+    h3 {font-size: 34px;}
     h4 {font-size: 1ev;}
-    .input {padding: 0 0 0 18px;}
     .content {font-size: 100%;}
 }
 
 @media screen and (max-width: 536px) {
-    h1, h2 {font-size: 41px;}
-    h3 {font-size: 36px;}
+    h1, h2 {font-size: 36px;}
+    h3 {font-size: 32px;}
     h4 {font-size: 1ev;}
-    .input {padding: 0 0 0 15px;}
     .content {font-size: 95%;}
     .footer {font-size: 100%;}
 }
 
 @media screen and (max-width: 535px) {
-    .content {font-size: 95%;}
-    h1, h2 {font-size: 38px;}
-    h3 {font-size: 34px;}
+    h1, h2 {font-size: 32px;}
+    h3 {font-size: 30px;}
     h4 {font-size: 25px;}
-    .input {padding: 0 0 0 10px;}
+    .content {font-size: 95%;}
     .footer {font-size: 90%;}
 }
 
 @media screen and (max-width: 501px) {
-    .content {font-size: 85%;}
-    h1, h2 {font-size: 36px;}
-    h3 {font-size: 32px;}
+    h1, h2 {font-size: 30px;}
+    h3 {font-size: 28px;}
     h4 {font-size: 22px;}
-    .input {padding: 0 0 0 8px;}
+    .content {font-size: 85%;}
     .footer {font-size: 90%;}
 }
 
 @media screen and (min-width: 381px) {.header-desc {display: block;}}
 @media screen and (min-height: 620px) {.header-desc {display: block;}}
 @media screen and (max-width: 380px) {.header-desc {display: none;}}
-@media screen and (min-height: 619px) {.header-desc {display: none;}}
+@media screen and (max-height: 619px) {.header-desc {display: none;}}
