@@ -147,7 +147,8 @@ body {
     right: 0px;
     width: 100vw;
     min-height: 76%;
-    max-height: 76%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .footer {
@@ -191,18 +192,21 @@ h2 {
     font-family: "Ubuntu";
     color: red;
     text-shadow: 0 0 1px rgb(85, 85, 85);
+    text-transform: uppercase;
 }
 
 h3 {
     font-family: "Ubuntu";
     color: red;
     text-shadow: 0 0 1px rgb(85, 85, 85);
+    text-transform: uppercase;
 }
 
 h4 {
     font-family: "Ubuntu";
     color: green;
     text-shadow: 0 0 1px rgb(85, 85, 85);
+    text-transform: uppercase;
 }
 
 p {
@@ -284,6 +288,7 @@ button {
     min-height: 38px;
     outline: none;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .button,
@@ -298,6 +303,7 @@ button {
     margin: 3px;
     cursor: pointer;
     outline: none;
+    text-transform: uppercase;
 }
 
 .button:hover,
@@ -747,111 +753,48 @@ textarea:focus {
 /* RESPONSIVE DESIGN */
 
 @media screen and (min-width: 736px) {
-    h1, h2, h3 {
-        font-size: 45px;
-    }
-
-    h4 {
-        font-size: 1.2ev;
-    }
-
-    .input {
-        padding: 0 0 0 20px;
-    }
+    h1, h2 {font-size: 42px;}
+    h3 {font-size: 40px;}
+    h4 {font-size: 1.2ev;}
+    .input {padding: 0 0 0 20px;}
 }
 
 @media screen and (max-width: 536px) {
-    h1, h2, h3 {
-        font-size: 43px;
-    }
-
-    h4 {
-        font-size: 1ev;
-    }
-
-    .input {
-        padding: 0 0 0 18px;
-    }
-
-    .content {
-        font-size: 100%;
-    }
+    h1, h2 {font-size: 43px;}
+    h3 {font-size: 38px;}
+    h4 {font-size: 1ev;}
+    .input {padding: 0 0 0 18px;}
+    .content {font-size: 100%;}
 }
 
 @media screen and (max-width: 536px) {
-    h1, h2, h3 {
-        font-size: 42px;
-    }
-
-    h4 {
-        font-size: 1ev;
-    }
-
-    .input {
-        padding: 0 0 0 15px;
-    }
-
-    .content {
-        font-size: 95%;
-    }
-
-    .footer {
-        font-size: 100%;
-    }
+    h1, h2 {font-size: 41px;}
+    h3 {font-size: 36px;}
+    h4 {font-size: 1ev;}
+    .input {padding: 0 0 0 15px;}
+    .content {font-size: 95%;}
+    .footer {font-size: 100%;}
 }
 
 @media screen and (max-width: 535px) {
-    .content {
-        font-size: 95%;
-    }
-
-    h1, h2, h3 {
-        font-size: 40px;
-    }
-
-    h4 {
-        font-size: 23px;
-    }
-
-    .input {
-        padding: 0 0 0 10px;
-    }
-
-    .footer {
-        font-size: 90%;
-    }
+    .content {font-size: 95%;}
+    h1, h2 {font-size: 38px;}
+    h3 {font-size: 34px;}
+    h4 {font-size: 25px;}
+    .input {padding: 0 0 0 10px;}
+    .footer {font-size: 90%;}
 }
 
 @media screen and (max-width: 501px) {
-    .content {
-        font-size: 85%;
-    }
-
-    h1, h2, h3 {
-        font-size: 38px;
-    }
-
-    h4 {
-        font-size: 20px;
-    }
-
-    .input {
-        padding: 0 0 0 8px;
-    }
-
-    .footer {
-        font-size: 90%;
-    }
+    .content {font-size: 85%;}
+    h1, h2 {font-size: 36px;}
+    h3 {font-size: 32px;}
+    h4 {font-size: 22px;}
+    .input {padding: 0 0 0 8px;}
+    .footer {font-size: 90%;}
 }
 
-@media screen and (min-width: 381px) {
-    .header-desc {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 380px) {
-    .header-desc {
-        display: none;
-    }
-}
+@media screen and (min-width: 381px) {.header-desc {display: block;}}
+@media screen and (min-height: 620px) {.header-desc {display: block;}}
+@media screen and (max-width: 380px) {.header-desc {display: none;}}
+@media screen and (min-height: 619px) {.header-desc {display: none;}}
