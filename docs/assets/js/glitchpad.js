@@ -62,7 +62,7 @@ function popBcoder() {
 
 function popEncoder() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/encoder64/", "_blank", "width=960,height=450,resizable");
+    window.open("https://glitchpad.com/encoder64/", "_blank", "width=960,height=680,resizable");
 }
 
 /* TOGGLE DROPDOWN MENUS - Source Code: https://pastebin.com/raw/D8Q5J11h */
