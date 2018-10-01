@@ -140,7 +140,7 @@ body {
 .content {
     background-color: black;
     color: green;
-    position: fixed;
+    position: absolute;
     top: 20%;
     bottom: 5%;
     left: 0px;
@@ -148,7 +148,7 @@ body {
     width: 100vw;
     min-height: 76%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .footer {
@@ -161,7 +161,7 @@ body {
     right: 0px;
     width: 100vw;
     /* Sticky Footer (set the fixed height of the footer here) */
-    max-height: 4%;
+    max-height: 35px;
     min-height: 32px;
     border-top: 2px solid green;
 }
@@ -638,10 +638,10 @@ textarea {
     line-height: 1em;
     color: green;
     background-color: black;
-    border-left: 4px solid rgba(4, 41, 3, 0.35);
-    border-right: 4px solid rgba(4, 41, 3, 0.35);
-    border-top: 4px solid rgba(4, 41, 3, 0.35);
-    border-bottom: 4px solid rgba(4, 41, 3, 0.35);
+    border-left: 4px solid rgba(5, 53, 4, 0.815);
+    border-right: 4px solid rgba(5, 53, 4, 0.815);
+    border-top: 4px solid rgba(5, 53, 4, 0.815);
+    border-bottom: 4px solid rgba(5, 53, 4, 0.815);
     /* Transition Effects */
     -webkit-transition-property: border-left, border-right, border-top, border-bottom;
     -webkit-transition-duration: 0.5s;
