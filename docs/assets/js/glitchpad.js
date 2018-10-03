@@ -186,6 +186,7 @@ function glitchDropY() {
 function glitchDropZ() {
     document.getElementById("glitchDropIDz").classList.toggle("show");
 }
+
 /* Close the dropdown if the user clicks outside of it */
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
@@ -199,3 +200,14 @@ window.onclick = function (event) {
         }
     }
 };
+
+/* COPY and CLEAR button functions */
+function copyButton() {
+    var copyText = document.getElementById("actionTarget");
+    copyText.select();
+    document.execCommand("copy");
+}
+
+function clearButton() {
+    var clearText = document.getElementById("actionTarget").value = '';
+}
