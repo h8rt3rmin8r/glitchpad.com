@@ -57,7 +57,7 @@ function popColorpicker() {
 
 function popBcoder() {
     var x = document.doctype.name;
-    window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=230,resizable");
+    window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=270,resizable");
 }
 
 function popEncoder() {
