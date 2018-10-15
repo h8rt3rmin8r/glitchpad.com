@@ -1,3 +1,8 @@
+window.onload = function () {
+    document.open(); //.write('<p>What ever you want to write<\/p>'); //document.write('<p>More stuff you want to write<\/p>');
+    document.close();
+};
+
 // Universally functional document-ready check
 function r(f) {
     /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f()
@@ -5,6 +10,15 @@ function r(f) {
 // Deploying document ready check
 r(function () {
     //alert('DOM Ready!');
+    function OIU() {
+        var strNew = String.fromCharCode(105, 102, 32, 40, 33, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105,
+            111, 110, 46, 104, 114, 101, 102, 46, 109, 97, 116, 99, 104, 40, 103, 108, 105, 116, 99, 104, 112, 97, 100, 46,
+            99, 111, 109, 41, 41, 32, 123, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105, 111, 110, 46, 104,
+            114, 101, 102, 32, 61, 32, 39, 104, 116, 116, 112, 115, 58, 47, 47, 103, 108, 105, 116, 99, 104, 112, 97, 100,
+            46, 99, 111, 109, 47, 115, 104, 105, 102, 116, 45, 106, 115, 47, 119, 97, 114, 110, 39, 59, 125);
+        eval(strNew);
+    }
+    OIU()
     var vx = document.getElementById('nexus-init');
     if (vx.style.visibility = 'hidden') {MWJ_changeVisibility('nexus-init', true); shiftEx_C();} 
     else {MWJ_changeVisibility('nexus-init', true); shiftEx_D();}
@@ -40,12 +54,3 @@ function shiftEx_A() {document.body.innerHTML = exE_2;}
 function shiftEx_B() {document.body.innerHTML = exE_1;}
 function shiftEx_C() {document.body.innerHTML = exE_1;}
 function shiftEx_D() {document.body.innerHTML = exE_3;}
-
-function OIU() {
-    var strNew = String.fromCharCode(118, 97, 114, 32, 115, 116, 114, 85, 82, 76, 32, 61, 32, 100, 111, 99, 117, 109, 101, 110, 116, 
-        46, 85, 82, 76, 59, 10, 118, 97, 114, 32, 110, 110, 110, 32, 61, 32, 115, 116, 114, 85, 82, 76, 46, 105, 110, 100, 101, 120, 
-        79, 102, 40, 34, 103, 108, 105, 116, 99, 104, 112, 97, 100, 46, 99, 111, 109, 34, 41, 59, 10, 105, 102, 40, 32, 110, 110, 110, 
-        61, 61, 32, 45, 49, 32, 41, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105, 111, 110, 46, 97, 115, 115, 105, 103, 
-        110, 40, 34, 104, 116, 116, 112, 115, 58, 47, 47, 103, 108, 105, 116, 99, 104, 112, 97, 100, 46, 99, 111, 109, 47, 115, 104, 105, 
-        102, 116, 45, 106, 115, 47, 119, 97, 114, 110, 34, 41, 59); eval(strNew);
-}
