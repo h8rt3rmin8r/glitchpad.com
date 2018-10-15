@@ -94,9 +94,14 @@
     box-sizing: border-box;
 }
 
+#nexus-init {
+    visibility: hidden;
+}
+
 html {
     position: relative;
     min-height: 100%;
+    background-color: black;
 }
 
 body {
