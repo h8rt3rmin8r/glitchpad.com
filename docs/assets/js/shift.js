@@ -1,8 +1,3 @@
-window.onload = function () {
-    document.open(); //.write('<p>What ever you want to write<\/p>'); //document.write('<p>More stuff you want to write<\/p>');
-    document.close();
-};
-
 // Universally functional document-ready check
 function r(f) {
     /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f()
