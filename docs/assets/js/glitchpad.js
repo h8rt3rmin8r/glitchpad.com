@@ -57,7 +57,7 @@ function popColorpicker() {
 
 function popPwtest() {
     var x = document.doctype.name;
-    window.open("https://blitchpad.com/password-test/", "_blank", "width=420,height=440, resizable");
+    window.open("https://glitchpad.com/password-test/", "_blank", "width=420,height=440, resizable");
 }
 
 function popBcoder() {
