@@ -239,8 +239,11 @@
                         <h2>Encoder Output</h2>
                     </div>
                     <div class="card-text">
-                        <textarea id="htmlOutput" class="codec-output" id="actionTarget"></textarea>
-                        <button class="btn button" onclick="copyButton()">COPY TEXT</button>
+                        <div id="actionTarget">
+                            <textarea id="htmlOutput" class="codec-output" id="actionTarget"></textarea>
+                        </div>
+                        <button class="btn button" id="copy-button" onclick="copyButton()" data-clipboard-text="1">COPY</button>
+                        <button class="btn button" id="clear-button" onclick="clearButton()">CLEAR</button>
                         <p id="fileOutputContainer">
                             <a href="#" id="fileOutputLink">Download encoded file: </a>
                             <input type="text" id="filenameField" value="Base64Encoded.txt" title="This name will be used as the default filename when you download." />
