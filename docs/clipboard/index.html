@@ -67,10 +67,9 @@
                         <h3>Examples</h3>
                     </div>
                     <div class="card-text">
-                        <textarea type="text" value="Text to be copied" id="actionTarget" class="actionTarget">Here is some example text.</textarea>
+                        <textarea type="text" value="Text to be copied" id="actionTarget" class="actionTarget clearTarget">Here is some example text.</textarea>
                         <button class="btn button" id="copy-button" onclick="copyButton()" data-clipboard-text="1">COPY</button>
-                        <button class="btn button" id="clear-button" onclick="clearButton()">CLEAR</button>
-
+                        <button class="btn button" onclick="clearButton()">CLEAR</button>
                         <br>
                     </div>
                 </div>
@@ -87,17 +86,6 @@
             </div>
         </div>
     </footer>
-    <!-- SITE SCRIPTS -->
     <script src="https://glitchpad.com/assets/js/glitchpad-min.js"></script>
-    <!--<script>
-        function copyButton() {
-            var copyText = document.getElementById("actionTarget");
-            copyText.select();
-            document.execCommand("copy");
-        }
-        function clearButton() {
-            var clearText = document.getElementById("actionTarget").value = '';
-        }
-    </script>-->
 </body>
 </html>
