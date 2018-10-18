@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Glitchpad | Draw</title>
+    <meta name="description" content="The Glitchpad drawing application for quick on the go brainstorming">
+    <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, glitchpad draw, online drawing, blackboard, whiteboard, sketch, notepad">
+
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="GlitchPad Draw">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+    <style>
+        @-ms-viewport {
+            width: device-width;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+            background-color: black;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .content,
+        canvas {
+            background: black;
+        }
+
+        .content {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .loading {
+            position: relative;
+        }
+
+        .loading:after {
+            content: url("data:image/gif;base64,R0lGODlhaAAbAPECAP///xkZGSEiIQAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUFY/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVy9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPwAh+QQEMgD/ACwAAAAAaAAbAEACppSPqcvtD6NEodqLq8n87t59YCaOmGOSQnqurFWysTzV9o3n+s73+wtzAWcm4sh4bAA1whcy1KQtmb6q9aqYPjlblTZKY3zHy25rGkCVwUV2krwWr+FON8jcwur3/L7/DxgoOEioNmQHRSf1JXeomIIXhGZY99hm2dZYOcfpyLiAeYfINer1mdW56bl6qLnI+qraCpoaawtZquKKG5pYG1YYLDxMWAAAIfkEBQAAAQAsBQAFABEAEQAAAg+Ej6nL7Q+jnLTai7PesQAAIfkEBQAAAQAsGAAFABEAEQAAAg+Ej6nL7Q+jnLTai7PesQAAIfkEBQAAAQAsKwAFABEAEQAAAg+Ej6nL7Q+jnLTai7PesQAAIfkEBQAAAQAsPgAFABEAEQAAAg+Ej6nL7Q+jnLTai7PesQAAIfkEBTIAAQAsUQAFABIAEQAAAg+Ej6nL7Q+jnLTai7PeXBUAIfkEBQAAAAAsBQAFABEAEQAAAg+Mj6nL7Q+jnLTai7PesQAAIfkEBQAAAAAsGAAFABEAEQAAAg+Mj6nL7Q+jnLTai7PesQAAIfkEBQAAAAAsKwAFABEAEQAAAg+Mj6nL7Q+jnLTai7PesQAAIfkEBQAAAAAsPgAFABEAEQAAAg+Mj6nL7Q+jnLTai7PesQAAOw==");
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -13px 0 0 -51px;
+            opacity: 0.8;
+        }
+
+        #error {
+            display: none;
+            width: 960px;
+            text-align: left;
+            padding: 10px;
+        }
+
+        #mobile {
+            display: none;
+            width: 960px;
+            text-align: left;
+            padding: 10px;
+        }
+
+        /**
+         * For modern browsers
+         * 1. The space content is one way to avoid an Opera bug when the
+         *    contenteditable attribute is included anywhere else in the document.
+         *    Otherwise it causes space to appear at the top and bottom of elements
+         *    that are clearfixed.
+         * 2. The use of `table` rather than `block` is only necessary if using
+         *    `:before` to contain the top-margins of child elements.
+         */
+        .cf:before,
+        .cf:after {
+            content: " ";
+            /* 1 */
+            display: table;
+            /* 2 */
+        }
+
+        .cf:after {
+            clear: both;
+        }
+
+        /**
+         * For IE 6/7 only
+         * Include this rule to trigger hasLayout and contain floats.
+         */
+        .cf {
+            *zoom: 1;
+        }
+
+        canvas {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+    <link href="https://glitchpad.com/assets/css/glitchpad.css" rel="stylesheet" type="text/css" />
+    <script>
+        (function () {
+            if (document.body) {
+                setupEmbed();
+            } else {
+                document.addEventListener("DOMContentLoaded", setupEmbed);
+            }
+
+            function setupEmbed() {
+                if (window.top != window) {
+                    document.body.className += " embedded";
+                }
+            }
+
+            var o = window.examples = {};
+            o.showDistractor = function (id) {
+                var div = id ? document.getElementById(id) : document.querySelector("div canvas").parentNode;
+                div.className += " loading";
+            };
+
+            o.hideDistractor = function () {
+                var div = document.querySelector(".loading");
+                div.className = div.className.replace(/\bloading\b/);
+            };
+        })();
+    </script>
+    <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+
+    <script id="editable">
+        var canvas, stage;
+        var drawingCanvas;
+        var oldPt;
+        var oldMidPt;
+        var title;
+        var color;
+        var stroke;
+        var colors;
+        var index;
+
+        function init() {
+            canvas = document.getElementById("myCanvas");
+            index = 0;
+            colors = ["#008000", "#008000", "#008000", "#008000", "#008000", "#008000", "#008000", "#008000", "#008000",
+                "#008000", "#008000"
+            ];
+
+            //check to see if we are running in a browser with touch support
+            stage = new createjs.Stage(canvas);
+            stage.autoClear = false;
+            stage.enableDOMEvents(true);
+
+            createjs.Touch.enable(stage);
+            createjs.Ticker.framerate = 60;
+
+            drawingCanvas = new createjs.Shape();
+
+            stage.addEventListener("stagemousedown", handleMouseDown);
+            stage.addEventListener("stagemouseup", handleMouseUp);
+
+            title = new createjs.Text("Click and Drag to draw", "3px Arial", "#008000");
+            title.x = 300;
+            title.y = 200;
+            stage.addChild(title);
+
+            stage.addChild(drawingCanvas);
+            stage.update();
+        }
+
+        function handleMouseDown(event) {
+            if (!event.primary) {
+                return;
+            }
+            if (stage.contains(title)) {
+                stage.clear();
+                stage.removeChild(title);
+            }
+            color = colors[(index++) % colors.length];
+            stroke = Math.random() * 1 | 0;
+            oldPt = new createjs.Point(stage.mouseX, stage.mouseY);
+            oldMidPt = oldPt.clone();
+            stage.addEventListener("stagemousemove", handleMouseMove);
+        }
+
+        function handleMouseMove(event) {
+            if (!event.primary) {
+                return;
+            }
+            var midPt = new createjs.Point(oldPt.x + stage.mouseX >> 1, oldPt.y + stage.mouseY >> 1);
+
+            drawingCanvas.graphics.clear().setStrokeStyle(stroke, 'round', 'round').beginStroke(color).moveTo(midPt.x,
+                midPt.y).curveTo(oldPt.x, oldPt.y, oldMidPt.x, oldMidPt.y);
+
+            oldPt.x = stage.mouseX;
+            oldPt.y = stage.mouseY;
+
+            oldMidPt.x = midPt.x;
+            oldMidPt.y = midPt.y;
+
+            stage.update();
+        }
+
+        function handleMouseUp(event) {
+            if (!event.primary) {
+                return;
+            }
+            stage.removeEventListener("stagemousemove", handleMouseMove);
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <canvas id="myCanvas"></canvas>
+</body>
+
+</html>
