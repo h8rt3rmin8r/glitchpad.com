@@ -131,12 +131,16 @@
 </script>
 
 <body id="nexus-init">
-  <form name="base64Form">
-    <textarea name="theText" cols="60" rows="10"></textarea>
-    <br><br>
-    <input type="button" class="button" name="encode" value="Encode" onClick="document.base64Form.theText.value=encode64(document.base64Form.theText.value);">
-    <input type="button" class="button" name="decode" value="Decode" onClick="document.base64Form.theText.value=decode64(document.base64Form.theText.value);">
-  </form>
+    <div class="content-full">
+        <form name="base64Form">
+            <textarea class="copyTarget clearTarget" name="theText" cols="60" rows="10"></textarea>
+            <br><br>
+            <input type="button" class="button" name="encode" value="Encode" onClick="document.base64Form.theText.value=encode64(document.base64Form.theText.value);">
+            <input type="button" class="button" name="decode" value="Decode" onClick="document.base64Form.theText.value=decode64(document.base64Form.theText.value);">
+        </form>
+        <button class="button btn" onclick="copyButton()">COPY</button>
+	    <button class="button btn" onclick="clearButton()">CLEAR</button>
+    </div>
   <!-- Site Scripts -->
   <script src="https://glitchpad.com/assets/js/glitchpad-min.js"></script>
 </body>
