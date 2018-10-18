@@ -160,6 +160,38 @@ body {
     padding-top: 22px;
 }
 
+.content-fill {
+    background-color: black;
+    color: green;
+    position: fixed;
+    z-index: 8888;
+    top: 2%;
+    bottom: 2%;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    min-height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 8px;
+}
+
+.content-full {
+    background-color: black;
+    color: green;
+    position: fixed;
+    z-index: 8888;
+    top: 2%;
+    bottom: 2%;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    min-height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 8px;
+}
+
 .footer {
     color: green;
     padding: 1vh;
