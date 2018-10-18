@@ -117,6 +117,11 @@ function popColorpicker() {
     window.open("https://glitchpad.com/colorpicker/", "_blank", "width=470,height=300,resizable");
 }
 
+function popPwtest() {
+    var x = document.doctype.name;
+    window.open("https://blitchpad.com/password-test/", "_blank", "width=420,height=440, resizable");
+}
+
 function popBcoder() {
     var x = document.doctype.name;
     window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=270,resizable");
