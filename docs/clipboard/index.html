@@ -49,43 +49,16 @@
 </head>
 
 <body id="nexus-init">
-
-<!-- SITE HEADER -->
-    <div class="header">
-        <div class="container">
-            <h3 class="display-4">HTML Clipboard</h3>
-            <p class="header-desc">Notepads, IDEs, and other useful web tools by
-                <a href="https://resonova.com">ResoNova</a>.</p>
-        </div>
+	<div class="content-full">
+		<div class="container"><br>
+			<h2 class="example">NOTES: Copy &amp; Clear</h2>
+			<textarea class="copyTarget clearTarget" style="height:45vh;">10101011010101</textarea>
+			<br>
+			<button class="button btn" onclick="copyButton()">COPY</button>
+			<button class="button btn" onclick="clearButton()">CLEAR</button>
+		</div>
     </div>
-    <!-- MAIN SITE CONTENT -->
-    <div class="content">
-        <div class="container">
-            <div class="card fallout animated fadeInUp">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h3>Examples</h3>
-                    </div>
-                    <div class="card-text">
-                        <textarea type="text" value="Text to be copied" id="actionTarget" class="actionTarget clearTarget">Here is some example text.</textarea>
-                        <button class="btn button" id="copy-button" onclick="copyButton()" data-clipboard-text="1">COPY</button>
-                        <button class="btn button" onclick="clearButton()">CLEAR</button>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- SITE FOOTER -->
-    <footer>
-        <div class="footer">
-            <div class="container">
-                <p class="p2">
-                    <i>think outside the box | <a href="https://glitchpad.com/">Glitchpad</a> by <a href="https://resonova.com/">ResoNova</a></i>
-                </p>
-            </div>
-        </div>
-    </footer>
-    <script src="https://glitchpad.com/assets/js/glitchpad-min.js"></script>
+	<script src="https://glitchpad.com/assets/js/glitchpad-min.js"></script>
 </body>
+    
 </html>
