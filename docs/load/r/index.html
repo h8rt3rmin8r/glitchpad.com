@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80288786-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-80288786-6');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Glitch Load</title>
+    <meta name="description" content="Glitchpad loader graphics">
+    <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad">
+    
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="GlitchPad">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+	
+	<!-- ****** SITE STYLES ****** -->
+	<style>
+	.animationload {
+    	background-color: #000;
+    	height: 100%;
+    	left: 0;
+    	position: fixed;
+    	top: 0;
+    	width: 100%;
+    	z-index: 99999999;
+	}
+	.glitchloading {
+    	animation: 1.5s linear 0s normal none infinite running glitchloading;
+    	background: black none repeat scroll 0 0;
+    	border-radius: 50px;
+    	height: 50px;
+    	left: 50%;
+    	margin-left: -25px;
+    	margin-top: -25px;
+    	position: fixed;
+    	top: 50%;
+    	width: 50px;
+	}
+	.glitchloading::after {
+    	animation: 1.5s linear 0s normal none infinite running glitchloading_after;
+    	border-color: red transparent;
+    	border-radius: 80px;
+    	border-style: solid;
+    	border-width: 10px;
+    	content: "";
+    	height: 80px;
+    	left: -15px;
+    	position: absolute;
+    	top: -15px;
+    	width: 80px;
+	}
+	@keyframes glitchloading {
+		0% {
+    		transform: rotate(0deg);
+		}
+		50% {
+    		background: red none repeat scroll 0 0;
+    		transform: rotate(180deg);
+		}
+		100% {
+    		transform: rotate(360deg);
+		}
+	}
+	</style>
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/glitchpad.css">
+	
+</head>
+<body>
+<div class="container animated fadeIn">
+	<div class="row">
+		<div class="text-center">
+        </div>    
+        <div class="animationload">
+            <div class="glitchloading"></div>
+        </div>
+	</div>
+</div>
+<!-- SITE FOOTER -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <p class="p2">
+                    <i>think outside the box | <a href="https://glitchpad.com/">Glitchpad</a> by <a href="https://resonova.com/">ResoNova</a></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
+</html>
