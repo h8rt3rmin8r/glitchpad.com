@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80288786-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-80288786-6');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JSON2CSV</title>
+    <meta name="description" content="Converts CSV markup to JSON and from JSON into CSV">
+    <meta name="keywords" content="json2csv, obj2csv, csv, obj, javascript, json, convert, utility, ResoNova, Glitchpad">
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="JSON2CSV">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+    <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">-->
+    <!-- ****** SITE STYLES ****** -->
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/glitchpad.css">
+    <style>
+        textarea {
+            resize: vertical;
+        }
+
+        body {
+            position: relative;
+        }
+
+        * {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="40">
+    <br>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <section id="json2csv">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">JSON2CSV</h3>
+                            </div>
+                            <div class="container-fluid" style="padding: 12px;">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="json-input">JSON:</label>
+                                            <textarea class="form-control" rows="25" id="json-input">
+[
+    {
+        "name": "john", 
+        "age": "47"
+    }
+]
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="csv-output">Output:</label>
+                                            <textarea readonly class="form-control" rows="25" id="csv-output"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-12">
+                                        <button class="btn btn-primary" id="json2csvgo">Convert</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-xs-12">
+                    <section id="csv2json">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">CSV2JSON</h3>
+                            </div>
+                            <div class="container-fluid" style="padding: 12px;">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="csv-input">CSV:</label>
+                                            <textarea class="form-control" rows="25" id="csv-input">
+"name","age"
+"John","47"
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="json-output">Output:</label>
+                                            <textarea readonly class="form-control" rows="25" id="json-output"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-12">
+                                        <button class="btn btn-primary" id="csv2jsongo">Convert</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- SITE FOOTER -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <p class="p2">
+                    <i>think outside the box | <a href="https://glitchpad.com/">Glitchpad</a> by <a href="https://resonova.com/">ResoNova</a></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Site Scripts -->
+    <script src="https://glitchpad.com/assets/js/glitchpad-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- smoothscroll.js -->
+    <script>
+        $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname ==
+                this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 38
+                    }, 200, function () {
+                        var $target = $(target);
+                        $target.focus();
+                        setTimeout(function () {
+                            window.scrollTo(0, target.offset().top - 38);
+                        }, 1);
+                        if ($target.is(":focus")) {
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1');
+                            $target.focus();
+                        };
+                    });
+                }
+            }
+        });
+    </script>
+    <!-- obj2csv.js -->
+    <script>
+        function obj2csv(obj, opt) {
+            if (typeof obj !== 'object') return null;
+            opt = opt || {};
+            var scopechar = opt.scopechar || '/';
+            var delimeter = opt.delimeter || ',';
+            if (Array.isArray(obj) === false) obj = [obj];
+            var curs, name, rownum, key, queue, values = [],
+                rows = [],
+                headers = {},
+                headersArr = [];
+            for (rownum = 0; rownum < obj.length; rownum++) {
+                queue = [obj[rownum], ''];
+                rows[rownum] = {};
+                while (queue.length > 0) {
+                    name = queue.pop();
+                    curs = queue.pop();
+                    if (curs !== null && typeof curs === 'object') {
+                        for (key in curs) {
+                            if (curs.hasOwnProperty(key)) {
+                                queue.push(curs[key]);
+                                queue.push(name + (name ? scopechar : '') + key);
+                            }
+                        }
+                    } else {
+                        if (headers[name] === undefined) headers[name] = true;
+                        rows[rownum][name] = curs;
+                    }
+                }
+                values[rownum] = [];
+            }
+            for (key in headers) {
+                if (headers.hasOwnProperty(key)) {
+                    headersArr.push(key);
+                    for (rownum = 0; rownum < obj.length; rownum++) {
+                        values[rownum].push(rows[rownum][key] === undefined ? '' : JSON.stringify(rows[rownum][key]));
+                    }
+                }
+            }
+            for (rownum = 0; rownum < obj.length; rownum++) {
+                values[rownum] = values[rownum].join(delimeter);
+            }
+            return '"' + headersArr.join('"' + delimeter + '"') + '"\n' + values.join('\n');
+        }
+
+        function csv2obj(csv, opt) {
+            opt = opt || {};
+            var delimeter = opt.delimeter || ',';
+            var i, row, rownum, collumNum, lines = csv.split(/\s*\n\s*/);
+            var headers = lines[0].split(delimeter);
+            for (i = 0; i < headers.length; i++) {
+                headers[i] = headers[i].replace(/(^[\s"]+|[\s"]+$)/g, '');
+            }
+            var ret = [];
+            for (rownum = 1; rownum < lines.length; rownum++) {
+                if (lines[rownum].trim().length === 0) continue;
+                row = lines[rownum].split(delimeter);
+                ret[rownum - 1] = {};
+                for (collumNum = 0; collumNum < headers.length; collumNum++) {
+                    if (row[collumNum].length > 0 && (!isNaN(row[collumNum]) || row[collumNum] === 'true' || row[
+                            collumNum] === 'false' || row[collumNum] === 'null'))
+                        ret[rownum - 1][headers[collumNum]] = JSON.parse(row[collumNum]);
+                    else
+                        ret[rownum - 1][headers[collumNum]] = row[collumNum].replace(/(^\s*"*|"*\s*$)/g, '');;
+                }
+            }
+            return ret;
+        }
+    </script>
+    <!-- main.js -->
+    <script>
+        var jsonOutput = $('#json-output');
+        var csvOutput = $('#csv-output');
+        var jsonInput = $('#json-input');
+        var csvInput = $('#csv-input');
+        var json2csvGo = $('#json2csvgo');
+        var csv2jsonGo = $('#csv2jsongo');
+        var indentation = 4;
+        var delimeter = ','
+        json2csvGo.on('click', function (e) {
+            try {
+                var obj = JSON.parse(jsonInput.val());
+            } catch (err) {
+                console.error(err);
+                alert('Error while converting JSON to CSV. Malformed JSON');
+            }
+            try {
+                csvOutput.val(obj2csv(obj, {
+                    delimeter: delimeter
+                }))
+            } catch (err) {
+                console.error(err);
+                alert('Error while converting JSON to CSV. Check the console for more information');
+            }
+        });
+        csv2jsonGo.on('click', function (e) {
+            try {
+                jsonOutput.val(JSON.stringify(csv2obj(csvInput.val(), {
+                    delimeter: delimeter
+                }), null, indentation));
+            } catch (err) {
+                console.error(err);
+                alert('Error while converting JSON to CSV. Check the console for more information');
+            }
+        });
+    </script>
+</body>
+
+</html>
