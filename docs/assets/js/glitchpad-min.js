@@ -87,7 +87,7 @@ function popPwtest() {
 }
 
 function popBcoder() {
-    document.doctype.name, window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=270,resizable")
+    document.doctype.name, window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=355,resizable")
 }
 
 function popEncoder() {
