@@ -98,20 +98,20 @@ function popGoogleEarth() {
     document.doctype.name, window.open("https://earth.google.com/web/", "_blank", "width=960,height=680,resizable")
 }
 
-function glitchDropEx() {
-    document.getElementById("glitchDropExID").classList.toggle("show")
+function popTabsSpaces() {
+    document.doctype.name, window.open("https://glitchpad.com/tab2spaces/", "_blank", "width=960,height=680,resizable")
 }
 
-function glitchDropCalc() {
-    document.getElementById("glitchDropCalcID").classList.toggle("show")
+function popJsonCsv() {
+    document.doctype.name, window.open("https://glitchpad.com/json2csv/", "_blank", "width=960,height=680,resizable")
 }
 
-function glitchDropNotes() {
-    document.getElementById("glitchDropNotesID").classList.toggle("show")
-}
+function popDraw() {
+    document.doctype.name, window.open("https://glitchpad.com/draw/", "_blank", "width=960,height=680,resizable")
+} //https://glitchpad.com/postbin/
 
-function glitchDropIde() {
-    document.getElementById("glitchDropIdeID").classList.toggle("show")
+function popPostbin() {
+    document.doctype.name, window.open("https://glitchpad.com/postbin/", "_blank", "width=960,height=680,resizable")
 }
 
 function glitchDropA() {
