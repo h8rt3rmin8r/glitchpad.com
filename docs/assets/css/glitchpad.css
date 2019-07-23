@@ -93,11 +93,11 @@
 * {
     box-sizing: border-box;
 }
-
+/*
 #nexus-init {
     visibility: hidden;
 }
-
+*/
 html {
     position: relative;
     min-height: 100%;
