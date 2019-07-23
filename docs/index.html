@@ -67,15 +67,16 @@
                 <div class="card-body">
                     <div class="card-title">
                         <h3>Tools</h3>
-                        <p>Select a tool you want to use. All tools open in an immersive pop-out window.</p>
+                        <p>Select a tool you want to use</p>
                     </div>
                     <div class="card-text">
                         <!-- Dropdown start -->
                         <div class="dropdown">
-                            <button onclick="glitchDropNotes()" class="dropbtn btn">NOTEPADS</button>
+                            <button onclick="glitchDropNotes()" class="dropbtn btn">NOTES &amp; IDEs</button>
                             <div id="glitchDropNotesID" class="dropdown-content">
-                                <a href='javascript:;' onclick='popGlitchwide();'>Simple Desktop</a>
-                                <a href='javascript:;' onclick='popGlitchtall();'>Simple Mobile</a>
+                                <button class="btn" onclick="popWorkflowy()">WORKFLOWY</button>
+                                <a href='javascript:;' onclick='popGlitchwide();'>Notes Desktop</a>
+                                <a href='javascript:;' onclick='popGlitchtall();'>Notes Mobile</a>
                                 <a href='javascript:;' onclick='popBasheditor();'>Bash IDE</a>
                                 <a href='javascript:;' onclick='popHtmleditor();'>HTML IDE</a>
                                 <a href='javascript:;' onclick='popAnyfilenotepad();'>Anyfile Notepad</a>
@@ -87,30 +88,29 @@
                         <div class="dropdown">
                             <button onclick="glitchDropCalc()" class="dropbtn btn">CALCULATORS</button>
                             <div id="glitchDropCalcID" class="dropdown-content">
-                                <a href='javascript:;' onclick='popPreev();'>Preev BTC</a>
-                                <a href='javascript:;' onclick='popCalc();'>Scientific</a>
+                                <a href='javascript:;' onclick='popPreev();'>Preev BTC Calc</a>
+                                <a href='javascript:;' onclick='popCalc();'>Scientific Calc</a>
                             </div>
                         </div>
                         <!-- Dropdown finish -->
-                        <button class="btn" onclick="window.location.href='https://glitchpad.com/draw/'">DRAW</button>
                         <!-- Dropdown start -->
                         <div class="dropdown">
-                            <button onclick="glitchDropIde()" class="dropbtn btn">BASE64</button>
+                            <button onclick="glitchDropIde()" class="dropbtn btn">CONCERSIONS</button>
                             <div id="glitchDropIdeID" class="dropdown-content">
                                 <button class="btn" onclick="popBcoder()">BASE64 (Basic)</button>
                                 <button class="btn" onclick="popEncoder()">BASE64 (Advanced)</button>
+                                <button class="btn" onclick="window.location.href='https://glitchpad.com/json2csv/'">JSON2CSV</button>
+                                <button class="btn" onclick="window.location.href='https://glitchpad.com/tab2spaces/'">TAB2SPACES</button>
                             </div>
                         </div>
                         <!-- Dropdown finish -->
+                        <button class="btn" onclick="window.location.href='https://glitchpad.com/draw/'">SKETCHPAD</button>
                         <button class="btn" onclick="popColorpicker()">COLOR PICKER</button>
-                        <button class="btn" onclick="popWorkflowy()">WORKFLOWY</button>
                         <button class="btn" onclick="popGoogleEarth()">GOOGLE EARTH</button>
                         <button class="btn" onclick="popClox()">DIGITAL CLOCK</button>
                         <button class="btn" onclick="popPwtest()">PASSWORD TEST</button>
-                        <button class="btn" onclick="window.location.href='https://glitchpad.com/json2csv/'">JSON2CSV</button>
                         <button class="btn" onclick="window.location.href='https://glitchpad.com/primes/'">PRIME NUMBERS</button>
                         <button class="btn" onclick="window.location.href='https://glitchpad.com/postbin/'">POSTBIN</button>
-                        <button class="btn" onclick="window.location.href='https://glitchpad.com/tab2spaces/'">TAB2SPACES</button>
                     </div>
                 </div>
             </div>
