@@ -30,11 +30,265 @@ function json2html_events(t){for(var e=$(document.createElement("i")).html(t.htm
 /*! clipboard.js v1.5.5 -- Source Code: https://zenorocha.github.io/clipboard.js -- Licensed MIT -- Copyright (C) Zeno Rocha */
 !function(t){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).Clipboard=t()}}(function(){return function t(e,n,o){function r(c,a){if(!n[c]){if(!e[c]){var s="function"==typeof require&&require;if(!a&&s)return s(c,!0);if(i)return i(c,!0);var l=new Error("Cannot find module '"+c+"'");throw l.code="MODULE_NOT_FOUND",l}var u=n[c]={exports:{}};e[c][0].call(u.exports,function(t){var n=e[c][1][t];return r(n||t)},u,u.exports,t,e,n,o)}return n[c].exports}for(var i="function"==typeof require&&require,c=0;c<o.length;c++)r(o[c]);return r}({1:[function(t,e,n){var o=t("matches-selector");e.exports=function(t,e,n){for(var r=n?t:t.parentNode;r&&r!==document;){if(o(r,e))return r;r=r.parentNode}}},{"matches-selector":2}],2:[function(t,e,n){var o=Element.prototype,r=o.matchesSelector||o.webkitMatchesSelector||o.mozMatchesSelector||o.msMatchesSelector||o.oMatchesSelector;e.exports=function(t,e){if(r)return r.call(t,e);for(var n=t.parentNode.querySelectorAll(e),o=0;o<n.length;++o)if(n[o]==t)return!0;return!1}},{}],3:[function(t,e,n){var o=t("closest");e.exports=function(t,e,n,r){var i=function(t,e,n,r){return function(n){n.delegateTarget=o(n.target,e,!0),n.delegateTarget&&r.call(t,n)}}.apply(this,arguments);return t.addEventListener(n,i),{destroy:function(){t.removeEventListener(n,i)}}}},{closest:1}],4:[function(t,e,n){n.node=function(t){return void 0!==t&&t instanceof HTMLElement&&1===t.nodeType},n.nodeList=function(t){var e=Object.prototype.toString.call(t);return void 0!==t&&("[object NodeList]"===e||"[object HTMLCollection]"===e)&&"length"in t&&(0===t.length||n.node(t[0]))},n.string=function(t){return"string"==typeof t||t instanceof String},n.function=function(t){return"[object Function]"===Object.prototype.toString.call(t)}},{}],5:[function(t,e,n){var o=t("./is"),r=t("delegate");e.exports=function(t,e,n){if(!t&&!e&&!n)throw new Error("Missing required arguments");if(!o.string(e))throw new TypeError("Second argument must be a String");if(!o.function(n))throw new TypeError("Third argument must be a Function");if(o.node(t))return i=t,c=e,a=n,i.addEventListener(c,a),{destroy:function(){i.removeEventListener(c,a)}};var i,c,a,s,l,u,f,d,h;if(o.nodeList(t))return s=t,l=e,u=n,Array.prototype.forEach.call(s,function(t){t.addEventListener(l,u)}),{destroy:function(){Array.prototype.forEach.call(s,function(t){t.removeEventListener(l,u)})}};if(o.string(t))return f=t,d=e,h=n,r(document.body,f,d,h);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")}},{"./is":4,delegate:3}],6:[function(t,e,n){e.exports=function(t){var e;if("INPUT"===t.nodeName||"TEXTAREA"===t.nodeName)t.focus(),t.setSelectionRange(0,t.value.length),e=t.value;else{t.hasAttribute("contenteditable")&&t.focus();var n=window.getSelection(),o=document.createRange();o.selectNodeContents(t),n.removeAllRanges(),n.addRange(o),e=n.toString()}return e}},{}],7:[function(t,e,n){function o(){}o.prototype={on:function(t,e,n){var o=this.e||(this.e={});return(o[t]||(o[t]=[])).push({fn:e,ctx:n}),this},once:function(t,e,n){function o(){r.off(t,o),e.apply(n,arguments)}var r=this;return o._=e,this.on(t,o,n)},emit:function(t){for(var e=[].slice.call(arguments,1),n=((this.e||(this.e={}))[t]||[]).slice(),o=0,r=n.length;o<r;o++)n[o].fn.apply(n[o].ctx,e);return this},off:function(t,e){var n=this.e||(this.e={}),o=n[t],r=[];if(o&&e)for(var i=0,c=o.length;i<c;i++)o[i].fn!==e&&o[i].fn._!==e&&r.push(o[i]);return r.length?n[t]=r:delete n[t],this}},e.exports=o},{}],8:[function(t,e,n){"use strict";n.__esModule=!0;var o,r=function(){function t(t,e){for(var n=0;n<e.length;n++){var o=e[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}return function(e,n,o){return n&&t(e.prototype,n),o&&t(e,o),e}}(),i=t("select"),c=(o=i)&&o.__esModule?o:{default:o},a=function(){function t(e){(function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")})(this,t),this.resolveOptions(e),this.initSelection()}return t.prototype.resolveOptions=function(){var t=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];this.action=t.action,this.emitter=t.emitter,this.target=t.target,this.text=t.text,this.trigger=t.trigger,this.selectedText=""},t.prototype.initSelection=function(){if(this.text&&this.target)throw new Error('Multiple attributes declared, use either "target" or "text"');if(this.text)this.selectFake();else{if(!this.target)throw new Error('Missing required attributes, use either "target" or "text"');this.selectTarget()}},t.prototype.selectFake=function(){var t=this;this.removeFake(),this.fakeHandler=document.body.addEventListener("click",function(){return t.removeFake()}),this.fakeElem=document.createElement("textarea"),this.fakeElem.style.position="absolute",this.fakeElem.style.left="-9999px",this.fakeElem.style.top=(window.pageYOffset||document.documentElement.scrollTop)+"px",this.fakeElem.setAttribute("readonly",""),this.fakeElem.value=this.text,document.body.appendChild(this.fakeElem),this.selectedText=c.default(this.fakeElem),this.copyText()},t.prototype.removeFake=function(){this.fakeHandler&&(document.body.removeEventListener("click"),this.fakeHandler=null),this.fakeElem&&(document.body.removeChild(this.fakeElem),this.fakeElem=null)},t.prototype.selectTarget=function(){this.selectedText=c.default(this.target),this.copyText()},t.prototype.copyText=function(){var t=void 0;try{t=document.execCommand(this.action)}catch(e){t=!1}this.handleResult(t)},t.prototype.handleResult=function(t){t?this.emitter.emit("success",{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)}):this.emitter.emit("error",{action:this.action,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})},t.prototype.clearSelection=function(){this.target&&this.target.blur(),window.getSelection().removeAllRanges()},t.prototype.destroy=function(){this.removeFake()},r(t,[{key:"action",set:function(){var t=arguments.length<=0||void 0===arguments[0]?"copy":arguments[0];if(this._action=t,"copy"!==this._action&&"cut"!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function(){return this._action}},{key:"target",set:function(t){if(void 0!==t){if(!t||"object"!=typeof t||1!==t.nodeType)throw new Error('Invalid "target" value, use a valid Element');this._target=t}},get:function(){return this._target}}]),t}();n.default=a,e.exports=n.default},{select:6}],9:[function(t,e,n){"use strict";function o(t){return t&&t.__esModule?t:{default:t}}function r(t,e){var n="data-clipboard-"+t;if(e.hasAttribute(n))return e.getAttribute(n)}n.__esModule=!0;var i=o(t("./clipboard-action")),c=o(t("tiny-emitter")),a=o(t("good-listener")),s=function(t){function e(n,o){(function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")})(this,e),t.call(this),this.resolveOptions(o),this.listenClick(n)}return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}(e,t),e.prototype.resolveOptions=function(){var t=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];this.action="function"==typeof t.action?t.action:this.defaultAction,this.target="function"==typeof t.target?t.target:this.defaultTarget,this.text="function"==typeof t.text?t.text:this.defaultText},e.prototype.listenClick=function(t){var e=this;this.listener=a.default(t,"click",function(t){return e.onClick(t)})},e.prototype.onClick=function(t){var e=t.delegateTarget||t.currentTarget;this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new i.default({action:this.action(e),target:this.target(e),text:this.text(e),trigger:e,emitter:this})},e.prototype.defaultAction=function(t){return r("action",t)},e.prototype.defaultTarget=function(t){var e=r("target",t);if(e)return document.querySelector(e)},e.prototype.defaultText=function(t){return r("text",t)},e.prototype.destroy=function(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)},e}(c.default);n.default=s,e.exports=n.default},{"./clipboard-action":8,"good-listener":5,"tiny-emitter":7}]},{},[9])(9)});
 
-/* Glitchpad Function Series -- Copyright (C) ResoNova International Consulting, LLC 2018 -- Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
-/* Source Code: https://glitchpad.com/assets/js/glitchpad.js -- Toggle Dropdown Source Code: https://pastebin.com/raw/D8Q5J11h */
-function popCalc(){document.doctype.name,window.open("https://web2.0calc.com/widgets/minimal/","_blank","width=420,height=420,resizable")}function popPreev(){document.doctype.name,window.open("http://preev.com","_blank","width=420,height=420,resizable")}function popClox(){document.doctype.name,window.open("https://glitchpad.com/clox/g/","_blank","width=960,height=450,resizable")}function popWorkflowy(){document.doctype.name,window.open("https://workflowy.com","_blank","width=960,height=450,resizable")}function popDrivenotepad(){document.doctype.name,window.open("https://drivenotepad.github.io/app/","_blank","width=960,height=450,resizable")}function popAnyfilenotepad(){document.doctype.name,window.open("https://anyfile-notepad.semaan.ca/app#new/GoogleDrive","_blank","width=960,height=450,resizable")}function popHtmleditor(){document.doctype.name,window.open("https://glitchpad.com/html","_blank","width=960,height=450,resizable")}function popBasheditor(){document.doctype.name,window.open("https://glitchpad.com/bash","_blank","width=960,height=450,resizable")}function popGlitchtall(){document.doctype.name,window.open("https://glitchpad.com/note/t/","_blank","width=960,height=450,resizable")}function popGlitchwide(){document.doctype.name,window.open("https://glitchpad.com/note/w/","_blank","width=960,height=450,resizable")}function popColorpicker(){document.doctype.name,window.open("https://glitchpad.com/colorpicker/","_blank","width=470,height=300,resizable")}function popPwtest(){document.doctype.name,window.open("https://glitchpad.com/password-test/","_blank","width=420,height=455, resizable")}function popBcoder(){document.doctype.name,window.open("https://glitchpad.com/base64/","_blank","width=760,height=270,resizable")}function popEncoder(){document.doctype.name,window.open("https://glitchpad.com/encoder64/","_blank","width=960,height=680,resizable")}function glitchDropEx(){document.getElementById("glitchDropExID").classList.toggle("show")}function glitchDropCalc(){document.getElementById("glitchDropCalcID").classList.toggle("show")}function glitchDropNotes(){document.getElementById("glitchDropNotesID").classList.toggle("show")}function glitchDropIde(){document.getElementById("glitchDropIdeID").classList.toggle("show")}function glitchDropA(){document.getElementById("glitchDropIDa").classList.toggle("show")}function glitchDropB(){document.getElementById("glitchDropIDb").classList.toggle("show")}function glitchDropC(){document.getElementById("glitchDropIDc").classList.toggle("show")}function glitchDropD(){document.getElementById("glitchDropIDd").classList.toggle("show")}function glitchDropE(){document.getElementById("glitchDropIDe").classList.toggle("show")}function glitchDropF(){document.getElementById("glitchDropIDf").classList.toggle("show")}function glitchDropG(){document.getElementById("glitchDropIDg").classList.toggle("show")}function glitchDropH(){document.getElementById("glitchDropIDh").classList.toggle("show")}function glitchDropI(){document.getElementById("glitchDropIDi").classList.toggle("show")}function glitchDropJ(){document.getElementById("glitchDropIDj").classList.toggle("show")}function glitchDropK(){document.getElementById("glitchDropIDk").classList.toggle("show")}function glitchDropL(){document.getElementById("glitchDropIDl").classList.toggle("show")}function glitchDropM(){document.getElementById("glitchDropIDm").classList.toggle("show")}function glitchDropN(){document.getElementById("glitchDropIDn").classList.toggle("show")}function glitchDropO(){document.getElementById("glitchDropIDo").classList.toggle("show")}function glitchDropP(){document.getElementById("glitchDropIDp").classList.toggle("show")}function glitchDropQ(){document.getElementById("glitchDropIDq").classList.toggle("show")}function glitchDropR(){document.getElementById("glitchDropIDr").classList.toggle("show")}function glitchDropS(){document.getElementById("glitchDropIDs").classList.toggle("show")}function glitchDropT(){document.getElementById("glitchDropIDt").classList.toggle("show")}function glitchDropU(){document.getElementById("glitchDropIDu").classList.toggle("show")}function glitchDropV(){document.getElementById("glitchDropIDv").classList.toggle("show")}function glitchDropW(){document.getElementById("glitchDropIDw").classList.toggle("show")}function glitchDropX(){document.getElementById("glitchDropIDx").classList.toggle("show")}function glitchDropY(){document.getElementById("glitchDropIDy").classList.toggle("show")}function glitchDropZ(){document.getElementById("glitchDropIDz").classList.toggle("show")}window.onclick=function(t){if(!t.target.matches(".dropbtn")){var o,e=document.getElementsByClassName("dropdown-content");for(o=0;o<e.length;o++){var n=e[o];n.classList.contains("show")&&n.classList.remove("show")}}};function copyButton() {let textarea = document.querySelector(".copyTarget");textarea.select();document.execCommand("copy");}function clearButton() {document.querySelector(".clearTarget").value = "";}
-function r(e){/in/.test(document.readyState)?setTimeout("r("+e+")",9):e()}r(function(){function OIU(){var strNew=String.fromCharCode(105,102,32,40,33,119,105,110,100,111,119,46,108,111,99,97,116,105,111,110,46,104,111,115,116,110,97,109,101,46,109,97,116,99,104,40,39,103,108,105,116,99,104,112,97,100,46,99,111,109,39,41,41,32,123,10,32,32,32,32,119,105,110,100,111,119,46,108,111,99,97,116,105,111,110,46,104,114,101,102,32,61,32,39,104,116,116,112,115,58,47,47,103,108,105,116,99,104,112,97,100,46,99,111,109,47,115,104,105,102,116,45,106,115,47,119,97,114,110,39,59,10,125);eval(strNew)}OIU();var vx=document.getElementById("nexus-init");(vx.style.visibility="hidden")&&MWJ_changeVisibility("nexus-init",!0)});var exA_1='<div class="header"><div class="container"><h3 class="display-4">',exA_2='</h3><p class="header-desc">',exA_3="</p></div></div>",exA_4='<div class="content"><div class="container"><div class="card animated ',exA_5='fadeInUp"><div class="card-body"><div class="card-title"><h3>',exA_6='</h3></div><div class="card-text"><hr><p>',exA_7='</p><button class="button btn" ',exA_8=">SHIFT</button></div></div></div></div></div>",exA_9="</p></div></div></div></div></div>",exB_1="shift.js",exB_2="Switch between HTML pages with pure JavaScript",exB_3="[ 1 ]",exB_4="[ 2 ]",exB_5="The initial HTML page",exB_6="The secondary HTML page",exB_7="an error has occurred",exB_8="This event has been reported to the system administrator",exC_1='onclick="shiftEx_A()"',exC_2='onclick="shiftEx_B()"',exC_3='onclick="shiftEx_C()"',exD_1=exA_1.concat(exB_1,exA_2,exB_2,exA_3),exD_2=exA_4.concat(exA_5,exB_3,exA_6,exB_5,exA_7,exC_1,exA_8),exD_3=exA_4.concat(exA_5,exB_4,exA_6,exB_6,exA_7,exC_2,exA_8),exD_4=exA_4.concat(exA_5,exB_7,exA_6,exB_8,exA_9),exE_1=exD_1.concat(exD_2),exE_2=exD_1.concat(exD_3),exE_3=exD_4;function shiftEx_A(){document.body.innerHTML=exE_2}function shiftEx_B(){document.body.innerHTML=exE_1}function shiftEx_C(){document.body.innerHTML=exE_1}function shiftEx_D(){document.body.innerHTML=exE_3}
+/* Glitchpad Function Series 
+    -- Copyright (C) ResoNova International Consulting, LLC 2018 
+    -- Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) 
+*/
+/* Source Code: https://glitchpad.com/assets/js/glitchpad.js 
+    -- Toggle Dropdown Source Code: https://pastebin.com/raw/D8Q5J11h 
+*/
 
+function popCalc() {
+    document.doctype.name, window.open("https://web2.0calc.com/widgets/minimal/", "_blank", "width=420,height=420,resizable")
+}
+
+function popPreev() {
+    document.doctype.name, window.open("http://preev.com", "_blank", "width=420,height=420,resizable")
+}
+
+function popClox() {
+    document.doctype.name, window.open("https://glitchpad.com/clox/g/", "_blank", "width=960,height=450,resizable")
+}
+
+function popWorkflowy() {
+    document.doctype.name, window.open("https://workflowy.com", "_blank", "width=960,height=450,resizable")
+}
+
+function popDrivenotepad() {
+    document.doctype.name, window.open("https://drivenotepad.github.io/app/", "_blank", "width=960,height=450,resizable")
+}
+
+function popAnyfilenotepad() {
+    document.doctype.name, window.open("https://anyfile-notepad.semaan.ca/app#new/GoogleDrive", "_blank", "width=960,height=450,resizable")
+}
+
+function popHtmleditor() {
+    document.doctype.name, window.open("https://glitchpad.com/html", "_blank", "width=960,height=450,resizable")
+}
+
+function popBasheditor() {
+    document.doctype.name, window.open("https://glitchpad.com/bash", "_blank", "width=960,height=450,resizable")
+}
+
+function popGlitchtall() {
+    document.doctype.name, window.open("https://glitchpad.com/note/t/", "_blank", "width=960,height=450,resizable")
+}
+
+function popGlitchwide() {
+    document.doctype.name, window.open("https://glitchpad.com/note/w/", "_blank", "width=960,height=450,resizable")
+}
+
+function popColorpicker() {
+    document.doctype.name, window.open("https://glitchpad.com/colorpicker/", "_blank", "width=470,height=300,resizable")
+}
+
+function popPwtest() {
+    document.doctype.name, window.open("https://glitchpad.com/password-test/", "_blank", "width=420,height=455, resizable")
+}
+
+function popBcoder() {
+    document.doctype.name, window.open("https://glitchpad.com/base64/", "_blank", "width=760,height=270,resizable")
+}
+
+function popEncoder() {
+    document.doctype.name, window.open("https://glitchpad.com/encoder64/", "_blank", "width=960,height=680,resizable")
+}
+
+function glitchDropEx() {
+    document.getElementById("glitchDropExID").classList.toggle("show")
+}
+
+function glitchDropCalc() {
+    document.getElementById("glitchDropCalcID").classList.toggle("show")
+}
+
+function glitchDropNotes() {
+    document.getElementById("glitchDropNotesID").classList.toggle("show")
+}
+
+function glitchDropIde() {
+    document.getElementById("glitchDropIdeID").classList.toggle("show")
+}
+
+function glitchDropA() {
+    document.getElementById("glitchDropIDa").classList.toggle("show")
+}
+
+function glitchDropB() {
+    document.getElementById("glitchDropIDb").classList.toggle("show")
+}
+
+function glitchDropC() {
+    document.getElementById("glitchDropIDc").classList.toggle("show")
+}
+
+function glitchDropD() {
+    document.getElementById("glitchDropIDd").classList.toggle("show")
+}
+
+function glitchDropE() {
+    document.getElementById("glitchDropIDe").classList.toggle("show")
+}
+
+function glitchDropF() {
+    document.getElementById("glitchDropIDf").classList.toggle("show")
+}
+
+function glitchDropG() {
+    document.getElementById("glitchDropIDg").classList.toggle("show")
+}
+
+function glitchDropH() {
+    document.getElementById("glitchDropIDh").classList.toggle("show")
+}
+
+function glitchDropI() {
+    document.getElementById("glitchDropIDi").classList.toggle("show")
+}
+
+function glitchDropJ() {
+    document.getElementById("glitchDropIDj").classList.toggle("show")
+}
+
+function glitchDropK() {
+    document.getElementById("glitchDropIDk").classList.toggle("show")
+}
+
+function glitchDropL() {
+    document.getElementById("glitchDropIDl").classList.toggle("show")
+}
+
+function glitchDropM() {
+    document.getElementById("glitchDropIDm").classList.toggle("show")
+}
+
+function glitchDropN() {
+    document.getElementById("glitchDropIDn").classList.toggle("show")
+}
+
+function glitchDropO() {
+    document.getElementById("glitchDropIDo").classList.toggle("show")
+}
+
+function glitchDropP() {
+    document.getElementById("glitchDropIDp").classList.toggle("show")
+}
+
+function glitchDropQ() {
+    document.getElementById("glitchDropIDq").classList.toggle("show")
+}
+
+function glitchDropR() {
+    document.getElementById("glitchDropIDr").classList.toggle("show")
+}
+
+function glitchDropS() {
+    document.getElementById("glitchDropIDs").classList.toggle("show")
+}
+
+function glitchDropT() {
+    document.getElementById("glitchDropIDt").classList.toggle("show")
+}
+
+function glitchDropU() {
+    document.getElementById("glitchDropIDu").classList.toggle("show")
+}
+
+function glitchDropV() {
+    document.getElementById("glitchDropIDv").classList.toggle("show")
+}
+
+function glitchDropW() {
+    document.getElementById("glitchDropIDw").classList.toggle("show")
+}
+
+function glitchDropX() {
+    document.getElementById("glitchDropIDx").classList.toggle("show")
+}
+
+function glitchDropY() {
+    document.getElementById("glitchDropIDy").classList.toggle("show")
+}
+
+function glitchDropZ() {
+    document.getElementById("glitchDropIDz").classList.toggle("show")
+}
+window.onclick = function (t) {
+    if (!t.target.matches(".dropbtn")) {
+        var o, e = document.getElementsByClassName("dropdown-content");
+        for (o = 0; o < e.length; o++) {
+            var n = e[o];
+            n.classList.contains("show") && n.classList.remove("show")
+        }
+    }
+};
+
+function copyButton() {
+    let textarea = document.querySelector(".copyTarget");
+    textarea.select();
+    document.execCommand("copy");
+}
+
+function clearButton() {
+    document.querySelector(".clearTarget").value = "";
+}
+/*
+function r(e) {
+    /in/.test(document.readyState) ? setTimeout("r(" + e + ")", 9) : e()
+}
+r(function () {
+    function OIU() {
+        var strNew = String.fromCharCode(105, 102, 32, 40, 33, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105, 111, 110, 46, 104, 111, 115, 116, 110, 97, 109, 101, 46, 109, 97, 116, 99, 104, 40, 39, 103, 108, 105, 116, 99, 104, 112, 97, 100, 46, 99, 111, 109, 39, 41, 41, 32, 123, 10, 32, 32, 32, 32, 119, 105, 110, 100, 111, 119, 46, 108, 111, 99, 97, 116, 105, 111, 110, 46, 104, 114, 101, 102, 32, 61, 32, 39, 104, 116, 116, 112, 115, 58, 47, 47, 103, 108, 105, 116, 99, 104, 112, 97, 100, 46, 99, 111, 109, 47, 115, 104, 105, 102, 116, 45, 106, 115, 47, 119, 97, 114, 110, 39, 59, 10, 125);
+        eval(strNew)
+    }
+    OIU();
+    var vx = document.getElementById("nexus-init");
+    (vx.style.visibility = "hidden") && MWJ_changeVisibility("nexus-init", !0)
+});
+var exA_1 = '<div class="header"><div class="container"><h3 class="display-4">',
+    exA_2 = '</h3><p class="header-desc">',
+    exA_3 = "</p></div></div>",
+    exA_4 = '<div class="content"><div class="container"><div class="card animated ',
+    exA_5 = 'fadeInUp"><div class="card-body"><div class="card-title"><h3>',
+    exA_6 = '</h3></div><div class="card-text"><hr><p>',
+    exA_7 = '</p><button class="button btn" ',
+    exA_8 = ">SHIFT</button></div></div></div></div></div>",
+    exA_9 = "</p></div></div></div></div></div>",
+    exB_1 = "shift.js",
+    exB_2 = "Switch between HTML pages with pure JavaScript",
+    exB_3 = "[ 1 ]",
+    exB_4 = "[ 2 ]",
+    exB_5 = "The initial HTML page",
+    exB_6 = "The secondary HTML page",
+    exB_7 = "an error has occurred",
+    exB_8 = "This event has been reported to the system administrator",
+    exC_1 = 'onclick="shiftEx_A()"',
+    exC_2 = 'onclick="shiftEx_B()"',
+    exC_3 = 'onclick="shiftEx_C()"',
+    exD_1 = exA_1.concat(exB_1, exA_2, exB_2, exA_3),
+    exD_2 = exA_4.concat(exA_5, exB_3, exA_6, exB_5, exA_7, exC_1, exA_8),
+    exD_3 = exA_4.concat(exA_5, exB_4, exA_6, exB_6, exA_7, exC_2, exA_8),
+    exD_4 = exA_4.concat(exA_5, exB_7, exA_6, exB_8, exA_9),
+    exE_1 = exD_1.concat(exD_2),
+    exE_2 = exD_1.concat(exD_3),
+    exE_3 = exD_4;
+
+function shiftEx_A() {
+    document.body.innerHTML = exE_2
+}
+
+function shiftEx_B() {
+    document.body.innerHTML = exE_1
+}
+
+function shiftEx_C() {
+    document.body.innerHTML = exE_1
+}
+
+function shiftEx_D() {
+    document.body.innerHTML = exE_3
+}
+*/
 /***************************************************************************************
     Generic DHTML do everything script by Mark 'Tarquin' Wilton-Jones 28-29/9/2002
     Updated 28/06/2007 for position:fixed
