@@ -93,6 +93,10 @@ function popBcoder() {
 function popEncoder() {
     document.doctype.name, window.open("https://glitchpad.com/encoder64/", "_blank", "width=960,height=680,resizable")
 }
+            
+function popGoogleEarth() {
+    document.doctype.name, window.open("https://earth.google.com/web/", "_blank", "width=960,height=680,resizable")
+}
 
 function glitchDropEx() {
     document.getElementById("glitchDropExID").classList.toggle("show")
