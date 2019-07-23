@@ -108,7 +108,11 @@ function popJsonCsv() {
 
 function popDraw() {
     document.doctype.name, window.open("https://glitchpad.com/draw/", "_blank", "width=960,height=680,resizable")
-} //https://glitchpad.com/postbin/
+}
+
+function popPrimeNums() {
+    document.doctype.name, window.open("https://glitchpad.com/primes/", "_blank", "width=960,height=680,resizable")
+}
 
 function popPostbin() {
     document.doctype.name, window.open("https://glitchpad.com/postbin/", "_blank", "width=960,height=680,resizable")
