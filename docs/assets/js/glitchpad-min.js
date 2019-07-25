@@ -82,6 +82,14 @@ function popColorpicker() {
     document.doctype.name, window.open("https://glitchpad.com/colorpicker/", "_blank", "width=470,height=300,resizable")
 }
 
+function popLoadG() {
+    document.doctype.name, window.open("https://glitchpad.com/load/g/", "_blank", "width=300,height=300,resizable")
+}
+
+function popLoadR() {
+    document.doctype.name, window.open("https://glitchpad.com/load/r/", "_blank", "width=300,height=300,resizable")
+}
+
 function popPwtest() {
     document.doctype.name, window.open("https://glitchpad.com/password-test/", "_blank", "width=420,height=455, resizable")
 }
@@ -108,6 +116,14 @@ function popJsonCsv() {
 
 function popDraw() {
     document.doctype.name, window.open("https://glitchpad.com/draw/", "_blank", "width=960,height=680,resizable")
+}
+            
+function popDrawLight() {
+    document.doctype.name, window.open("https://glitchpad.com/draw/light/", "_blank", "width=960,height=680,resizable")
+}
+
+function popDrawDark() {
+    document.doctype.name, window.open("https://glitchpad.com/draw/dark/", "_blank", "width=960,height=680,resizable")
 }
 
 function popPrimeNums() {
