@@ -133,6 +133,14 @@ function popPrimeNums() {
 function popPostbin() {
     document.doctype.name, window.open("https://glitchpad.com/postbin/", "_blank", "width=960,height=680,resizable")
 }
+            
+function popIpLocal() {
+    document.doctype.name, window.open("data:text/html;base64,PCFkb2N0eXBlIGh0bWw+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT5Mb2NhbCBJUDwvdGl0bGU+PHN0eWxlPnB7Y29sb3I6Z3JlZW47dGV4dC1hbGlnbjptaWRkbGU7Zm9udC1mYW1pbHk6bW9ub3NwYWNlO2Rpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6Y2VudGVyfTwvc3R5bGU+PHNjcmlwdCBzcmM9aHR0cHM6Ly9nbGl0Y2hwYWQuY29tL2Fzc2V0cy9qcy9nbGlwLW1pbi5qcz48L3NjcmlwdD4K", "_blank", "width=500,height=300,resizable")
+}
+
+function popIpRemote() {
+    document.doctype.name, window.open("https://domains.google.com/checkip", "_blank", "width=500,height=300,resizable")
+}
 
 function glitchDropA() {
     document.getElementById("glitchDropIDa").classList.toggle("show")
