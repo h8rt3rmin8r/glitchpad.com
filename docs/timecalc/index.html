@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TimeCalc | Glitchpad</title>
+    <meta name="description" content="Convert date and time values into and out of unix timestamps">
+    <meta name="keywords"
+        content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad, unixtime, time conversions">
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/manifest.json">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="TimeCalc">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+    <!-- ****** STYLESHEETS ****** -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: black;
+        }
+
+        p {
+            text-align: left;
+            line-height: 0.8em;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #36679e
+        }
+
+        hr {
+            border-width: 1px;
+            border-color: #fff
+        }
+
+        #bgTarget {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+        }
+
+        #bgTarget.transition {
+            background: black;
+        }
+
+        .btn-break {
+            line-height: 1.3em;
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        .btn {
+            display: block;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .point {
+            position:relative;
+            animation:mymove 1s ease infinite;
+            -moz-animation:mymove 1s ease infinite;
+            -webkit-animation:mymove 1s ease infinite;
+            padding-left:2px;
+            padding-right:2px;
+        }
+
+        @keyframes mymove {
+            0% {opacity:1.0; text-shadow:0 0 18px #00d31c;}
+            50% {opacity:0; text-shadow:none; }
+            100% {opacity:1.0; text-shadow:0 0 18px #00d31c; }
+        }
+
+        @-webkit-keyframes mymove {
+            0% {opacity:1.0; text-shadow:0 0 18px #00d31c;}
+            50% {opacity:0; text-shadow:none; }
+            100% {opacity:1.0; text-shadow:0 0 18px #00d31c; }	
+        }
+
+        @-moz-keyframes mymove {
+            0% {opacity:1.0; text-shadow:0 0 18px #00d31c;}
+            50% {opacity:0; text-shadow:none; }
+            100% {opacity:1.0; text-shadow:0 0 18px #00d31c; }	
+        }
+    </style>
+    <!-- ****** RADIALBG CSS ****** -->
+    <link rel="stylesheet" href="https://h8rt3rmin8r.github.io/radialbg/assets/radialbg.css">
+</head>
+
+<body class="animated fadeIn radialbg-green">
+    <br>
+    <div class="container">
+        <div class="card animated bounceInUp text-white" style="background-color:rgba(0, 0, 0, 0.5);">
+            <div class="card-body">
+                <div class="card-title">
+                    <h2>TimeCalc</h2>
+                </div>
+                <div class="card-text">
+                    <div class="clock">
+                        <p>(Local Time)&nbsp;&nbsp;<span id="hours"></span><span class="point">:</span><span id="min"></span><span class="point">:</span><span id="sec"></span></p>
+                    </div>
+                    <br>
+                    <select>
+                        <option tzId="1" gmtAdj="GMT-12:00" hasDst="0" value="-12">(GMT-12:00)</option>
+                        <option tzId="2" gmtAdj="GMT-11:00" hasDst="0" value="-11">(GMT-11:00)</option>
+                        <option tzId="3" gmtAdj="GMT-10:00" hasDst="0" value="-10">(GMT-10:00)</option>
+                        <option tzId="4" gmtAdj="GMT-09:00" hasDst="1" value="-9">(GMT-09:00)</option>
+                        <option tzId="5" gmtAdj="GMT-08:00" hasDst="1" value="-8">(GMT-08:00)</option>
+                        <option tzId="6" gmtAdj="GMT-08:00" hasDst="1" value="-8">(GMT-08:00)</option>
+                        <option tzId="7" gmtAdj="GMT-07:00" hasDst="0" value="-7">(GMT-07:00)</option>
+                        <option tzId="8" gmtAdj="GMT-07:00" hasDst="1" value="-7">(GMT-07:00)</option>
+                        <option tzId="9" gmtAdj="GMT-07:00" hasDst="1" value="-7">(GMT-07:00)</option>
+                        <option tzId="10" gmtAdj="GMT-06:00" hasDst="0" value="-6">(GMT-06:00)</option>
+                        <option tzId="11" gmtAdj="GMT-06:00" hasDst="1" value="-6">(GMT-06:00)</option>
+                        <option tzId="12" gmtAdj="GMT-06:00" hasDst="1" value="-6">(GMT-06:00)</option>
+                        <option tzId="13" gmtAdj="GMT-06:00" hasDst="0" value="-6">(GMT-06:00)</option>
+                        <option tzId="14" gmtAdj="GMT-05:00" hasDst="0" value="-5">(GMT-05:00)</option>
+                        <option tzId="15" gmtAdj="GMT-05:00" hasDst="1" value="-5">(GMT-05:00)</option>
+                        <option tzId="16" gmtAdj="GMT-05:00" hasDst="1" value="-5">(GMT-05:00)</option>
+                        <option tzId="17" gmtAdj="GMT-04:00" hasDst="1" value="-4">(GMT-04:00)</option>
+                        <option tzId="18" gmtAdj="GMT-04:00" hasDst="0" value="-4">(GMT-04:00)</option>
+                        <option tzId="19" gmtAdj="GMT-04:00" hasDst="0" value="-4">(GMT-04:00)</option>
+                        <option tzId="20" gmtAdj="GMT-04:00" hasDst="1" value="-4">(GMT-04:00)</option>
+                        <option tzId="21" gmtAdj="GMT-03:30" hasDst="1" value="-3.5">(GMT-03:30)</option>
+                        <option tzId="22" gmtAdj="GMT-03:00" hasDst="1" value="-3">(GMT-03:00)</option>
+                        <option tzId="23" gmtAdj="GMT-03:00" hasDst="0" value="-3">(GMT-03:00)</option>
+                        <option tzId="24" gmtAdj="GMT-03:00" hasDst="1" value="-3">(GMT-03:00)</option>
+                        <option tzId="25" gmtAdj="GMT-03:00" hasDst="1" value="-3">(GMT-03:00)</option>
+                        <option tzId="26" gmtAdj="GMT-02:00" hasDst="1" value="-2">(GMT-02:00)</option>
+                        <option tzId="27" gmtAdj="GMT-01:00" hasDst="0" value="-1">(GMT-01:00)</option>
+                        <option tzId="28" gmtAdj="GMT-01:00" hasDst="1" value="-1">(GMT-01:00)</option>
+                        <option tzId="29" gmtAdj="GMT+00:00" hasDst="0" value="0">(GMT+00:00)</option>
+                        <option tzId="30" gmtAdj="GMT+00:00" hasDst="1" value="0">(GMT+00:00)</option>
+                        <option tzId="31" gmtAdj="GMT+01:00" hasDst="1" value="1">(GMT+01:00)</option>
+                        <option tzId="32" gmtAdj="GMT+01:00" hasDst="1" value="1">(GMT+01:00)</option>
+                        <option tzId="33" gmtAdj="GMT+01:00" hasDst="1" value="1">(GMT+01:00)</option>
+                        <option tzId="34" gmtAdj="GMT+01:00" hasDst="1" value="1">(GMT+01:00)</option>
+                        <option tzId="35" gmtAdj="GMT+01:00" hasDst="1" value="1">(GMT+01:00)</option>
+                        <option tzId="36" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="37" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="38" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="39" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="40" gmtAdj="GMT+02:00" hasDst="0" value="2">(GMT+02:00)</option>
+                        <option tzId="41" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="42" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="43" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="44" gmtAdj="GMT+02:00" hasDst="1" value="2">(GMT+02:00)</option>
+                        <option tzId="45" gmtAdj="GMT+03:00" hasDst="0" value="3">(GMT+03:00)</option>
+                        <option tzId="46" gmtAdj="GMT+03:00" hasDst="1" value="3">(GMT+03:00)</option>
+                        <option tzId="47" gmtAdj="GMT+03:00" hasDst="0" value="3">(GMT+03:00)</option>
+                        <option tzId="48" gmtAdj="GMT+03:00" hasDst="0" value="3">(GMT+03:00)</option>
+                        <option tzId="49" gmtAdj="GMT+03:30" hasDst="1" value="3.5">(GMT+03:30)</option>
+                        <option tzId="50" gmtAdj="GMT+04:00" hasDst="0" value="4">(GMT+04:00)</option>
+                        <option tzId="51" gmtAdj="GMT+04:00" hasDst="1" value="4">(GMT+04:00)</option>
+                        <option tzId="52" gmtAdj="GMT+04:00" hasDst="1" value="4">(GMT+04:00)</option>
+                        <option tzId="53" gmtAdj="GMT+04:30" hasDst="0" value="4.5">(GMT+04:30)</option>
+                        <option tzId="54" gmtAdj="GMT+05:00" hasDst="1" value="5">(GMT+05:00)</option>
+                        <option tzId="55" gmtAdj="GMT+05:00" hasDst="0" value="5">(GMT+05:00)</option>
+                        <option tzId="56" gmtAdj="GMT+05:30" hasDst="0" value="5.5">(GMT+05:30)</option>
+                        <option tzId="57" gmtAdj="GMT+05:30" hasDst="0" value="5.5">(GMT+05:30)</option>
+                        <option tzId="58" gmtAdj="GMT+05:45" hasDst="0" value="5.75">(GMT+05:45)</option>
+                        <option tzId="59" gmtAdj="GMT+06:00" hasDst="1" value="6">(GMT+06:00)</option>
+                        <option tzId="60" gmtAdj="GMT+06:00" hasDst="0" value="6">(GMT+06:00)</option>
+                        <option tzId="61" gmtAdj="GMT+06:30" hasDst="0" value="6.5">(GMT+06:30)</option>
+                        <option tzId="62" gmtAdj="GMT+07:00" hasDst="0" value="7">(GMT+07:00)</option>
+                        <option tzId="63" gmtAdj="GMT+07:00" hasDst="1" value="7">(GMT+07:00)</option>
+                        <option tzId="64" gmtAdj="GMT+08:00" hasDst="0" value="8">(GMT+08:00)</option>
+                        <option tzId="65" gmtAdj="GMT+08:00" hasDst="0" value="8">(GMT+08:00)</option>
+                        <option tzId="66" gmtAdj="GMT+08:00" hasDst="0" value="8">(GMT+08:00)</option>
+                        <option tzId="67" gmtAdj="GMT+08:00" hasDst="0" value="8">(GMT+08:00)</option>
+                        <option tzId="68" gmtAdj="GMT+08:00" hasDst="0" value="8">(GMT+08:00)</option>
+                        <option tzId="69" gmtAdj="GMT+09:00" hasDst="0" value="9">(GMT+09:00)</option>
+                        <option tzId="70" gmtAdj="GMT+09:00" hasDst="0" value="9">(GMT+09:00)</option>
+                        <option tzId="71" gmtAdj="GMT+09:00" hasDst="1" value="9">(GMT+09:00)</option>
+                        <option tzId="72" gmtAdj="GMT+09:30" hasDst="0" value="9.5">(GMT+09:30)</option>
+                        <option tzId="73" gmtAdj="GMT+09:30" hasDst="0" value="9.5">(GMT+09:30)</option>
+                        <option tzId="74" gmtAdj="GMT+10:00" hasDst="0" value="10">(GMT+10:00)</option>
+                        <option tzId="75" gmtAdj="GMT+10:00" hasDst="1" value="10">(GMT+10:00)</option>
+                        <option tzId="76" gmtAdj="GMT+10:00" hasDst="1" value="10">(GMT+10:00)</option>
+                        <option tzId="77" gmtAdj="GMT+10:00" hasDst="0" value="10">(GMT+10:00)</option>
+                        <option tzId="78" gmtAdj="GMT+10:00" hasDst="1" value="10">(GMT+10:00)</option>
+                        <option tzId="79" gmtAdj="GMT+11:00" hasDst="1" value="11">(GMT+11:00)</option>
+                        <option tzId="80" gmtAdj="GMT+12:00" hasDst="1" value="12">(GMT+12:00)</option>
+                        <option tzId="81" gmtAdj="GMT+12:00" hasDst="0" value="12">(GMT+12:00)</option>
+                        <option tzId="82" gmtAdj="GMT+13:00" hasDst="0" value="13">(GMT+13:00)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- ****** Hour Minute Second HTML ID builder ****** -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Create two variable with the names of the months and days in an array
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August",
+                "September",
+                "October", "November", "December"
+            ];
+            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+            // Create a newDate() object
+            var newDate = new Date();
+            // Extract the current date from Date object
+            newDate.setDate(newDate.getDate());
+            // Output the day, date, month and year    
+            $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate
+                .getMonth()] + ' ' + newDate.getFullYear());
+
+            setInterval(function () {
+                // Create a newDate() object and extract the seconds of the current time on the visitor's
+                var seconds = new Date().getSeconds();
+                // Add a leading zero to seconds value
+                $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+            }, 1000);
+
+            setInterval(function () {
+                // Create a newDate() object and extract the minutes of the current time on the visitor's
+                var minutes = new Date().getMinutes();
+                // Add a leading zero to the minutes value
+                $("#min").html((minutes < 10 ? "0" : "") + minutes);
+            }, 1000);
+
+            setInterval(function () {
+                // Create a newDate() object and extract the hours of the current time on the visitor's
+                var hours = new Date().getHours();
+                // Add a leading zero to the hours value
+                $("#hours").html((hours < 10 ? "0" : "") + hours);
+            }, 1000);
+
+        });
+    </script>
+    <!-- ****** Timestamp Conversion ****** -->
+
+    <script>
+        function Date_Unixtimestamp_to_Javascript(_unixtimestamp) {
+            // create a new javascript Date object based on the timestamp
+            // multiplied by 1000 so that the argument is in milliseconds, not seconds
+            // +(1000*60*60*4) calculated to avoid Pacific timezone and Central timezone issue
+            this.date = new Date((_unixtimestamp * 1000) + (1000 * 60 * 60 * 4));
+            // hours part from the timestamp
+            //var hours = date.getHours();
+            // minutes part from the timestamp
+            //var minutes = date.getMinutes();
+            // seconds part from the timestamp
+            //var seconds = date.getSeconds();
+
+            // will display time in 10:30:23 format
+            //var formattedTime = hours + ':' + minutes + ':' + seconds;
+
+            this.monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            this.weekNames = [
+                "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+            ];
+        }
+
+        Date_Unixtimestamp_to_Javascript.prototype.getConverteMonthName = function () {
+            return this.monthNames[this.date.getMonth()];
+        };
+
+        Date_Unixtimestamp_to_Javascript.prototype.getConverteShortMonthName = function () {
+            return this.getConverteMonthName().substr(0, 3);
+        };
+
+        Date_Unixtimestamp_to_Javascript.prototype.getConvertedWeekName = function () {
+            return this.weekNames[this.date.getDay()];
+        };
+
+        Date_Unixtimestamp_to_Javascript.prototype.getConvertedDate = function () {
+            return this.date.getDate();
+        }
+
+        Date_Unixtimestamp_to_Javascript.prototype.getFullYear = function () {
+            return this.date.getFullYear();
+        }
+
+        Date_Unixtimestamp_to_Javascript.prototype.getMonthNormal = function () {
+            return this.date.getMonth() + 1;
+        };
+        Date.prototype.stdTimezoneOffset = function () {
+            var jan = new Date(this.getFullYear(), 0, 1);
+            var jul = new Date(this.getFullYear(), 6, 1);
+            return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+        }
+        Date.prototype.printLocalTimezone = function () {
+            if (typeof moment !== "undefined") {
+                var md = moment(this);
+                return "GMT" + md.format("Z");
+            }
+            return '';
+        }
+        Date.prototype.epochConverterLocaleString = function (disabletz) {
+            disabletz = disabletz || false;
+            var locale = window.navigator.userLanguage || window.navigator.language;
+            if (typeof moment === "undefined") {
+                return this.toDateString() + " " + this.toTimeString();
+            }
+            moment.locale(locale);
+            var md = moment(this);
+            if (!md.isValid()) {
+                return 'Invalid input.';
+            }
+            var currentLocaleData = moment.localeData();
+            var myLocaleData = moment.localeData(locale);
+            var myFormat = myLocaleData.longDateFormat('LLLL');
+            if (md.format("SSS") != '000') {
+                myFormat = myFormat.replace(":mm", ":mm:ss.SSS");
+                myFormat = myFormat.replace(".mm", ".mm.ss.SSS");
+            } else {
+                myFormat = myFormat.replace(":mm", ":mm:ss");
+                myFormat = myFormat.replace(".mm", ".mm.ss");
+            }
+            if (!disabletz) {
+                myFormat += " [GMT]Z";
+            }
+            var customDate = md.format(myFormat);
+            return customDate;
+        }
+        Date.prototype.epochConverterGMTString = function () {
+            var locale = window.navigator.userLanguage || window.navigator.language;
+            if (typeof moment === "undefined") {
+                return this.toUTCString();
+            }
+            moment.locale('en');
+            var md = moment(this);
+            if (!md.isValid()) {
+                return 'Invalid input.';
+            }
+            var myLocaleData = moment.localeData(locale);
+            var myFormat = myLocaleData.longDateFormat('LLLL');
+            if (md.format("SSS") != '000') {
+                myFormat = myFormat.replace(":mm", ":mm:ss.SSS");
+            } else {
+                myFormat = myFormat.replace(":mm", ":mm:ss");
+            }
+            return md.utc().format(myFormat);
+        }
+
+        function EpochToHuman() {
+            var inputtext = $('#ecinput').val();
+            inputtext = inputtext.replace(/\s+/g, '');
+            if (inputtext.charAt(inputtext.length - 1) == "L") {
+                inputtext = inputtext.slice(0, -1);
+            }
+            var hr = "<hr class=\"lefthr\">";
+            var errormessage =
+                "Sorry, I can't parse this date.<br/>Check your timestamp, strip letters and punctuation marks.";
+            var outputtext = "";
+            if (isNaN(inputtext)) {
+                if (isHex(inputtext)) {
+                    inputtext = '0x' + inputtext;
+                } else {
+                    document.getElementById('result1').innerHTML = errormessage + hr;
+                    return;
+                }
+            }
+            if (inputtext.substring(0, 2) == '0x') {
+                outputtext += 'Converting <a href="/hex?q=' + inputtext.substring(2) +
+                    '">hexadecimal timestamp</a> to decimal: ' + parseInt(inputtext) + '<br/>';
+            }
+            inputtext = inputtext * 1;
+            if (!Ax()) inputtext -= inputtext;
+            var epoch = inputtext;
+            var extraInfo = 0;
+            var rest = 0;
+            if ((inputtext >= 100000000000000) || (inputtext <= -100000000000000)) {
+                outputtext += "<b>Assuming that this timestamp is in microseconds (1/1,000,000 second):</b><br/>";
+                epoch = Math.round(inputtext / 1000000);
+                inputtext = Math.round(inputtext / 1000);
+            } else if ((inputtext >= 100000000000) || (inputtext <= -100000000000)) {
+                outputtext += "<b>Assuming that this timestamp is in milliseconds:</b><br/>";
+                epoch = Math.floor(inputtext / 1000);
+                rest = inputtext - (epoch * 1000);
+            } else {
+                if (inputtext < -6857222400) {
+                    outputtext +=
+                        "<b>Dates before 14 september 1752 (pre-Gregorian calendar) are not accurate:</b><br/>";
+                }
+                if (inputtext > 10000000000) extraInfo = 1;
+                inputtext = (inputtext * 1000);
+            }
+            var datum = new Date(inputtext);
+            if (isValidDate(datum)) {
+                var convertedDate = datum.epochConverterGMTString();
+                outputtext += "<b>GMT</b>: " + convertedDate;
+                outputtext += "<br/><b>Your time zone</b>: <span title=\"" + datum.toDateString() + " " + datum
+                    .toTimeString() + "\">" + datum.epochConverterLocaleString(1) + "</span>";
+                if (typeof moment !== "undefined") {
+                    outputtext +=
+                        epoch + " " + datum.printLocalTimezone();
+                    var md = moment(datum);
+                    if (md.isDST()) {
+                        outputtext += ' <span class="help" title="daylight saving/summer time">DST</span>';
+                        if (datum.getFullYear() < 1908) outputtext +=
+                            '<br/><br/>Please note:<br/>DST (Daylight Saving Time) was first used around 1908. JavaScript uses the current DST rules for all dates in history. ';
+                    }
+                }
+                if (extraInfo) outputtext +=
+                    "<br/>This conversion uses your timestamp in seconds. Remove the last 3 digits if you are trying to convert milliseconds.";
+            } else {
+                outputtext += errormessage;
+            }
+            document.getElementById('result1').innerHTML = outputtext + hr;
+        }
+
+        function HumanToEpoch() {
+            var datum = new Date(Date.UTC(document.hf.yyyy.value, document.hf.mm.value - 1, document.hf.dd.value,
+                document
+                .hf.hh.value, document.hf.mn.value, document.hf.ss.value));
+            var a = document.getElementById('result2');
+            a.innerHTML = "<b>Epoch timestamp</b>: " + (datum.getTime() / 1000.0) + "<br>Human time: " + datum
+                .epochConverterGMTString();
+        }
+
+        function HumanToEpochTZ() {
+            var tz = $('#hf select[name=tz]').val();
+            var datum;
+            var a = document.getElementById('result2');
+            var preflink =
+                '<br/><br/>If you prefer another date format, set your <a href="/site/preferences">preferences</a>.';
+            if (document.hf.mm.value > 12) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid month: ' + document.hf.mm.value + preflink;
+                return;
+            }
+            if (document.hf.dd.value > 31) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid day: ' + document.hf.dd.value;
+                return;
+            }
+            if (document.hf.hh.value > 23) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid hour: ' + document.hf.hh.value;
+                return;
+            }
+            if (document.hf.mn.value > 59) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid minute: ' + document.hf.mn.value;
+                return;
+            }
+            if (document.hf.ss.value > 59) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid second: ' + document.hf.ss.value;
+                return;
+            }
+            var usedGMT = 0;
+            if (tz == 2) {
+                datum = new Date(document.hf.yyyy.value, document.hf.mm.value - 1, document.hf.dd.value, document.hf.hh
+                    .value, document.hf.mn.value, document.hf.ss.value);
+            } else {
+                datum = new Date(Date.UTC(document.hf.yyyy.value, document.hf.mm.value - 1, document.hf.dd.value,
+                    document
+                    .hf.hh.value, document.hf.mn.value, document.hf.ss.value));
+                usedGMT = 1;
+            }
+            var resulttext = "<b>Epoch timestamp</b>: " + (datum.getTime() / 1000.0);
+            resulttext += "<br/><span title='Used in Java, JavaScript'>Timestamp in milliseconds: " + datum.getTime() +
+                "</span>";
+            resulttext += "<br/>" + (usedGMT ? '<b>' : '') + "Human time (GMT)" + (usedGMT ? '</b>' : '') + ":  " +
+                datum
+                .epochConverterGMTString();
+            resulttext += "<br/>" + (usedGMT ? '' : '<b>') + "Human time (your time zone)" + (usedGMT ? '' : '</b>') +
+                ": " + datum.epochConverterLocaleString();
+            if (!Ax()) return;
+            a.innerHTML = resulttext;
+        }
+
+        function HumanToEpoch2(loop) {
+            loop = loop || 1;
+            var strDate = $('input#rcinput').val();
+            var mapDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Mon\,',
+                'Tue\,',
+                'Wed\,', 'Thu\,', 'Fri\,', 'Sat\,', 'Sun\,', 'Mon ', 'Tue ', 'Wed ', 'Thu ', 'Fri ', 'Sat ', 'Sun ',
+                'Sun\.', 'Mon\.', 'Tue\.', 'Wed\.', 'Thu\.', 'Fri\.', 'Sat\.', 'Sun\.'
+            ];
+            if (loop == 2) {
+                strDate = translateLocaleToEn(strDate);
+            }
+            strDate = stripAll(strDate, mapDays);
+            strDate = strDate.replace(/[\,]/g, '');
+            strDate = strDate.replace(/^\s+|\s+$/g, '');
+            strDate = strDate.replace(/ +(?= )/g, '');
+            strDate = strDate.replace(/^(\d+)\./, '$1');
+            var ok = 0;
+            var skipDate = 0;
+            var content = "";
+            var date = "";
+            var format = "";
+            var yr = 1970;
+            var mnth = 1;
+            var dy = 1;
+            var hr = 0;
+            var mn = 0;
+            var sec = 0;
+            var dmy = 1;
+            if (!ok) {
+                var dateTimeSplit = strDate.split(" ");
+                var dateParts = dateTimeSplit[0].split("-");
+                if (dateParts.length == 1) dateParts = dateTimeSplit[0].split(".");
+                if (dateParts.length == 1) {
+                    dmy = 0;
+                    dateParts = dateTimeSplit[0].split("/");
+                }
+                if (dateParts.length == 1) {
+                    dmy = 1;
+                    if (dateTimeSplit.length > 2) {
+                        if (dateTimeSplit[2].split(":").length == 1) {
+                            strDate = strDate.replace(dateTimeSplit[0] + ' ' + dateTimeSplit[1] + ' ' + dateTimeSplit[
+                                2],
+                                dateTimeSplit[0] + '-' + dateTimeSplit[1] + '-' + dateTimeSplit[2]);
+                            dateTimeSplit = strDate.split(" ");
+                            dateParts = dateTimeSplit[0].split("-");
+                        }
+                    }
+                }
+                if (dateParts.length == 1) {
+                    dateParts = dateTimeSplit;
+                    if (dateTimeSplit.length > 3) timeParts = dateTimeSplit[4];
+                }
+                if (dateParts.length > 2) {
+                    if (dateParts[0] > 100) {
+                        yr = dateParts[0];
+                        mnth = parseMonth(dateParts[1]);
+                        dy = dateParts[2];
+                        format = "YMD";
+                    } else {
+                        if (dmy) {
+                            dy = dateParts[0];
+                            mnth = parseMonth(dateParts[1]);
+                            yr = dateParts[2];
+                            format = "DMY";
+                            if ((!parseFloat(mnth)) || (!parseFloat(dy))) {
+                                dy = dateParts[1];
+                                mnth = parseMonth(dateParts[0]);
+                                format = "MDY";
+                            }
+                        } else {
+                            mnth = parseMonth(dateParts[0]);
+                            dy = dateParts[1];
+                            yr = dateParts[2];
+                            format = "MDY";
+                            if ((!parseFloat(mnth)) || (!parseFloat(dy))) {
+                                dy = dateParts[0];
+                                mnth = parseMonth(dateParts[1]);
+                                format = "DMY";
+                            }
+                        }
+                    }
+                    ok = 1;
+                }
+                if (ok && dateTimeSplit[1]) {
+                    var timeParts = dateTimeSplit[1].split(":");
+                    if (timeParts.length >= 2) {
+                        hr = timeParts[0];
+                        mn = timeParts[1];
+                    }
+                    if (timeParts.length >= 3) {
+                        sec = timeParts[2];
+                    }
+                    if ((dateTimeSplit[2] && dateTimeSplit[2].toLowerCase() == "pm") && (parseFloat(hr) < 12)) hr =
+                        parseFloat(hr) + 12;
+                    if ((dateTimeSplit[2] && dateTimeSplit[2].toLowerCase() == "am") && (parseFloat(hr) == 12)) hr = 0;
+                }
+            }
+            if (!ok) {
+                date = new Date(strDate);
+                if (date.getFullYear() > 1900) {
+                    ok = 1;
+                    skipDate = 1;
+                }
+            }
+            if (ok) {
+                if (!skipDate) {
+                    if (mnth != parseFloat(mnth)) mnth = parseMonth(mnth);
+                    if (yr < 30) yr = 2000 + parseFloat(yr);
+                    if (yr < 200) yr = 1900 + parseFloat(yr);
+                    var usedGMT = 0;
+                    if (((strDate.toUpperCase().indexOf('GMT') > 0) || (strDate.toUpperCase().indexOf('UTC') > 0)) && (
+                            strDate.toUpperCase().indexOf('GMT+') == -1) && (strDate.toUpperCase().indexOf('UTC+') == -
+                            1)) {
+                        date = new Date(Date.UTC(yr, mnth - 1, dy, hr, mn, sec));
+                        usedGMT = 1;
+                    } else {
+                        date = new Date(yr, mnth - 1, dy, hr, mn, sec);
+                    }
+                }
+                content += "<b>Epoch timestamp</b>: " + (date.getTime() / 1000.0);
+                content += "<br/><span title='Used in Java, JavaScript'>Timestamp in milliseconds: " + date.getTime() +
+                    "</span>";
+                content += "<br/>" + (usedGMT ? '<b>' : '') + "Human time (GMT)" + (usedGMT ? '</b>' : '') + ":  " +
+                    date
+                    .epochConverterGMTString();
+                content += "<br/>" + (usedGMT ? '' : '<b>') + "Human time (Your time zone)" + (usedGMT ? '' : '</b>') +
+                    ": " + date.epochConverterLocaleString();
+            }
+            if ((!content) || (date.getTime() != parseFloat(date.getTime()))) {
+                if (loop == 1) {
+                    HumanToEpoch2(2);
+                    return;
+                }
+                content = 'Sorry, can\'t parse this date.';
+            }
+            if (!Ax()) return;
+            document.getElementById('result3').innerHTML = content;
+        }
+
+        function secondsSince0(offset) {
+            var formname = "s2t";
+            if (offset) formname += "2";
+            var val = parseInt(document.getElementById(formname).value);
+            val -= 62167219200;
+            if (offset) {
+                val += offset;
+            }
+            var datum = new Date(val * 1000);
+            outputtext = "<b>GMT</b>: " + datum.epochConverterGMTString() + "<br/><b>Your time zone</b>: " + datum
+                .epochConverterLocaleString();
+            document.getElementById('result' + formname).innerHTML = outputtext;
+        }
+
+        function daysSince0(offset) {
+            var formname = "d2t";
+            if (offset) formname += "2";
+            var val = parseInt(document.getElementById(formname).value);
+            if (offset) {
+                val = offset + val;
+            }
+            val = (val * 86400) - 62167219200;
+            var datum = new Date(val * 1000);
+            outputtext = "<b>Conversion result</b>: " + datum.toDateString();
+            document.getElementById('result' + formname).innerHTML = outputtext;
+        }
+
+        function hexToHuman() {
+            var hex = document.getElementById('hextime').value;
+            dec = parseInt(hex, 16);
+            var datum = new Date(dec * 1000);
+            outputtext = "<b>GMT</b>: " + datum.epochConverterGMTString() + "<br/><b>Your time zone</b>: " + datum
+                .epochConverterLocaleString();
+            outputtext += "<br/>Decimal timestamp/epoch: " + dec;
+            document.getElementById('resulthex').innerHTML = outputtext;
+        }
+
+        function TimeCounter() {
+            var t = parseInt(document.tc.DateTime.value);
+            var days = parseInt(t / 86400);
+            t = t - (days * 86400);
+            var hours = parseInt(t / 3600);
+            t = t - (hours * 3600);
+            var minutes = parseInt(t / 60);
+            t = t - (minutes * 60);
+            var content = "";
+            if (days) content += days + " days";
+            if (hours || days) {
+                if (content) content += ", ";
+                content += hours + " hours";
+            }
+            if (content) content += ", ";
+            content += minutes + " minutes and " + t + " seconds.";
+            document.getElementById('result4').innerHTML = content;
+        }
+        var currentBeginEnd = "month";
+
+        function updateBe(a) {
+            if (a != currentBeginEnd) {
+                if (a == "day") {
+                    document.br.mm.disabled = 0;
+                    document.br.dd.disabled = 0;
+                }
+                if (a == "month") {
+                    document.br.mm.disabled = 0;
+                    document.br.dd.disabled = 1;
+                }
+                if (a == "year") {
+                    document.br.mm.disabled = 1;
+                    document.br.dd.disabled = 1;
+                }
+                currentBeginEnd = a;
+                beginEnd();
+            }
+        }
+
+        function beginEnd() {
+            var tz = $('#br select[name=tz]').val();
+            var a = document.getElementById('resultbe');
+            if (currentBeginEnd != "year" && (document.br.mm.value > 12)) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid month: ' + document.br.mm.value;
+                return;
+            }
+            if (currentBeginEnd == "day" && (document.br.dd.value > 31)) {
+                a.innerHTML = '<b>Please check your input</b><br/>Invalid day: ' + document.br.dd.value;
+                return;
+            }
+            var outputText =
+                "<table class=\"infotable\"><tr><td></td><td><b>Epoch</b></td><td>&nbsp;&nbsp;<b>Human date</b></td></tr><tr><td>Start of " +
+                currentBeginEnd + ":&nbsp;</td><td>";
+            var mon = 0;
+            var day = 1;
+            var yr = document.br.yyyy.value;
+            if (currentBeginEnd != "year") {
+                mon = document.br.mm.value - 1;
+            }
+            if (currentBeginEnd == "day") {
+                day = document.br.dd.value;
+            }
+            var startDate;
+            if (tz == 2) {
+                startDate = new Date(yr, mon, day, 0, 0, 0);
+            } else {
+                startDate = new Date(Date.UTC(yr, mon, day, 0, 0, 0));
+            }
+            if (currentBeginEnd == "year") yr++;
+            if (currentBeginEnd == "month") mon++;
+            if (currentBeginEnd == "day") day++;
+            var endDate;
+            if (tz == 2) {
+                endDate = new Date(yr, mon, day, 0, 0, -1);
+            } else {
+                endDate = new Date(Date.UTC(yr, mon, day, 0, 0, -1));
+            }
+            outputText += (startDate.getTime() / 1000.0) + "</td><td>&nbsp;&nbsp;";
+            if (tz == 2) {
+                outputText += startDate.epochConverterLocaleString();
+            } else {
+                outputText += startDate.epochConverterGMTString();
+            }
+            outputText += "</td></tr>";
+            outputText += "<tr><td>End of " + currentBeginEnd + ":&nbsp;</td><td>";
+            outputText += (endDate.getTime() / 1000.0) + "</td><td>&nbsp;&nbsp;";
+            if (tz == 2) {
+                outputText += endDate.epochConverterLocaleString();
+            } else {
+                outputText += endDate.epochConverterGMTString();
+            }
+            outputText += "</td></tr>";
+            a.innerHTML = outputText;
+        }
+
+        function homepageStart() {
+            if ($("#ecclock").length != 0) {
+                var clockActive = 1;
+                $("#ecclock").mouseover(function () {
+                    clockActive = 0;
+                    $(this).css('backgroundColor', '#dadafc');
+                    $("#clocknotice").html('[stopped]');
+                });
+                $("#ecclock").mouseout(function () {
+                    clockActive = 1;
+                    $(this).css('backgroundColor', '#eaeafa');
+                    $("#clocknotice").html('');
+                });
+                setInterval(function () {
+                    if (clockActive) {
+                        var epoch = Math.round(new Date().getTime() / 1000.0);
+                        $("#ecclock").html(epoch);
+                    }
+                }, 1000);
+            }
+            var today = new Date();
+            $('#ecinput').val(Math.round(today.getTime() / 1000.0));
+            if (preferredtz == 2) {
+                $('select[name=mm],input:text[name=mm]').val(today.getMonth() + 1);
+                $('input:text[name=yyyy]').val(today.getFullYear());
+                $('input:text[name=dd]').val(today.getDate());
+                $('input:text[name=hh]').val(today.getHours());
+                $('input:text[name=mn]').val(today.getMinutes());
+            } else {
+                $('select[name=mm],input:text[name=mm]').val(today.getUTCMonth() + 1);
+                $('input:text[name=yyyy]').val(today.getUTCFullYear());
+                $('input:text[name=dd]').val(today.getUTCDate());
+                $('input:text[name=hh]').val(today.getUTCHours());
+                $('input:text[name=mn]').val(today.getUTCMinutes());
+            }
+            $('input:text[name=ss]').val(today.getUTCSeconds());
+            $('#fs input:text[name=DateTime]').val(today.toUTCString());
+            $(document).keypress(function (e) {
+                if (!$(e.target).is('input#ecinput, input#rcinput')) {
+                    if (!(e.ctrlKey || e.altKey || e.metaKey)) {
+                        if (String.fromCharCode(e.which).match(/[a-zA-Z]/)) e.preventDefault();
+                        switch (e.which) {
+                            case 101:
+                            case 69:
+                                kp('ecinput');
+                                jumpTo('top');
+                                break;
+                            case 99:
+                            case 67:
+                                emptyFields();
+                                break;
+                            case 104:
+                            case 72:
+                                kp('hcinput');
+                                jumpTo('top');
+                                break;
+                            case 114:
+                            case 82:
+                                kp('rcinput');
+                                jumpTo('fs');
+                                break;
+                            case 115:
+                            case 83:
+                                kp('scinput');
+                                jumpTo('tchead');
+                                break;
+                            case 121:
+                            case 89:
+                                $('input:radio[name=cw]:nth(0)').attr('checked', true);
+                                updateBe('year');
+                                jumpTo('brhead');
+                                kp('ycinput');
+                                break;
+                            case 109:
+                            case 77:
+                                $('input:radio[name=cw]:nth(1)').attr('checked', true);
+                                updateBe('month');
+                                jumpTo('brhead');
+                                if (dateformat == "3") {
+                                    kp('ycinput');
+                                } else {
+                                    kp('mcinput');
+                                }
+                                break;
+                            case 100:
+                            case 68:
+                                $('input:radio[name=cw]:nth(2)').attr('checked', true);
+                                updateBe('day');
+                                jumpTo('brhead');
+                                if (dateformat == "2") {
+                                    kp('dcinput');
+                                } else if (dateformat == "3") {
+                                    kp('ycinput');
+                                } else {
+                                    kp('mcinput');
+                                }
+                                break;
+                        }
+                    }
+                }
+            });
+        }
+
+        function timezoneStart() {
+            $(document).keypress(function (e) {
+                if (!(e.ctrlKey || e.altKey || e.metaKey)) {
+                    if (String.fromCharCode(e.which).match(/[a-zA-Z]/)) e.preventDefault();
+                    switch (e.which) {
+                        case 101:
+                        case 69:
+                            kp('ecinput');
+                            jumpTo('top');
+                            break;
+                    }
+                }
+            });
+        }
+
+        function jumpTo(toid) {
+            var new_position = $('#' + toid).offset();
+            window.scrollTo(new_position.left, new_position.top);
+        }
+
+        function emptyFields() {
+            $('input:text').val("");
+            $(".resultbox").fadeOut('', function () {
+                $(".resultbox").html('').show();
+            });
+        }
+
+        function kp(id) {
+            $('#' + id).focus();
+            $('#' + id).select();
+        }
+
+        function parseMonth(mnth) {
+            switch (mnth.toLowerCase()) {
+                case 'january':
+                case 'jan':
+                case 'enero':
+                    return 1;
+                case 'february':
+                case 'feb':
+                case 'febrero':
+                    return 2;
+                case 'march':
+                case 'mar':
+                case 'marzo':
+                    return 3;
+                case 'april':
+                case 'apr':
+                case 'abril':
+                    return 4;
+                case 'may':
+                case 'mayo':
+                    return 5;
+                case 'jun':
+                case 'june':
+                case 'junio':
+                    return 6;
+                case 'jul':
+                case 'july':
+                case 'julio':
+                    return 7;
+                case 'aug':
+                case 'august':
+                case 'agosto':
+                    return 8;
+                case 'sep':
+                case 'september':
+                case 'septiembre':
+                case 'setiembre':
+                    return 9;
+                case 'oct':
+                case 'october':
+                case 'octubre':
+                    return 10;
+                case 'nov':
+                case 'november':
+                case 'noviembre':
+                    return 11;
+                case 'dec':
+                case 'december':
+                case 'diciembre':
+                    return 12;
+            }
+            return mnth;
+        }
+
+        function isValidDate(d) {
+            if (Object.prototype.toString.call(d) !== "[object Date]")
+                return false;
+            return !isNaN(d.getTime());
+        }
+
+        function isHex(h) {
+            var a = parseInt(h, 16);
+            return (a.toString(16) === h.toLowerCase())
+        }
+
+        function Ax() {
+            var d = $(location).attr('hostname');
+            if ((d.search(/sja/i) > 0) || (d.search(/hcon/i) > 3) || d.search(/ogl/i) > 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        function UpdateTableHeaders() {
+            $(".persist-area").each(function () {
+                var el = $(this),
+                    offset = el.offset(),
+                    scrollTop = $(window).scrollTop(),
+                    floatingHeader = $(".floatingHeader", this)
+                if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+                    floatingHeader.css({
+                        "visibility": "visible"
+                    });
+                } else {
+                    floatingHeader.css({
+                        "visibility": "hidden"
+                    });
+                };
+            });
+        }
+
+        function stripAll(str, mapDays) {
+            var re = new RegExp(mapDays.join("|"), "gi");
+            return str.replace(re, '');
+        }
+
+        function replaceAll(str, mapObj) {
+            var keysstr = Object.keys(mapObj).join("|");
+            if (!keysstr) return str;
+            keysstr = keysstr.replace(/\./g, '\\.');
+            var re = new RegExp(keysstr, "i");
+            return str.replace(re, function (matched) {
+                return mapObj[matched.toLowerCase()];
+            });
+        }
+
+        function replaceArray1withArray2(str, a1, a2) {
+            var obj = {};
+            for (var i = 0, l = a1.length; i < l; i++) {
+                s = a1[i];
+                t = a2[i];
+                if (s != t) {
+                    obj[s.toLowerCase()] = t;
+                }
+            }
+            str = replaceAll(str, obj);
+            return str;
+        }
+
+        function translateLocaleToEn(str) {
+            var locale = window.navigator.userLanguage || window.navigator.language;
+            if (typeof moment === "undefined") return str;
+            if (locale == 'en' || locale == 'en-us') return str;
+            moment.locale(locale);
+            monthsA = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                'November', 'December'
+            ];
+            inA = moment.months();
+            str = replaceArray1withArray2(str, inA, monthsA);
+            inB = moment.monthsShort();
+            str = replaceArray1withArray2(str, inB, monthsA);
+            daysA = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            inC = moment.weekdays();
+            str = replaceArray1withArray2(str, inC, daysA);
+            inD = moment.weekdaysShort();
+            str = replaceArray1withArray2(str, inD, daysA);
+            return str;
+        }
+    </script>
+    <!-- ****** Date Formatting ****** -->
+
+    <script>
+        /*
+         * Date Format 1.2.3
+         * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
+         * MIT license
+         *
+         * Includes enhancements by Scott Trenda <scott.trenda.net>
+         * and Kris Kowal <cixar.com/~kris.kowal/>
+         *
+         * Accepts a date, a mask, or a date and a mask.
+         * Returns a formatted version of the given date.
+         * The date defaults to the current date/time.
+         * The mask defaults to dateFormat.masks.default.
+         */
+        var dateFormat = function () {
+            var a = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
+                b =
+                /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
+                d = /[^-+\dA-Z]/g,
+                c = function (f, e) {
+                    f = String(f);
+                    e = e || 2;
+                    while (f.length < e) {
+                        f = "0" + f
+                    }
+                    return f
+                };
+            return function (j, w, r) {
+                var g = dateFormat;
+                if (arguments.length == 1 && Object.prototype.toString.call(j) == "[object String]" && !/\d/
+                    .test(
+                        j)) {
+                    w = j;
+                    j = undefined
+                }
+                j = j ? new Date(j) : new Date;
+                if (isNaN(j)) {
+                    throw SyntaxError("invalid date")
+                }
+                w = String(g.masks[w] || w || g.masks["default"]);
+                if (w.slice(0, 4) == "UTC:") {
+                    w = w.slice(4);
+                    r = true
+                }
+                var u = r ? "getUTC" : "get",
+                    n = j[u + "Date"](),
+                    e = j[u + "Day"](),
+                    k = j[u + "Month"](),
+                    q = j[u + "FullYear"](),
+                    t = j[u + "Hours"](),
+                    l = j[u + "Minutes"](),
+                    v = j[u + "Seconds"](),
+                    p = j[u + "Milliseconds"](),
+                    f = r ? 0 : j.getTimezoneOffset(),
+                    h = {
+                        d: n,
+                        dd: c(n),
+                        ddd: g.i18n.dayNames[e],
+                        dddd: g.i18n.dayNames[e + 7],
+                        m: k + 1,
+                        mm: c(k + 1),
+                        mmm: g.i18n.monthNames[k],
+                        mmmm: g.i18n.monthNames[k + 12],
+                        yy: String(q).slice(2),
+                        yyyy: q,
+                        h: t % 12 || 12,
+                        hh: c(t % 12 || 12),
+                        H: t,
+                        HH: c(t),
+                        M: l,
+                        MM: c(l),
+                        s: v,
+                        ss: c(v),
+                        l: c(p, 3),
+                        L: c(p > 99 ? Math.round(p / 10) : p),
+                        t: t < 12 ? "a" : "p",
+                        tt: t < 12 ? "am" : "pm",
+                        T: t < 12 ? "A" : "P",
+                        TT: t < 12 ? "AM" : "PM",
+                        Z: r ? "UTC" : (String(j).match(b) || [""]).pop().replace(d, ""),
+                        o: (f > 0 ? "-" : "+") + c(Math.floor(Math.abs(f) / 60) * 100 + Math.abs(f) % 60, 4),
+                        S: ["th", "st", "nd", "rd"][n % 10 > 3 ? 0 : (n % 100 - n % 10 != 10) * n % 10]
+                    };
+                return w.replace(a, function (m) {
+                    return m in h ? h[m] : m.slice(1, m.length - 1)
+                })
+            }
+        }();
+        dateFormat.masks = {
+            "default": "ddd mmm dd yyyy HH:MM:ss",
+            shortDate: "m/d/yy",
+            mediumDate: "mmm d, yyyy",
+            longDate: "mmmm d, yyyy",
+            fullDate: "dddd, mmmm d, yyyy",
+            shortTime: "h:MM TT",
+            mediumTime: "h:MM:ss TT",
+            longTime: "h:MM:ss TT Z",
+            isoDate: "yyyy-mm-dd",
+            isoTime: "HH:MM:ss",
+            isoDateTime: "yyyy-mm-dd'T'HH:MM:ss",
+            isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'"
+        };
+        dateFormat.i18n = {
+            dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sunday", "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday"
+            ],
+            monthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+                "January",
+                "February", "March", "April", "May", "June", "July", "August", "September", "October",
+                "November",
+                "December"
+            ]
+        };
+        Date.prototype.format = function (a, b) {
+            return dateFormat(this, a, b)
+        };
+
+        function inherit(b) {
+            function a() {}
+            a.prototype = b;
+            return new a()
+        }
+
+        function getTimeComponents(g, j) {
+            var a = {
+                componentKeys: ["year", "month", "day", "hours", "hours2", "minutes", "seconds", "ampm",
+                    "dayofweek",
+                    "monthname", "date"
+                ],
+                formatStr12: "yyyy|mm|d|h|h|MM|ss|tt|ddd|mmm|ddd, mmm d",
+                formatStr24: "yyyy|mm|d|HH|H|MM|ss||ddd|mmm|ddd, mmm d"
+            };
+            var h = new Date(g);
+            var c = (j == 12) ? a.formatStr12 : a.formatStr24;
+            var k = h.format(c, true).split("|");
+            var f = a.componentKeys;
+            var e = {};
+            for (var b = 0; b < f.length; b++) {
+                e[f[b]] = k[b]
+            }
+            return e
+        }
+
+        function getElementsByClassName(e, g) {
+            var f = e.getElementsByTagName("*");
+            var b = new Array();
+            var d;
+            var a;
+            for (d = 0, a = 0; d < f.length; d++) {
+                var h = " " + f[d].className + " ";
+                if (h.indexOf(" " + g + " ") != -1) {
+                    b[a++] = f[d]
+                }
+            }
+            return b
+        }
+        AbstractLocationAdapter = function () {
+            this.initialize = function (a) {};
+            this.setCurrentTime = function (c, b, d, a) {};
+            this.initialize()
+        };
+        ClockWidgetAdapter = inherit(new AbstractLocationAdapter());
+        with(ClockWidgetAdapter) {
+            initialize = function (a) {
+                console.log("initialized clock widget location adapter")
+            };
+            setCurrentTime = function (h, j, k, m) {
+                var g = getTimeComponents(j, k);
+                var c = {
+                    hours: "th",
+                    minutes: "tm",
+                    ampm: "ampm",
+                    date: "date"
+                };
+                for (var l in c) {
+                    var b = getElementsByClassName(h, c[l])[0];
+                    b.innerHTML = g[l]
+                }
+                var f = getElementsByClassName(h, "country")[0];
+                var o = (m.data.gmtOffset + (m.data.inNextDst ? m.data.nextDstDelta : 0)) / (1000 * 3600);
+                var n = (o >= 0 ? "+" : "");
+                var e = (m.data.nextDstDelta < 0 && !m.data.inNextDst ? " DST" : "");
+                var d = "GMT" + n + o + e;
+                f.innerHTML = d;
+                var a = getElementsByClassName(h, "wheel")[0];
+                if (a != undefined) {
+                    data.hourWheel.update(a, j, m.gmtOffset(), k)
+                }
+            }
+        }
+        Ticker = function (m) {
+            var c = [];
+            var h = {
+                second: 1000,
+                minute: 60000
+            };
+            var g = 60000;
+            var e = 1000;
+            var a = null;
+            var l = this;
+
+            function f() {
+                var o, p;
+                var r = (new Date().getTime());
+                var n, q;
+                for (o = 0; o < c.length; o++) {
+                    q = c[o];
+                    if (d(r, q.lastTimestampUtc, q.interval, q.intervalFreq)) {
+                        q.lastTimestampUtc = r;
+                        setTimeout((function (t, s) {
+                            return function () {
+                                t.func({
+                                    uts: s
+                                })
+                            }
+                        }(q, r)), 0)
+                    }
+                }
+            }
+
+            function d(r, o, p, n) {
+                var s = Math.floor(r / p);
+                var q = Math.floor(o / p);
+                return (s - q) >= n
+            }
+
+            function b() {
+                a = setInterval(f, e)
+            }
+
+            function j() {
+                clearInterval(a);
+                lastTimestampUtc = 0
+            }
+
+            function k(o, p, n) {
+                c.push({
+                    interval: h[p],
+                    func: o,
+                    intervalFreq: n,
+                    lastTimestampUtc: 0
+                })
+            }
+            return {
+                start: b,
+                stop: j,
+                addHandler: k
+            }
+        };
+        Location = function (a) {
+            this.data = {
+                clockMismatch: 0,
+                gmtOffset: 0,
+                hourFormat: 0,
+                nextDstTime: 0,
+                nextDstDelta: 0,
+                parentEl: null,
+                inNextDst: false,
+                domAdapter: null
+            };
+            this.gmtOffset = function () {
+                return this.data.gmtOffset
+            };
+            this.currentTimestamp = function () {
+                var b = (new Date().getTime());
+                b -= this.data.clockMismatch;
+                if (b >= this.data.nextDstTime) {
+                    b += this.data.nextDstDelta;
+                    this.data.inNextDst = true
+                }
+                b += this.data.gmtOffset;
+                return b
+            };
+            this.updateTimestamp = function () {
+                this.data.domAdapter.setCurrentTime(this.data.parentEl, this.currentTimestamp(), this.data
+                    .hourFormat, this)
+            };
+            this.data = a
+        };
+        HourWheel = function (a) {
+            this.data = {
+                visibleHours: 5,
+                hoursBeforeActive: 1,
+                hoursAfterActive: 3
+            };
+            this.update = function (b, g, e, j, n) {
+                var h = new Date(g);
+                var o = h.getUTCHours();
+                var c = g - this.data.hoursBeforeActive * 1000 * 3600 - h.getUTCMinutes() * 1000 * 60 - h
+                    .getUTCSeconds() * 1000 - h.getUTCMilliseconds();
+                var m = ((e / 1000) % 3600) * 1000;
+                c += m;
+                var l = c + this.data.hoursBeforeActive * 1000 * 3600;
+                if (l > g) {
+                    c -= 1000 * 3600
+                }
+                var k = "";
+                for (var f = 0; f < this.data.visibleHours; f++) {
+                    k += this.drawHour(c, j);
+                    c += 3600 * 1000
+                }
+                b.innerHTML = k
+            };
+            this.drawHour = function (k, n) {
+                var m = new Date(k);
+                var e = new Date(k + 3600 * 1000);
+                var h = getTimeComponents(k, n);
+                var f = ["c", "n", "n", "n", "n", "n", "m", "m", "d", "d", "d", "d", "d", "d", "d", "d", "d",
+                    "d",
+                    "e", "e", "e", "e", "n", "n"
+                ][m.getUTCHours()];
+                var b = "tod_" + f;
+                var l = {
+                    n: "Night",
+                    m: "Morning",
+                    e: "Evening",
+                    d: "Day",
+                    c: "Midnight"
+                };
+                var j = m.getUTCHours();
+                var c = e.getUTCHours();
+                if (c < j) {
+                    b += " tod_boundary"
+                }
+                var g = '<li title="{TIP}" class="tod_c"><b>' + h.monthname + "</b><i>" + h.day + "</i></li>";
+                if (j != 0) {
+                    g = (n == 12) ? (h.minutes == "00" ?
+                            '<li title="{TIP}" class="{CLASS}"><b>{HOURS}</b> <u>{AMPM}</u></li>' :
+                            '<li title="{TIP}" class="{CLASS}"><b>{HOURS}</b><i>{MINUTES}</i> <u>{AMPM}</u></li>'
+                            ) :
+                        (h.minutes == "00" ? '<li title="{TIP}" class="{CLASS}"><b>{HOURS2}</b></li>' :
+                            '<li title="{TIP}" class="{CLASS}"><b>{HOURS2}</b><i>{MINUTES}</i></li>')
+                }
+                g = g.replace("{CLASS}", b).replace("{TIP}", l[f]).replace("{HOURS}", h.hours).replace(
+                    "{HOURS2}", h
+                    .hours2).replace("{MINUTES}", h.minutes).replace("{AMPM}", h.ampm);
+                return g
+            }
+        };
+        var deltaYear = 365 * 24 * 60 * 60 * 1000;
+        var deltaMonth = 30 * 24 * 60 * 60 * 1000;
+        var deltaDay = 24 * 60 * 60 * 1000;
+        var deltaHour = 60 * 60 * 1000;
+        var deltaMinute = 60 * 1000;
+
+        function findDstTransitions(e, g, q, b) {
+            var o = [];
+            var c = new Date();
+            var a = new Date();
+            if (b == undefined) {
+                b = 0
+            }
+            c.setTime(e);
+            a.setTime(g);
+            for (var h = e; h < g; h += q) {
+                c.setTime(h);
+                var l = c.getTimezoneOffset();
+                a.setTime(h + q);
+                var d = a.getTimezoneOffset();
+                var p = l - d;
+                if (p != 0) {
+                    var f = h;
+                    var n = h + q;
+                    c.setTime(a.getTime() - c.getTimezoneOffset() * 60 * 1000);
+                    switch (q) {
+                        case deltaMonth:
+                            newDelta = deltaDay;
+                            break;
+                        case deltaDay:
+                            newDelta = deltaHour;
+                            break;
+                        case deltaHour:
+                            newDelta = deltaMinute;
+                            break;
+                        default:
+                            var k = ((p < 0 ? 0 : p) * 60);
+                            var j = -(d * 60) - k;
+                            return {
+                                gmt_offset: j, dst_add: k, ts_u: a.getTime() / 1000, ts_w: c.getTime() / 1000
+                            }
+                    }
+                    var m = findDstTransitions(f, n, newDelta, b + 1);
+                    if (m) {
+                        o = o.concat(m)
+                    }
+                }
+            }
+            return o
+        }
+
+        function findDstTransitionsWrapper() {
+            var c = new Date();
+            var a = Date.UTC(c.getFullYear(), c.getMonth(), c.getDate(), 0, 0, 0);
+            var e = a - deltaYear * 2;
+            var d = a + deltaYear * 2;
+            var f = findDstTransitions(e, d, deltaMonth);
+            if (f.length == 0) {
+                f = {
+                    gmt_offset2: -c.getTimezoneOffset() * 60,
+                    dst_move: null,
+                    ts_u: null
+                }
+            } else {
+                var g = 0;
+                for (var b = 0; b < f.length; b++) {
+                    if (f[b].ts_u > (a / 1000)) {
+                        f = f[b];
+                        f.dst_move = f.dst_add - g;
+                        f.gmt_offset2 = f.gmt_offset + g;
+                        break
+                    }
+                    g = f[b].dst_add
+                }
+            }
+            return f
+        }
+        if (window.sts == undefined || window.sts == 0) {
+            window.sts = (new Date().getTime()) / 1000
+        }
+        var transitions = findDstTransitionsWrapper();
+        locations[1].gmt_offset = transitions.gmt_offset2;
+        locations[1].dst_uts = transitions.ts_u;
+        locations[1].dst_move = transitions.dst_move;
+        var clockDiff = (new Date().getTime()) - window.sts * 1000;
+        var containers = getElementsByClassName(document, "container");
+        var hw = new HourWheel();
+        window.domLocations = [];
+        for (var i = 0; i < 2; i++) {
+            var data = {
+                clockMismatch: clockDiff,
+                gmtOffset: locations[i].gmt_offset * 1000,
+                parentEl: containers[i],
+                hourFormat: window.hourFormat,
+                hourWheel: hw,
+                nextDstTime: locations[i].dst_uts * 1000,
+                nextDstDelta: locations[i].dst_move * 1000,
+                domAdapter: ClockWidgetAdapter
+            };
+            var loc = new Location(data);
+            loc.updateTimestamp();
+            window.domLocations.push(loc)
+        }
+        var ticker = new Ticker();
+        ticker.addHandler(function () {
+            window.domLocations[0].updateTimestamp();
+            window.domLocations[1].updateTimestamp()
+        }, "minute", 1);
+        ticker.addHandler(function () {
+            var b = " blink";
+            var a = document.getElementById("clientarea");
+            if (a.className.indexOf(b) >= 0) {
+                a.className = a.className.replace(b, "")
+            } else {
+                a.className += b
+            }
+        }, "second", 1);
+        ticker.start();
+    </script>
+</body>
+
+</html>
