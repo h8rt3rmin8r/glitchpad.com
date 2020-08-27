@@ -26,10 +26,12 @@
 #>    local log files located in logs/ (relative to the location of the gitctl
 #>    script). This logging feature can be disabled (see the "USAGE" section).
 #>
+#>    Source: https://github.com/h8rt3rmin8r/gitctl
+#>
 #> USAGE:
 #>
-#>    hw_git <OPTION>
-#>    hw_git <OPTION> <OPERATION>
+#>    gitctl <OPTION>
+#>    gitctl <OPTION> <OPERATION>
 #>
 #>    where "OPTION" is one or more of the following:
 #>
@@ -84,7 +86,7 @@
 #>                  |
 #>    --stage "X",  |
 #>    --stageit "X" | Stage all modified, deleted, and new files (this is a
-#>                  | required step before urnning '--push'); May include
+#>                  | required step before running '--push'); May include
 #>                  | an optional commit message, "X"
 #>                  |
 #>
