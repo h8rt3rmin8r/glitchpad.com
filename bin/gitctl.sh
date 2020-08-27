@@ -546,7 +546,7 @@ fi
 
 ## process core options inputs
 
-in_test=$(grep -E '^-{1,2}(d|dump|f|find|h|H|help|l|log|n|nolog|p|project|s|silent|v|verbose)' <<<"${1}" &>/dev/null; echo $?)
+in_test=$(grep -E '^-{1,2}((d|f|h|H|l|n|p|s|v)$|(dump|find|help|log|nolog|project|silent|verbose))' <<<"${1}" &>/dev/null; echo $?)
 
 while [[ "${in_test}" -eq 0 ]]; do
     cycle_base_pre="${1#[-]}"
@@ -601,7 +601,7 @@ while [[ "${in_test}" -eq 0 ]]; do
 
     shift 1
 
-    in_test=$(grep -E '^-{1,2}(d|dump|f|find|h|H|help|l|log|n|nolog|p|project|s|silent|v|verbose)' <<<"${1}" &>/dev/null; echo $?)
+    in_test=$(grep -E '^-{1,2}((d|f|h|H|l|n|p|s|v)$|(dump|find|help|log|nolog|project|silent|verbose))' <<<"${1}" &>/dev/null; echo $?)
 done
 
 ## kill the script if no further inputs were supplied
