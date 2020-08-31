@@ -139,7 +139,11 @@ function popJsonCsv() {
 function popDraw() {
     document.doctype.name, window.open("https://glitchpad.com/draw/", "_blank", "width=960,height=680,resizable")
 }
-            
+
+function popDrawIo() {
+    document.doctype.name, window.open("https://draw.io/", "_blank", "width=960,height=450,resizable")
+}
+
 function popDrawLight() {
     document.doctype.name, window.open("https://glitchpad.com/draw/light/", "_blank", "width=960,height=680,resizable")
 }
