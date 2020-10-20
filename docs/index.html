@@ -3,18 +3,12 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80288786-6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-80288786-6');
-    </script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-80288786-6');</script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GlitchPad</title>
-    <meta name="description" content="A collection of useful web tools by ResoNova">
+    <meta name="description" content="A collection of useful web tools by h8rt3rmin8r">
     <meta name="keywords" content="IDE, cloud edit, cloud ide, cloud coding, coding, html coding, browser notepad, browser ide, notepad">
 
     <!-- ****** FAVICONS AND BRANDING ****** -->
@@ -57,7 +51,7 @@
         <div class="container">
             <h3 class="display-4">Glitchpad</h3>
             <p class="header-desc">A collection of useful web tools by
-                <a href="https://resonova.com">ResoNova</a>.</p>
+                <a href="https://h8rt3rmin8r.com">h8rt3rmin8r</a>.</p>
         </div>
     </div>
     <!-- MAIN SITE CONTENT -->
@@ -66,76 +60,132 @@
             <div class="card fallout animated fadeInUp">
                 <div class="card-body">
                     <div class="card-title">
-                        <h3>Tools</h3>
-                        <p>Select a tool you want to use</p>
+                        <h3>IDEs &amp; NOTES</h3>
+                        <p>Resources for basic IDE development and brainstorming</p>
                     </div>
                     <div class="card-text">
-                        <!-- Dropdown -->
-                        <div class="dropdown">
-                            <button onclick="glitchDropA()" class="dropbtn btn">NOTES &amp; IDEs</button>
-                            <div id="glitchDropIDa" class="dropdown-content">
-                                <a href='javascript:;' onclick='popWorkflowy();'>Workflowy</a>
-                                <a href='javascript:;' onclick='popGlitchwide();'>Notes Desktop</a>
-                                <a href='javascript:;' onclick='popGlitchtall();'>Notes Mobile</a>
-                                <a href='javascript:;' onclick='popBasheditor();'>Bash IDE</a>
-                                <a href='javascript:;' onclick='popHtmleditor();'>HTML IDE</a>
-                                <a href='javascript:;' onclick='popAnyfilenotepad();'>Anyfile Notepad</a>
-                                <a href='javascript:;' onclick='popDrivenotepad();'>Drive Notepad</a>
-                            </div>
-                        </div>
-                        <!-- Dropdown -->
-                        <div class="dropdown">
-                            <button onclick="glitchDropB()" class="dropbtn btn">CALCULATORS</button>
-                            <div id="glitchDropIDb" class="dropdown-content">
-                                <a href='javascript:;' onclick='popPreev();'>Preev BTC Calc</a>
-                                <a href='javascript:;' onclick='popCalc();'>Scientific Calc</a>
-                            </div>
-                        </div>
-                        <!-- Dropdown -->
-                        <div class="dropdown">
-                            <button onclick="glitchDropC()" class="dropbtn btn">CONVERSIONS</button>
-                            <div id="glitchDropIDc" class="dropdown-content">
-                                <a href='javascript:;' onclick='popBcoder();'>BASE64 (Basic)</a>
-                                <a href='javascript:;' onclick='popEncoder();'>BASE64 (Advanced)</a>
-                                <a href='javascript:;' onclick='popJsonCsv();'>Json2Csv</a>
-                                <a href='javascript:;' onclick='popTabsSpaces();'>Tabs2Spaces</a>
-                            </div>
-                        </div>
-                        <!-- Dropdown -->
-                        <div class="dropdown">
-                            <button onclick="glitchDropD()" class="dropbtn btn">LOADERS</button>
-                            <div id="glitchDropIDd" class="dropdown-content">
-                                <a href='javascript:;' onclick='popLoadG();'>Green Loader</a>
-                                <a href='javascript:;' onclick='popLoadR();'>Red Loader</a>
-                            </div>
-                        </div>
-                        <!-- Dropdown -->
-                        <div class="dropdown">
-                            <button onclick="glitchDropE()" class="dropbtn btn">SKETCHPADS</button>
-                            <div id="glitchDropIDe" class="dropdown-content">
-                                <a href='javascript:;' onclick='popDrawIo();'>Draw.io</a>
-                                <a href='javascript:;' onclick='popDrawDark();'>Draw Dark</a>
-                                <a href='javascript:;' onclick='popDrawLight();'>Draw Light</a>
-                            </div>
-                        </div>
-                        <!-- Dropdown -->
-                        <div class="dropdown">
-                            <button onclick="glitchDropF()" class="dropbtn btn">IP CHECK</button>
-                            <div id="glitchDropIDf" class="dropdown-content">
-                                <a href='javascript:;' onclick='popIpLocal();'>Local IP</a>
-                                <a href='javascript:;' onclick='popIpRemote();'>Remote IP</a>
-                            </div>
-                        </div>
-                        <!-- Regular Buttons Section -->
-                        <button class="btn" onclick="popColorpicker();">COLOR PICKER</button>
-                        <button class="btn" onclick="popGoogleEarth();">GOOGLE EARTH</button>
-                        <button class="btn" onclick="popClox();">DIGITAL CLOCK</button>
-                        <button class="btn" onclick="popPwtest();">PASSWORD TEST</button>
-                        <button class="btn" onclick="popPrimeNums();">PRIME NUMBERS</button>
-                        <button class="btn" onclick="popPostbin();">POSTBIN</button>
+                        <!-- DEVELOPER TOOLS -->
+                        <button class="btn" onclick='popWorkflowy();'>Workflowy</button>
+                        <button class="btn" onclick='popGlitchwide();'>Browser Notes</button>
+                        <button class="btn" onclick='popAnyfilenotepad();'>Anyfile Notepad</button>
+                        <button class="btn" onclick="popPostbin();">Postbin</button>
+                        <button class="btn" onclick='popBasheditor();'>Bash Editor</button>
+                        <button class="btn" onclick="popIdeBash();">Bash IDE</button>
+                        <button class="btn" onclick='popHtmleditor();'>HTML Editor</button>
+                        <button class="btn" onclick="popIdeHtml();">HTML IDE</button>
+                        <button class="btn" onclick="popJsConsole();">JS Console</button>
+                        <button class="btn" onclick="popIdeJs();">JS IDE</button>
+                        <button class="btn" onclick="popIdePython2();">Python2 IDE</button>
+                        <button class="btn" onclick="popIdePython3();">Python3 IDE</button>
+                        <button class="btn" onclick="popIdeSqlite();">SQLite IDE</button>
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="card fallout animated fadeInUp">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>GENERAL TOOLS</h3>
+                        <p>A set of general-purpose tools and applications</p>
+                    </div>
+                    <div class="card-text">
+                        <button class="btn" onclick="popClox();">Digital Clock</button>
+                        <button class="btn" onclick="popGoogleEarth();">Google Earth</button>
+                        <button class="btn" onclick='popCalc();'>Basic Calculator</button>
+                        <button class="btn" onclick='popLauncher();'>Window Launcher</button>
+                        <button class="btn" onclick='popShruggieCo();'>Shruggies</button>
+                        <button class="btn" onclick='popGlitchpad();'>Glitchpad</button>
+                        <button class="btn" onclick='popNgrokSystem();'>ngrok Portal</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card fallout animated fadeInUp">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>FINANCIAL MARKETS</h3>
+                        <p>Charts and other tools for trading financial markets</p>
+                    </div>
+                    <div class="card-text">
+                        <button class="btn" onclick='popChartBasic();'>Basic Chart</button>
+                        <button class="btn" onclick='popChartAdvanced();'>Advanced Chart</button>
+                        <button class="btn" onclick='popChartGrid2x2();'>Grid Charts (2x2)</button>
+                        <button class="btn" onclick='popPreev();'>BTC Calculator</button>
+                        <button class="btn" onclick='popOptionsCalc();'>Options Calculator</button>
+                        <button class="btn" onclick='popWavesExchange();'>WAVES Exchange</button>
+                        <button class="btn" onclick='popWavesExplorer();'>WAVES Explorer</button>
+                        <button class="btn" onclick='popWavesPywaves();'>PyWaves</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card fallout animated fadeInUp">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>BROWSER INFORMATION</h3>
+                        <p>Display information detected via the web browser</p>
+                    </div>
+                    <div class="card-text">
+                        <button class="btn" onclick="popIpLocal();">Local IP</button>
+                        <button class="btn" onclick="popIpRemote();">Remote IP</button>
+                        <button class="btn" onclick="popUserAgent();">User Agent</button>
+                        <button class="btn" onclick="popScreenSize();">Screen Size</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card fallout animated fadeInUp">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>DESIGN TOOLS</h3>
+                        <p>Things that help with making visual stuff</p>
+                    </div>
+                    <div class="card-text">
+                        <button class="btn" onclick='popDrawIo();'>draw.io</button>
+                        <button class="btn" onclick='popDrawDark();'>Sketchpad Dark</button>
+                        <button class="btn" onclick='popDrawLight();'>Sketchpad Light</button>
+                        <button class="btn" onclick="popColorpicker();">Color Picker</button>
+                        <button class="btn" onclick="popFaviconGen();">Favicon Generator</button>
+                        <button class="btn" onclick="popFxRainfall();">Rainfall Effect</button>
+                        <button class="btn" onclick="popFxParticles();">Particles Effect</button>
+                        <button class="btn" onclick='popFxLoaderG();'>Green Loader</button>
+                        <button class="btn" onclick='popFxLoaderR();'>Red Loader</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card fallout animated fadeInUp">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>TEXT FORMATTING</h3>
+                        <p>Utilities for formatting and encoding</p>
+                    </div>
+                    <div class="card-text">
+                        <button class="btn" onclick='popBcoder();'>BASE64 (Basic)</button>
+                        <button class="btn" onclick='popEncoder();'>BASE64 (Advanced)</button>
+                        <button class="btn" onclick='popJsonCsv();'>JSON2CSV</button>
+                        <button class="btn" onclick='popTabsSpaces();'>Tabs2Spaces</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card fallout animated fadeInUp">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h3>SECURITY</h3>
+                        <p>Cybersecurity and encryption tools</p>
+                    </div>
+                    <div class="card-text">
+                        <!--  -->
+                        <button class="btn" onclick="popPwtest();">Password Test</button>
+                        <button class="btn" onclick="popPwString();">Random String</button>
+                        <button class="btn" onclick="popPwGen();">Password Gen</button>
+                        <button class="btn" onclick="popInfoEncrypt();">InfoEncrypt</button>
+                        <button class="btn" onclick="popPrimeNums();">Prime Numbers</button>
+                    </div>
+                </div>
+            </div>
+            <br>
             <br>
         </div>
     </div>
@@ -143,9 +193,7 @@
     <footer>
         <div class="footer">
             <div class="container">
-                <p class="p2">
-                    <i>think outside the box | <a href="https://glitchpad.com/">Glitchpad</a> by <a href="https://resonova.com/">ResoNova</a></i>
-                </p>
+                <p>¯\_(ツ)_/¯  think outside the box</p>
             </div>
         </div>
     </footer>
