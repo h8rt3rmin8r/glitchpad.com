@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80288786-6"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-80288786-6');</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glitchpad Launcher</title>
+    <meta name="description" content="Spawn and control a child browser window">
+
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="Launcher">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+
+    <!-- Website styles -->
+    <link rel="stylesheet" href="https://glitchpad.com/assets/css/glitchpad.css">
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        article,aside,figure,footer,header,hgroup,menu,nav,section {display: block;}
+        body {font-family: sans-serif;}
+        p {margin: 5px;}
+    </style>
+</head>
+
+<body>
+    <div class="content-full">
+        <h1>Glitchpad Launcher</h1>
+        <form name="targetUrlForm">
+            <textarea class="copyTarget clearTarget" name="targetUrl" id="targetUrl" cols="60" rows="1"></textarea>
+        </form>
+        <button class="btn" id="btnOpen">Open</button>
+        <button class="btn" id="btnClose">Close</button>
+        <!--<button class="btn" id="btnRefresh">Refresh</button>-->
+        <br>
+    </div>
+
+    <!-- SITE SCRIPTS -->
+    <!-- NOTE: Debug may throw a security error due to XSS on child window refresh -->
+    <script type='text/javascript'>
+        (function () {
+            var childWindow;
+            document.getElementById('btnOpen').onclick = openChildWindow;
+            document.getElementById('btnClose').onclick = closeChildWindow;
+            /*document.getElementById('btnRefresh').onclick = refreshChildWindow;*/
+
+            function openChildWindow() {
+                var textArea = document.getElementById("targetUrl");
+                if (childWindow) {alert("ERROR: A child window is already open.");} else { debugger; childWindow = window.open(textArea.value, "_blank", "width=1000,height=480,resizable");}
+            }
+
+            function closeChildWindow() {
+                if (!childWindow) {alert("ERROR: There is no child window open. Begin by opening a new window.");} else {childWindow.close();childWindow = undefined;alert("Child window closed successfully");}
+            }
+
+            /*function refreshChildWindow() {
+                if (!childWindow) {alert("ERROR: There is no child window open. Begin by opening a new window.");} else {childWindow.location.reload(true);}
+            }*/
+        })();
+    </script>
+    <script src="https://glitchpad.com/assets/js/glitchpad-min.js"></script>
+</body>
+
+</html>
