@@ -74,8 +74,6 @@
         }
 
         .content {
-            width: 100vw;
-            height: 100vh;
             overflow: hidden;
         }
 
@@ -101,7 +99,6 @@
 
         #mobile {
             display: none;
-            width: 960px;
             text-align: left;
             padding: 10px;
         }
@@ -136,8 +133,6 @@
         }
 
         canvas {
-            height: 100vh;
-            width: 100vw;
             overflow: hidden;
             position: fixed;
             top: 0;
@@ -188,7 +183,15 @@
         var index;
 
         function init() {
+            var sH = window.screen.height;
+            var sW = window.screen.width;
+            window.devicePixelRatio=2;
+            var pR = window.devicePixelRatio;
             canvas = document.getElementById("myCanvas");
+            canvas.style.width = sW + "px";
+            canvas.style.height = sH + "px";
+            canvas.width = Math.floor(sW * pR);
+            canvas.height = Math.floor(sH * pR);
             index = 0;
             colors = ["#008000", "#008000", "#008000", "#008000", "#008000", "#008000", "#008000", "#008000", "#008000",
                 "#008000", "#008000"
@@ -224,8 +227,8 @@
                 stage.clear();
                 stage.removeChild(title);
             }
-            color = colors[(index++) % colors.length];
-            stroke = Math.random() * 1 | 0;
+            color = "#008000";
+            stroke = 8;
             oldPt = new createjs.Point(stage.mouseX, stage.mouseY);
             oldMidPt = oldPt.clone();
             stage.addEventListener("stagemousemove", handleMouseMove);
